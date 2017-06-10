@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EmailSet>
+    <openOrcloseWeb>0</openOrcloseWeb>
+    <EmailName>yankun19871116@126.com</EmailName>
+    <EmailPwd>yankun2009</EmailPwd>
+    <SMTP>smtp.126.com</SMTP>
+    <Port>25</Port>   
+</EmailSet>

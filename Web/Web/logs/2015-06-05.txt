@@ -1,0 +1,37 @@
+
+2015/6/5 22:29:08
+引发类型为“System.Web.HttpUnhandledException”的异常。
+2015/6/5 22:29:42
+e:\个人项目\最新模版全新\Web2015-06-03\Web\Web\Admin\main.aspx.cs(29): error CS0570: 现用语言不支持“YK.Service.EmployeeService.InfoCategoryService”
+2015/6/5 22:29:42
+e:\个人项目\最新模版全新\Web2015-06-03\Web\Web\Admin\main.aspx.cs(29): error CS0570: 现用语言不支持“YK.Service.EmployeeService.InfoCategoryService”
+2015/6/5 22:29:56
+e:\个人项目\最新模版全新\Web2015-06-03\Web\Web\Admin\SystemModel\Employee\AllWorkStatementList.aspx.cs(58): error CS0246: 未能找到类型或命名空间名称“TB_Employee_WorkStatement”(是否缺少 using 指令或程序集引用?)
+2015/6/5 22:30:01
+e:\个人项目\最新模版全新\Web2015-06-03\Web\Web\Admin\SystemModel\Employee\WorkStatementList.aspx.cs(48): error CS0246: 未能找到类型或命名空间名称“TB_Employee_WorkStatement”(是否缺少 using 指令或程序集引用?)
+2015/6/5 22:30:03
+e:\个人项目\最新模版全新\Web2015-06-03\Web\Web\Admin\SystemModel\Project\Project\AllProjectList.aspx.cs(40): error CS0246: 未能找到类型或命名空间名称“TB_Project_Projects”(是否缺少 using 指令或程序集引用?)
+2015/6/5 22:30:05
+e:\个人项目\最新模版全新\Web2015-06-03\Web\Web\Admin\SystemModel\Project\Project\ProjectList.aspx.cs(40): error CS0246: 未能找到类型或命名空间名称“TB_Project_Projects”(是否缺少 using 指令或程序集引用?)
+2015/6/5 22:30:09
+e:\个人项目\最新模版全新\Web2015-06-03\Web\Web\Admin\SystemModel\Project\Task\AllTaskList.aspx.cs(46): error CS0246: 未能找到类型或命名空间名称“TB_Project_Task”(是否缺少 using 指令或程序集引用?)
+2015/6/5 22:30:12
+e:\个人项目\最新模版全新\Web2015-06-03\Web\Web\Admin\SystemModel\Project\Task\MyTaskList.aspx.cs(47): error CS0246: 未能找到类型或命名空间名称“TB_Project_Task”(是否缺少 using 指令或程序集引用?)
+2015/6/5 22:31:03
+e:\个人项目\最新模版全新\Web2015-06-03\Web\Web\Admin\main.aspx.cs(29): error CS0570: 现用语言不支持“YK.Service.EmployeeService.InfoCategoryService”
+2015/6/5 22:31:11
+e:\个人项目\最新模版全新\Web2015-06-03\Web\Web\Admin\SystemModel\Employee\Info\CategoryList.aspx.cs(38): error CS0246: 未能找到类型或命名空间名称“TB_Employee_InfoCategory”(是否缺少 using 指令或程序集引用?)
+2015/6/5 22:34:35
+e:\个人项目\最新模版全新\Web2015-06-03\Web\Web\Admin\SystemModel\Employee\Info\CategoryList.aspx.cs(38): error CS0246: 未能找到类型或命名空间名称“TB_Employee_InfoCategory”(是否缺少 using 指令或程序集引用?)
+2015/6/5 22:34:39
+e:\个人项目\最新模版全新\Web2015-06-03\Web\Web\Admin\SystemModel\Employee\Info\CategoryList.aspx.cs(38): error CS0246: 未能找到类型或命名空间名称“TB_Employee_InfoCategory”(是否缺少 using 指令或程序集引用?)
+2015/6/5 22:35:55
+e:\个人项目\最新模版全新\Web2015-06-03\Web\Web\Admin\SystemModel\Employee\Info\CategoryList.aspx.cs(38): error CS0246: 未能找到类型或命名空间名称“TB_Employee_InfoCategory”(是否缺少 using 指令或程序集引用?)
+2015/6/5 22:36:02
+e:\个人项目\最新模版全新\Web2015-06-03\Web\Web\Admin\SystemModel\Employee\Info\CategoryList.aspx.cs(38): error CS0246: 未能找到类型或命名空间名称“TB_Employee_InfoCategory”(是否缺少 using 指令或程序集引用?)
+2015/6/5 22:36:51
+e:\个人项目\最新模版全新\Web2015-06-03\Web\Web\Admin\SystemModel\Employee\Info\CategoryList.aspx.cs(39): error CS0570: 现用语言不支持“YK.Service.EmployeeService.InfoCategoryService”
+2015/6/5 22:51:57
+e:\个人项目\最新模版全新\Web2015-06-03\Web\Web\Admin\SystemModel\Employee\Info\CategoryList.aspx.cs(40): error CS0104: “EmployeeService”是“YK.Service.EmployeeService”和“YK.Service.CRM.EmployeeService”之间的不明确的引用
+2015/6/5 22:53:09
+e:\个人项目\最新模版全新\Web2015-06-03\Web\Web\Admin\SystemModel\Employee\Info\InfoList.aspx.cs(38): error CS0246: 未能找到类型或命名空间名称“TB_Employee_Info”(是否缺少 using 指令或程序集引用?)

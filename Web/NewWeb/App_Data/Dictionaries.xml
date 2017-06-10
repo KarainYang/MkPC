@@ -1,0 +1,40 @@
+<?xml version="1.0" standalone="yes"?>
+<Dictionaries>
+  <Dictionarie name="订单状态">
+    <Title ID="0" Remark="">申请中</Title>
+    <Title ID="1" Remark="">已审核</Title>
+    <Title ID="2" Remark="">备货</Title>
+    <Title ID="3" Remark="">发货</Title>
+    <Title ID="4" Remark="">签收</Title>
+    <Title ID="5" Remark="">财务确认</Title>
+    <Title ID="6" Remark="">完成订单</Title>
+    <Title ID="7" Remark="">已取消</Title>
+  </Dictionarie>
+  <Dictionarie name="支付方式">
+    <Title ID="1" Remark="即时到帐，支持绝大数银行借记卡及部分银行信用卡 查看银行及限额">淘宝支付 </Title>
+    <Title ID="2" Remark="即时到帐，支持绝大数银行借记卡及部分银行信用卡 查看银行及限额">网银支付</Title>
+    <Title ID="3" Remark="当面付款后验货，支持现金、POS机刷卡、支票支付 查看运费及配送范围">货到付款</Title>
+    <Title ID="4" Remark="当面付款后验货，支持现金、POS机刷卡、支票支付 查看自提点地址">自提</Title>
+    <Title ID="5" Remark="通过快钱平台转账 转帐后1-3个工作日内到帐 查看帐户信息">公司转账</Title>
+  </Dictionarie>
+  <Dictionarie name="配送方式">
+    <Title ID="1" Remark="">快递送货</Title>
+    <Title ID="2" Remark="">门店配送</Title>
+    <Title ID="3" Remark="">上面自提</Title>
+  </Dictionarie>
+  <Dictionarie name="配送时间">
+    <Title ID="1" Remark="">1. 只工作日送货(双休日、假日不用送)</Title>
+    <Title ID="2" Remark="">2. 工作日、双休日与假日均可送货</Title>
+    <Title ID="3" Remark="">3. 只双休日、假日送货(工作日不用送)</Title>
+  </Dictionarie>
+  <Dictionarie name="发票类型">
+    <Title ID="1" Remark="">普通发票</Title>
+    <Title ID="2" Remark="">增值税发票</Title>
+  </Dictionarie>
+  <Dictionarie name="发票内容">
+    <Title ID="1" Remark="">明细</Title>
+    <Title ID="2" Remark="">办公用品</Title>
+    <Title ID="3" Remark="">电脑配件</Title>
+    <Title ID="4" Remark="">耗材</Title>
+  </Dictionarie>
+</Dictionaries>

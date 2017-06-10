@@ -1,0 +1,83 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using System.Xml;
+using System.IO;
+using YK.Model;
+
+public partial class Admin_WebSet_WebSet : System.Web.UI.Page
+{
+    //文件路径
+    protected string fileUrl = HttpContext.Current.Server.MapPath("~/App_Data/WebSet/Web.xml");
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        WebSet_WebSet model = MyXmlSerializer<WebSet_WebSet>.Get(fileUrl);
+       Response.Write(model.WebName);
+       model.WebName = "广州梦科网络科技有限公司 xxxx";
+       MyXmlSerializer<WebSet_WebSet>.Set(model, fileUrl);
+        if(!IsPostBack)
+        {
+             DataSet ds = new DataSet();
+            ds.ReadXml(fileUrl);
+            if(ds.Tables.Count>0)
+            {
+                for (int i = 0; i < ds.Tables[0].Rows.Count;i++ )
+                {
+                    RadioBtnOpenOrClose.SelectedValue = ds.Tables[0].Rows[0]["openOrcloseWeb"].ToString();
+                    TbWebSite.Text = ds.Tables[0].Rows[0]["Website"].ToString();
+                    TbWebName.Text = ds.Tables[0].Rows[0]["WebName"].ToString();
+                    TbMail.Text = ds.Tables[0].Rows[0]["Email"].ToString();
+                    TbAddress.Text = ds.Tables[0].Rows[0]["Address"].ToString();
+                    TbZipCode.Text = ds.Tables[0].Rows[0]["ZipCode"].ToString();
+                    TbPhone.Text = ds.Tables[0].Rows[0]["Phone"].ToString();
+                    TbCopyright.Text = ds.Tables[0].Rows[0]["Copyright"].ToString();
+                    RadioBtnDuplicateWebpage.SelectedValue = ds.Tables[0].Rows[0]["DuplicateWebpage"].ToString();
+                    TbIcp.Text = ds.Tables[0].Rows[0]["ICP"].ToString();
+                    TbKeyWord.Text = ds.Tables[0].Rows[0]["KeyWord"].ToString();
+                    TbDescirption.Text = ds.Tables[0].Rows[0]["Description"].ToString();
+                    TbFax.Text = ds.Tables[0].Rows[0]["Fax"].ToString();
+                    TbTQ.Text = ds.Tables[0].Rows[0]["TQ"].ToString();
+                }
+            }   
+        }          
+    }
+
+    protected void BtnSave_Click(object sender, EventArgs e)
+    {
+        #region
+        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.Load(fileUrl);
+        XmlNodeList nodeList = xmlDoc.SelectSingleNode("webset").ChildNodes;
+        foreach (XmlNode xn in nodeList)
+        {
+            XmlElement xe = (XmlElement)xn;
+            xe.ChildNodes[0].InnerText = RadioBtnOpenOrClose.SelectedValue;
+            xe.ChildNodes[1].InnerText = TbWebSite.Text;
+            xe.ChildNodes[2].InnerText = TbWebName.Text;
+            xe.ChildNodes[3].InnerText = TbMail.Text;
+            xe.ChildNodes[4].InnerText = TbAddress.Text;
+            xe.ChildNodes[5].InnerText = TbZipCode.Text;
+            xe.ChildNodes[6].InnerText = TbPhone.Text;
+            xe.ChildNodes[7].InnerText = TbCopyright.Text;
+            xe.ChildNodes[8].InnerText = RadioBtnDuplicateWebpage.SelectedValue;
+            xe.ChildNodes[9].InnerText = TbIcp.Text;
+            xe.ChildNodes[10].InnerText = TbKeyWord.Text;
+            xe.ChildNodes[11].InnerText = TbDescirption.Text;
+            xe.ChildNodes[12].InnerText = TbFax.Text;
+            xe.ChildNodes[13].InnerText = TbTQ.Text;
+        }
+        xmlDoc.Save(fileUrl);
+
+        MessageDiv.InnerHtml = YK.Common.CommonClass.Alert("数据修改成功！");
+        #endregion
+    }
+}

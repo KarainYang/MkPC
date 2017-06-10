@@ -1,0 +1,117 @@
+<?xml version="1.0" standalone="yes"?>
+<Dictionaries>
+  <Dictionarie Name="用户管理" ID="1" IsShow="True">
+    <PathInfo ID="1001" Url="SystemModel/Admin/UserList.aspx" IsShow="True">用户管理</PathInfo>
+    <PathInfo ID="1002" Url="SystemModel/Roles/RolesList.aspx" IsShow="True">角色管理</PathInfo>
+    <PathInfo ID="1003" Url="SystemModel/Admin/LogList.aspx" IsShow="True">操作日志</PathInfo>
+    <PathInfo ID="1004" Url="SystemModel/Roles/ResourceList.aspx" IsShow="True">资源管理</PathInfo>
+    <PathInfo ID="1005" Url="SystemModel/Roles/UserView.aspx">添加/编辑用户</PathInfo>
+    <PathInfo ID="1006" Url="SystemModel/Roles/RolesView.aspx">添加/编辑角色</PathInfo>
+    <PathInfo ID="1007" Url="SystemModel/Roles/UserInRole.aspx">用户角色设置</PathInfo>
+  </Dictionarie>  
+  <Dictionarie Name="系统设置" ID="2" IsShow="True">
+    <PathInfo ID="6001" Url="SystemModel/System/WebSet.aspx" IsShow="True">站点信息设置</PathInfo>
+    <PathInfo ID="6002" Url="SystemModel/System/EmailSet.aspx" IsShow="True">邮件信息配置</PathInfo>
+    <PathInfo ID="6003" Url="SystemModel/System/EmailSend.aspx" IsShow="True">发送邮件</PathInfo>
+    <PathInfo ID="6009" Url="SystemModel/System/DictionaryTypeList.aspx" IsShow="True">数据字典管理</PathInfo>
+    <PathInfo ID="6004" Url="SystemModel/System/AdverCategoryList.aspx" IsShow="True">广告类别管理</PathInfo>
+    <PathInfo ID="6005" Url="SystemModel/System/AdverCategoryView.aspx">添加/编辑广告类别</PathInfo>
+    <PathInfo ID="6006" Url="SystemModel/System/AdverList.aspx" IsShow="True">广告管理</PathInfo>
+    <PathInfo ID="6007" Url="SystemModel/System/AdverView.aspx">添加/编辑广告</PathInfo>
+    <PathInfo ID="6008" Url="SystemModel/System/ClearCache.aspx" IsShow="True">缓存清理</PathInfo>
+  </Dictionarie>
+  <Dictionarie Name="商品管理" ID="3" IsShow="True">
+    <PathInfo ID="7001" Url="SystemModel/Product/Categorys.aspx" IsShow="True">商品类别管理</PathInfo>
+    <PathInfo ID="7002" Url="SystemModel/Product/CategoryView.aspx">添加/编辑商品类别</PathInfo>
+    <PathInfo ID="7003" Url="SystemModel/Product/BrandList.aspx" IsShow="True">商品品牌管理</PathInfo>
+    <PathInfo ID="7004" Url="SystemModel/Product/BrandView.aspx">添加/编辑商品品牌</PathInfo>
+    <PathInfo ID="7005" Url="SystemModel/Product/CategoryToBrandList.aspx">类别品牌设置</PathInfo>
+    <PathInfo ID="7006" Url="SystemModel/Product/PropertieList.aspx" IsShow="True">商品属性管理</PathInfo>
+    <PathInfo ID="7007" Url="SystemModel/Product/PropertiesView.aspx">添加/编辑商品属性</PathInfo>
+    <PathInfo ID="7008" Url="SystemModel/Product/ProductList.aspx" IsShow="True">商品管理</PathInfo>
+    <PathInfo ID="7009" Url="SystemModel/Product/ProductView.aspx">添加/编辑商品</PathInfo>
+    <PathInfo ID="7010" Url="SystemModel/Product/PictureList.aspx">商品图片管理</PathInfo>
+    <PathInfo ID="7011" Url="SystemModel/Product/PictureView.aspx">添加/编辑商品图片</PathInfo>
+    <PathInfo ID="7012" Url="SystemModel/Product/CommentsList.aspx">商品评论管理</PathInfo>
+    <PathInfo ID="7013" Url="SystemModel/Product/QuestionsList.aspx">商品提问管理</PathInfo>
+    <PathInfo ID="7014" Url="SystemModel/Product/ReplyList.aspx">商品提问回复管理</PathInfo>
+    <PathInfo ID="7015" Url="SystemModel/Product/ReplyView.aspx">添加/编辑提问回复</PathInfo>
+    <PathInfo ID="7016" Url="SystemModel/Product/GroupList.aspx" IsShow="True">商品团购管理</PathInfo>
+    <PathInfo ID="7017" Url="SystemModel/Product/GroupView.aspx">添加/编辑商品团购</PathInfo>
+  </Dictionarie>
+  <Dictionarie Name="订单管理" ID="4" IsShow="True">
+    <PathInfo ID="8001" Url="SystemModel/Order/OrderList.aspx" IsShow="True">订单管理</PathInfo>
+    <PathInfo ID="8002" Url="SystemModel/Order/OrderList.aspx?state=0" IsShow="True">订单审核列表</PathInfo>
+    <PathInfo ID="8003" Url="SystemModel/Order/OrderList.aspx?state=1" IsShow="True">备货订单列表</PathInfo>
+    <PathInfo ID="8004" Url="SystemModel/Order/OrderList.aspx?state=2" IsShow="True">发货订单列表</PathInfo>
+    <PathInfo ID="8005" Url="SystemModel/Order/OrderList.aspx?state=3" IsShow="True">签收订单列表</PathInfo>
+    <PathInfo ID="8006" Url="SystemModel/Order/OrderList.aspx?state=4" IsShow="True">财务审核列表</PathInfo>
+    <PathInfo ID="8007" Url="SystemModel/Order/OrderList.aspx?state=5" IsShow="True">完成订单列表</PathInfo>
+    <PathInfo ID="8008" Url="SystemModel/Order/OrderList.aspx?state=6" IsShow="True">已完成订单列表</PathInfo>    
+    <PathInfo ID="8009" Url="SystemModel/Order/DeleteList.aspx" IsShow="True">弃购列表</PathInfo>
+    <PathInfo ID="8010" Url="SystemModel/Order/OrderDetails.aspx">订单详细</PathInfo>
+    <PathInfo ID="8011" Url="SystemModel/Order/Audit.aspx">订单流程操作</PathInfo>
+    <PathInfo ID="8012" Url="SystemModel/Order/FinanceAudit.aspx">财务审核</PathInfo>
+  </Dictionarie>
+  <Dictionarie Name="会员管理" ID="5" IsShow="True">
+    <PathInfo ID="9001" Url="SystemModel/Member/LevelList.aspx" IsShow="True">会员级别管理</PathInfo>
+    <PathInfo ID="9002" Url="SystemModel/Member/LevelView.aspx">添加/编辑会员级别</PathInfo>
+    <PathInfo ID="9003" Url="SystemModel/Member/MemberList.aspx" IsShow="True">会员管理</PathInfo>
+    <PathInfo ID="9004" Url="SystemModel/Member/MemberView.aspx">添加/编辑会员</PathInfo>    
+    <PathInfo ID="9005" Url="SystemModel/Member/BuyerInfoList.aspx">会员收货人信息管理</PathInfo>
+    <PathInfo ID="9006" Url="SystemModel/Member/TransRecord.aspx">查看会员交易记录</PathInfo>
+    <PathInfo ID="9007" Url="SystemModel/Member/IntergralRecord.aspx">查看会员积分记录</PathInfo>
+  </Dictionarie>
+  <Dictionarie Name="活动管理" ID="6" IsShow="True">
+    <PathInfo ID="10001" Url="SystemModel/Activity/ActivityList.aspx" IsShow="True">活动管理</PathInfo>
+    <PathInfo ID="10002" Url="SystemModel/Activity/ActivityView.aspx">添加/编辑活动</PathInfo>
+    <PathInfo ID="10003" Url="SystemModel/Activity/CouponNosList.aspx">活动优惠券管理</PathInfo>
+  </Dictionarie>
+  <Dictionarie Name="资讯管理" ID="7" IsShow="True">
+    <PathInfo ID="11001" Url="SystemModel/Info/HelpCategoryList.aspx" IsShow="True">帮助中心类别管理</PathInfo>
+    <PathInfo ID="11002" Url="SystemModel/Info/HelpCategoryView.aspx">添加/编辑帮助中心类别动</PathInfo>
+    <PathInfo ID="11001" Url="SystemModel/Info/HelpList.aspx" IsShow="True">帮助中心管理</PathInfo>
+    <PathInfo ID="11002" Url="SystemModel/Info/HelpView.aspx">添加/编辑帮助中心</PathInfo>
+    <PathInfo ID="11001" Url="SystemModel/Info/NewsCategoryList.aspx" IsShow="True">新闻类别管理</PathInfo>
+    <PathInfo ID="11002" Url="SystemModel/Info/NewsCategoryView.aspx">添加/编辑新闻类别</PathInfo>
+    <PathInfo ID="11001" Url="SystemModel/Info/NewsList.aspx" IsShow="True">新闻管理</PathInfo>
+    <PathInfo ID="11002" Url="SystemModel/Info/NewsView.aspx">添加/编辑新闻</PathInfo>
+    <PathInfo ID="11001" Url="SystemModel/Info/PageList.aspx" IsShow="True">单片页管理</PathInfo>
+    <PathInfo ID="11002" Url="SystemModel/Info/PageView.aspx">添加/编辑单篇页</PathInfo>
+    <PathInfo ID="11001" Url="SystemModel/Info/LinksList.aspx" IsShow="True">友情链接管理</PathInfo>
+    <PathInfo ID="11002" Url="SystemModel/Info/LinksView.aspx">添加/编辑友情链接</PathInfo>
+    <PathInfo ID="11001" Url="SystemModel/Info/HotSearch.aspx" IsShow="True">热门搜索管理</PathInfo>
+    <PathInfo ID="11002" Url="SystemModel/Info/HotSearchView.aspx">添加/编辑热门搜索</PathInfo>
+  </Dictionarie>
+  <Dictionarie Name="报表管理" ID="8" IsShow="True">
+    <PathInfo ID="12001" Url="SystemModel/Report/SalesReport.aspx" IsShow="True">销售订单报表</PathInfo>
+    <PathInfo ID="12002" Url="SystemModel/Report/BrowerRecord.aspx" IsShow="True">客户浏览记录报表</PathInfo>
+    <PathInfo ID="12003" Url="SystemModel/Report/BrowerRecordDaysReport.aspx" IsShow="True">客户浏览走势图</PathInfo>
+    <PathInfo ID="12004" Url="SystemModel/Report/BrowerRecordDaysReport.aspx">客户浏览走势图(日图形报表 )</PathInfo>
+    <PathInfo ID="12005" Url="SystemModel/Report/BrowerRecordMonthReport.aspx">客户浏览走势图(月度图形报表)</PathInfo>
+    <PathInfo ID="12006" Url="SystemModel/Report/BrowerRecordYearReport.aspx">客户浏览走势图(年度图形报表 )</PathInfo>
+    <PathInfo ID="12007" Url="SystemModel/Report/SalesRankingReportChart.aspx" IsShow="True">销量排行榜走势图</PathInfo>  
+  </Dictionarie>
+  <Dictionarie Name="日常办公" ID="9" IsShow="True">    
+    <PathInfo ID="3021" Url="SystemModel/Employee/AllWorkStatementList.aspx" IsShow="True">所有工作报告</PathInfo>
+    <PathInfo ID="3022" Url="SystemModel/Employee/WorkStatementList.aspx" IsShow="True">工作报告</PathInfo>
+    <PathInfo ID="3023" Url="SystemModel/Employee/WorkStatementView.aspx">添加/编辑工作报告</PathInfo>
+    <PathInfo ID="3024" Url="SystemModel/Employee/WorkStatementDetails.aspx">工作报告详细</PathInfo>
+    <PathInfo ID="4001" Url="SystemModel/Project/Project/AllProjectList.aspx" IsShow="True">所有项目</PathInfo>
+    <PathInfo ID="4005" Url="SystemModel/Project/Project/ProjectList.aspx" IsShow="True">我的项目管理</PathInfo>
+    <PathInfo ID="3001" Url="SystemModel/Project/Project/ProjectView.aspx">添加/编辑项目</PathInfo>
+    <PathInfo ID="3002" Url="SystemModel/Project/Project/ProjectDetails.aspx">项目详细</PathInfo>
+    <PathInfo ID="4010" Url="SystemModel/Project/Task/AllTaskList.aspx" IsShow="True">所有任务</PathInfo>
+    <PathInfo ID="4010" Url="SystemModel/Project/Task/TaskList.aspx" IsShow="True">我发布的任务</PathInfo>
+    <PathInfo ID="4011" Url="SystemModel/Project/Task/MyTaskList.aspx" IsShow="True">我的任务</PathInfo>
+    <PathInfo ID="3006" Url="SystemModel/Project/Project/TaskView.aspx">添加/编辑任务</PathInfo>
+    <PathInfo ID="3007" Url="SystemModel/Project/Project/TaskDetails.aspx">任务详细</PathInfo>
+  </Dictionarie>
+  <Dictionarie Name="信息管理" ID="10" IsShow="True">
+    <PathInfo ID="5002" Url="SystemModel/Employee/Info/CategoryList.aspx" IsShow="True">信息类别管理</PathInfo>
+    <PathInfo ID="5001" Url="SystemModel/Employee/Info/CategoryView.aspx">添加/编辑信息类别</PathInfo>
+    <PathInfo ID="5004" Url="SystemModel/Employee/Info/InfoList.aspx" IsShow="True">信息管理</PathInfo>
+    <PathInfo ID="5003" Url="SystemModel/Employee/Info/InfoView.aspx">添加/编辑信息</PathInfo>
+    <PathInfo ID="5005" Url="SystemModel/Employee/Info/InfoDetails.aspx">信息详细</PathInfo>
+  </Dictionarie>
+</Dictionaries>

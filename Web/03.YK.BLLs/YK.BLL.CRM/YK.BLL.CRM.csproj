@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{76134DF9-E3D7-4C02-BF91-2EA2F56F1F04}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YK.BLL.CRM</RootNamespace>
+    <AssemblyName>YK.BLL.CRM</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Customer\Customer_Customers_BLL.cs" />
+    <Compile Include="Customer\Customer_Order_BLL.cs" />
+    <Compile Include="Customer\Customer_VisitRcord_BLL.cs" />
+    <Compile Include="Employee\Employee_Attendance_BLL.cs" />
+    <Compile Include="Employee\Employee_Departments_BLL.cs" />
+    <Compile Include="Employee\Employee_Duty_BLL.cs" />
+    <Compile Include="Employee\Employee_Employees_BLL.cs" />
+    <Compile Include="Employee\Employee_InfoCategory_BLL.cs" />
+    <Compile Include="Employee\Employee_Info_BLL.cs" />
+    <Compile Include="Employee\Employee_Laborage_BLL.cs" />
+    <Compile Include="Employee\Employee_Leave_BLL.cs" />
+    <Compile Include="Employee\Employee_OfficeSupplies_BLL.cs" />
+    <Compile Include="Employee\Employee_Overtime_BLL.cs" />
+    <Compile Include="Employee\Employee_WorkStatement_BLL.cs" />
+    <Compile Include="Project\Project_Bug_BLL.cs" />
+    <Compile Include="Project\Project_Projects_BLL.cs" />
+    <Compile Include="Project\Project_Task_BLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkFlow\WorkFlow_ApprovalRecord_BLL.cs" />
+    <Compile Include="WorkFlow\WorkFlow_Approval_BLL.cs" />
+    <Compile Include="WorkFlow\WorkFlow_Main_BLL.cs" />
+    <Compile Include="WorkFlow\WorkFlow_Nodes_BLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\01.YK.Models\YK.Model.CRM\YK.Model.CRM.csproj">
+      <Project>{998a873d-959c-475c-abb8-8163107f9d37}</Project>
+      <Name>YK.Model.CRM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\02.YK.Interfaces\YK.Interface.Common\YK.Interface.Common.csproj">
+      <Project>{9b6f62b4-44c3-4d21-a9b6-8c013771846b}</Project>
+      <Name>YK.Interface.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\02.YK.Interfaces\YK.Interface.CRM\YK.Interface.CRM.csproj">
+      <Project>{d0d0007c-9f91-47ad-85a2-efa65bf07857}</Project>
+      <Name>YK.Interface.CRM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\YK.Common\YK.Common.csproj">
+      <Project>{b2ac6c0e-1121-4242-a6fe-39606ef7c694}</Project>
+      <Name>YK.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\YK.Core\YK.Core.csproj">
+      <Project>{79045b32-6aff-4418-8236-ee89f0430cfd}</Project>
+      <Name>YK.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\YK.Model\YK.Model.csproj">
+      <Project>{e48e8e78-d351-46b5-bc48-c4c82d2cd998}</Project>
+      <Name>YK.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.BLL.Common\YK.BLL.Common.csproj">
+      <Project>{2bf814b1-974a-4f3a-8d87-9eb70ad7f078}</Project>
+      <Name>YK.BLL.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HtmlConfig>
+  <info>
+    <name>首页生成</name>
+    <sourcePath>index.aspx</sourcePath>
+    <generatePath>index.html</generatePath>
+  </info>
+  <info>
+    <name>会员登录</name>
+    <sourcePath>member/login.aspx</sourcePath>
+    <generatePath>member/login.html</generatePath>
+  </info>
+</HtmlConfig>

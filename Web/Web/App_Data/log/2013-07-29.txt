@@ -1,0 +1,123 @@
+
+2013/7/29 10:45:49
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 10:48:23
+文件不存在。
+
+2013/7/29 15:55:45
+c:\颜锟\颜锟\最新模板全新\Web2013-07-28\Web\Web\GenerateHtml.aspx.cs(69): error CS0117: “YK.Common.CommonClass”并不包含“SiteUrl”的定义
+
+2013/7/29 15:57:04
+文件不存在。
+
+2013/7/29 15:57:22
+文件“/Web/member/logion.aspx”不存在。
+
+2013/7/29 15:57:30
+文件“/Web/member/logon.aspx”不存在。
+
+2013/7/29 15:57:41
+文件不存在。
+
+2013/7/29 17:00:53
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:03:32
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:03:51
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:05:38
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:20:13
+c:\颜锟\颜锟\最新模板全新\Web2013-07-28\Web\Web\QQWeibo.aspx.cs(189): error CS1009: 无法识别的转义序列
+
+2013/7/29 17:21:04
+c:\颜锟\颜锟\最新模板全新\Web2013-07-28\Web\Web\QQWeibo.aspx.cs(189): error CS1009: 无法识别的转义序列
+
+2013/7/29 17:21:37
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:22:25
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:23:59
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:26:09
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:26:15
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:28:50
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:29:02
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:29:42
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:29:53
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:29:58
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:30:19
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:31:16
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:31:26
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:32:28
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:34:33
+c:\颜锟\颜锟\最新模板全新\Web2013-07-28\Web\Web\QQWeibo.aspx.cs(262): error CS0453: 类型“string”必须是不可为 null 的值类型才能用作泛型类型或方法“System.Nullable<T>”中的参数“T”
+
+2013/7/29 17:35:01
+c:\颜锟\颜锟\最新模板全新\Web2013-07-28\Web\Web\QQWeibo.aspx.cs(262): error CS0453: 类型“string”必须是不可为 null 的值类型才能用作泛型类型或方法“System.Nullable<T>”中的参数“T”
+
+2013/7/29 17:35:17
+c:\颜锟\颜锟\最新模板全新\Web2013-07-28\Web\Web\QQWeibo.aspx.cs(262): error CS0453: 类型“object”必须是不可为 null 的值类型才能用作泛型类型或方法“System.Nullable<T>”中的参数“T”
+
+2013/7/29 17:35:56
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:36:55
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:37:58
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:41:24
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:41:46
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:42:49
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:44:07
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:45:43
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:49:59
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:55:55
+引发类型为“System.Web.HttpUnhandledException”的异常。
+
+2013/7/29 17:56:09
+引发类型为“System.Web.HttpUnhandledException”的异常。

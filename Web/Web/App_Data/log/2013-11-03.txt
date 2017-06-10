@@ -1,0 +1,210 @@
+
+2013-11-3 17:40:06
+未知指令“page”。
+
+2013-11-3 17:40:53
+未知指令“page”。
+
+2013-11-3 17:41:11
+未知指令“page”。
+
+2013-11-3 17:41:11
+未知指令“page”。
+
+2013-11-3 17:41:12
+未知指令“page”。
+
+2013-11-3 17:41:12
+未知指令“page”。
+
+2013-11-3 17:41:12
+未知指令“page”。
+
+2013-11-3 17:41:12
+未知指令“page”。
+
+2013-11-3 17:41:20
+未知指令“page”。
+
+2013-11-3 17:41:59
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Admin\Controls\Match.ascx(59): error CS1002: 应输入 ;
+
+2013-11-3 17:42:22
+c:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\web\93643bae\47d2e1c2\App_Web_match.ascx.c72a046e.fg0cii3m.0.cs(358): error CS1002: 应输入 ;
+
+2013-11-3 17:43:10
+c:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\web\93643bae\47d2e1c2\App_Web_match.ascx.c72a046e.l3qoto7z.0.cs(358): error CS1002: 应输入 ;
+
+2013-11-3 17:44:48
+c:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\web\93643bae\47d2e1c2\App_Web_match.ascx.c72a046e.ums0emib.0.cs(358): error CS1002: 应输入 ;
+
+2013-11-3 17:44:53
+c:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\web\93643bae\47d2e1c2\App_Web_match.ascx.c72a046e.ums0emib.0.cs(358): error CS1002: 应输入 ;
+
+2013-11-3 17:45:05
+c:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\web\93643bae\47d2e1c2\App_Web_match.ascx.c72a046e.7dgrzbjp.0.cs(358): error CS1002: 应输入 ;
+
+2013-11-3 17:46:32
+c:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\web\93643bae\47d2e1c2\App_Web_match.ascx.c72a046e.88luy0-u.0.cs(358): error CS1002: 应输入 ;
+
+2013-11-3 17:47:38
+c:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\web\93643bae\47d2e1c2\App_Web_match.ascx.c72a046e.z_qf15fg.0.cs(358): error CS1002: 应输入 ;
+
+2013-11-3 17:50:00
+c:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\web\93643bae\47d2e1c2\App_Web_match.ascx.c72a046e.npo0e9uk.0.cs(358): error CS1002: 应输入 ;
+
+2013-11-3 17:50:31
+c:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\web\93643bae\47d2e1c2\App_Web_match.ascx.c72a046e.hm3c_dbu.0.cs(358): error CS1002: 应输入 ;
+
+2013-11-3 17:50:51
+文件不存在。
+
+2013-11-3 17:51:00
+c:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\web\93643bae\47d2e1c2\App_Web_match.ascx.c72a046e.uivbz5ye.0.cs(358): error CS1002: 应输入 ;
+
+2013-11-3 17:51:21
+c:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\web\93643bae\47d2e1c2\App_Web_match.ascx.c72a046e.4h4kxpyn.0.cs(358): error CS1002: 应输入 ;
+
+2013-11-3 17:52:20
+c:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\web\93643bae\47d2e1c2\App_Web_match.ascx.c72a046e.rrtlaa58.0.cs(358): error CS1002: 应输入 ;
+
+2013-11-3 17:53:25
+c:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\web\93643bae\47d2e1c2\App_Web_match.ascx.c72a046e.y7ewwecj.0.cs(358): error CS1002: 应输入 ;
+
+2013-11-3 17:54:31
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Admin\Controls\Match.ascx(3): error CS0103: 当前上下文中不存在名称“newGuid”
+
+2013-11-3 17:55:05
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Admin\Controls\Match.ascx.cs(8): error ASPNET: 请确保此代码文件中定义的类与“inherits”特性匹配，并且该类扩展的基类(例如 Page 或 UserControl)是正确的。
+
+2013-11-3 17:55:40
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match2.aspx(20): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 17:56:42
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match2.aspx(20): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 17:57:23
+c:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\web\93643bae\47d2e1c2\App_Web_match.ascx.c72a046e.kmnbbtfj.0.cs(358): error CS1002: 应输入 ;
+
+2013-11-3 17:57:48
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match2.aspx(20): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 17:58:16
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match2.aspx(20): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 17:58:33
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match2.aspx(20): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 17:59:11
+该页必须具有 <%@ webhandler class="MyNamespace.MyClass" ... %> 指令。
+
+2013-11-3 17:59:13
+该页必须具有 <%@ webhandler class="MyNamespace.MyClass" ... %> 指令。
+
+2013-11-3 17:59:28
+该页必须具有 <%@ webhandler class="MyNamespace.MyClass" ... %> 指令。
+
+2013-11-3 17:59:30
+该页必须具有 <%@ webhandler class="MyNamespace.MyClass" ... %> 指令。
+
+2013-11-3 18:00:22
+该页必须具有 <%@ webhandler class="MyNamespace.MyClass" ... %> 指令。
+
+2013-11-3 18:00:54
+该页必须具有 <%@ webhandler class="MyNamespace.MyClass" ... %> 指令。
+
+2013-11-3 18:03:06
+该页必须具有 <%@ webhandler class="MyNamespace.MyClass" ... %> 指令。
+
+2013-11-3 18:03:36
+该页必须具有 <%@ webhandler class="MyNamespace.MyClass" ... %> 指令。
+
+2013-11-3 18:06:00
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Key.ashx(19): error CS0120: 非静态字段、方法或属性“System.Web.HttpContext.Request.get”要求对象引用
+
+2013-11-3 18:07:49
+无法找到表 0。
+
+2013-11-3 18:07:51
+无法找到表 0。
+
+2013-11-3 18:07:57
+无法找到表 0。
+
+2013-11-3 18:08:43
+无法找到表 0。
+
+2013-11-3 18:11:27
+无法找到表 0。
+
+2013-11-3 18:12:06
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match2.aspx(20): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:13:10
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match2.aspx(21): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:16:12
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match2.aspx(21): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:18:24
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match2.aspx(21): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:18:55
+文件“/Web/Match2.aspx.cs”不存在。
+
+2013-11-3 18:18:58
+文件“/Web/Match2.aspx.cs”不存在。
+
+2013-11-3 18:19:11
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match.aspx(21): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:19:57
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match.aspx(21): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:19:58
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match.aspx(21): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:19:58
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match.aspx(21): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:19:59
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match.aspx(21): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:19:59
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match.aspx(21): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:20:11
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match.aspx(20): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:20:25
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match.aspx(20): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:21:44
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match.aspx(20): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:22:08
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Admin\Controls\Match.ascx.cs(30): error CS0103: 当前上下文中不存在名称“newGuid”
+
+2013-11-3 18:22:19
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match.aspx(20): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:25:19
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Admin\Controls\Match.ascx.cs(22): error CS0103: 当前上下文中不存在名称“HiddenKey”
+
+2013-11-3 18:25:33
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match.aspx(20): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:25:51
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match.aspx(20): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:26:11
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match.aspx(20): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:27:09
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match.aspx(20): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:27:19
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match.aspx(20): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同
+
+2013-11-3 18:28:07
+e:\颜锟\公司网站\最新模版全新\Web\Web\Web\Match.aspx(20): error CS0542: “Match2”: 成员名称不能与它们的封闭类型相同

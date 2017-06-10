@@ -1,0 +1,112 @@
+@charset "utf-8";
+/* CSS Document */
+@import url("css_global.css");
+
+
+.Contain{ width:980px; margin:0 auto;}
+.mainbox{ border-color:#e3e3e3; border-style:solid; border-width:0px 3px; padding:20px 40px;}
+.BottomEdge{ background:url(images/order/mainbox_BottomEdge.jpg) no-repeat top; height:20px;}
+
+.myorder{ background:url(images/order/myorder.jpg) no-repeat left; height:50px; overflow:hidden;}
+
+.Title{height:28px; padding:0px 50px; line-height:28px; font-size:14px; color:#5e5e5e;  background:url(images/order/mainbox_title.jpg) no-repeat; }
+
+.shoppingcart_step{ width:443px; margin:auto; position:relative;}
+.shoppingcart_step span{ display:block; width:443px; height:30px; position:absolute; top:-90px;}
+.shoppingcart_step .step01{ background:url(images/order/order_step.jpg) no-repeat left top; }
+.shoppingcart_step .step02{ background:url(images/order/order_step.jpg) no-repeat left -30px;}
+.shoppingcart_step .step03{ background:url(images/order/order_step.jpg) no-repeat left -60px;}
+
+.empty{ width:400px; margin:0 auto; height:150px; overflow:hidden; padding-left:120px; padding-top:20px; background:url(images/order/empty.jpg) no-repeat left 30px;}
+.empty h5{font-family:"微软雅黑"; font-size:14px; line-height:30px; padding-top:20px;}
+.empty p{ padding:0px; margin:0px;}
+.empty a{ color:#06F;}
+
+.CartProduct{ padding-top:30px;}
+.CartProduct .mytable .item{}
+.CartProduct .mytable .item td{background:#fcefd3; line-height:26px;}
+.CartProduct .mytable{ border:solid 1px #eed6a2;  border-collapse:collapse;}
+.CartProduct .mytable td{ border:solid 1px #eed6a2; border-collapse:collapse; padding:5px 10px; text-align:center; background:#fffded;}
+.CartProduct .mytable .picture{ text-align:center;}
+.CartProduct .mytable .picture img{ width:100px; height:100px;}
+.CartProduct .mytable .name{ width:200px;}
+.CartProduct .mytable .name a{ color:#b27a00;}
+.CartProduct .mytable .text{border:solid 1px #e6e6e6; width:25px; height:14px; background:#fff;}
+.CartProduct .mytable font{ font-weight:bold; color:#ff0000;}
+.CartProduct .mytable .delete{ border:none; cursor:pointer; background:url(images/order/btn_delete.jpg) no-repeat; width:52px; height:22px;}
+.CartProduct .Total{ background:#fafafa; margin-top:10px; text-align:right; padding:3px 10px;}
+.CartProduct .Total font{ font-weight:bold; color:#ff0000; padding-right:10px;}
+
+
+.Consignee .show_txt{border-bottom:dashed 1px #d1d1d1; padding-bottom:15px;}
+.Consignee .show_txt li{ line-height:28px; color:#666;}
+.Consignee .show_txt li em{ width:100px; text-align:right; float:left; display:block; color:#333;}
+.Consignee .add_Common{  background:#eff8ff; border: dashed 1px #d7dfe5; padding:10px; display:none; width:650px;}
+.Consignee .add_Common h4{ font-size:12px; color:#005ea7;}
+.Consignee .add_Common ul li{ line-height:25px; }
+.Consignee .add_Common ul li span{ float:right;}
+.Consignee .add_Common ul li a{ color:#005ea7; text-decoration:underline;}
+.Consignee .mytable .item{ width:100px; text-align:right;}
+.Consignee .mytable td{ padding:5px 0px;}
+.Consignee .mytable em{ color:#F00;}
+.Consignee .mytable span{ color:#005ea7;}
+.Consignee .mytable a{ color:#005ea7; text-decoration:underline;}
+
+.Payment{border-bottom:dashed 1px #d1d1d1; padding-bottom:15px; line-height:30px;}
+
+
+.Delivery .txt_show{ border-bottom:dashed 1px #d1d1d1; padding-bottom:15px;}
+.Delivery .txt_show li{ line-height:28px; color:#666;}
+.Delivery .txt_show li em{ width:100px; text-align:right; float:left; display:block; color:#333;}
+.Delivery .mytable .item{ width:100px; text-align:right;}
+.Delivery .mytable td{ padding:5px 0px;}
+.Delivery .mytable em{ color:#F00;}
+.Delivery .mytable span{ color:#005ea7;}
+
+
+.Invoice .txt_show{ border-bottom:dashed 1px #d1d1d1; padding-bottom:15px;}
+.Invoice .txt_show li{ line-height:28px; color:#666;}
+.Invoice .txt_show li em{ width:100px; text-align:right; float:left; display:block; color:#333;}
+.Invoice .mytable .item{ width:100px; text-align:right;}
+.Invoice .mytable td{ padding:5px 0px;}
+.Invoice .mytable em{ color:#F00;}
+.Invoice .mytable a{ color:#06F; text-decoration:underline;}
+
+.Remarks{ border-bottom:dashed 1px #d1d1d1; padding-top:15px; padding-bottom:15px;}
+.Remarks .mytable .item{font-size:14px; color:#444444; font-weight:bold; padding-right:8px;}
+.Remarks .mytable td{ padding:5px 0px;}
+
+.PayProduct {border-bottom:dashed 1px #d1d1d1; padding-top:10px; padding-bottom:15px;}
+.PayProduct .mytable .item td{background:#fcefd3; line-height:26px;}
+.PayProduct .mytable{ border:solid 1px #eed6a2;  border-collapse:collapse;}
+.PayProduct .mytable td{ border-right:solid 1px #eed6a2; border-collapse:collapse; padding:5px 10px; text-align:center; background:#fffded;}
+.PayProduct .mytable .name{ width:300px; text-align:left;}
+.PayProduct .mytable .name a{ color:#b27a00;}
+
+.Accounts{border-bottom:dashed 1px #d1d1d1; padding-top:10px; padding-bottom:15px;}
+.Accounts .txt{ padding:15px 30px 5px 30px; background:#fcefd3; border-top:solid 2px #eed6a2;}
+.Accounts .txt dt{ font-size:14px;}
+.Accounts .txt p{ color:#b27a00; padding:10px 0px; margin:0px; font-weight:bold; font-size:12px;}
+.Accounts .txt dl{ padding:10px 0px; border-top: dotted 1px #d5a43a; text-align:right; font-size:16px; font-weight:bold; color:#333333;}
+.Accounts .txt dl font{ color:#de0000; font-size:16px; font-family:Arial;}
+
+.Success{ margin:0px auto; width:500px; background:url(images/order/success_icon.jpg) no-repeat left top; padding-left:60px;}
+.Success h5{ font-size:20px; font-weight:normal; font-family:"微软雅黑"; color:#3C9C05; display:block; padding:10px 0px;} 
+.Success p { line-height:25px; color:#666666;}
+.Success p font{ color:#C00; font-weight:bold; font-size:12px;}
+.Success .btn_Shopping{ background:url(images/order/btn_goShopping.jpg) no-repeat; width:114px; height:32px; border:none; cursor:pointer;}
+.Success .btn_Member{ background:url(images/order/btn_goMember.jpg) no-repeat; width:114px; height:32px; border:none; cursor:pointer;}
+
+.TitleName{ font-size:14px; color:#444444; padding:10px 0px;}
+.TitleName span{ font-size:12px; font-weight:normal; padding-left:10px;}
+.TitleName a{ color:#005ea7;}
+.HideDiv{ display:none;}
+.HideBox{ border:solid 1px #aacded; background:#ebf4fb; padding:10px;}
+.input{ width:245px; height:20px; border:solid 1px #bbbbbb; background:#fff;}
+
+.btn_save{ width:129px; height:33px; font-weight:bold; border:none; margin-top:8px; cursor:pointer; color:#333333; background:url(images/order/btn_save.gif) no-repeat; }
+.btn_submitOrder{ width:160px; height:53px; border:none; cursor:pointer; background:url(images/order/btn_submitorder.jpg) no-repeat;}
+
+.btnDiv{ text-align:right; padding:20px 0px;}
+.btnDiv .btn1{width:96px; height:31px; font-size:14px; font-weight:bold; color:#fff; border:none; cursor:pointer;  background:url(images/order/btn1_shop.jpg) no-repeat; }
+.btnDiv .btn2{width:96px; height:31px; font-size:14px; font-weight:bold; color:#555; border:none; cursor:pointer;  background:url(images/order/btn2_shop.jpg) no-repeat; }

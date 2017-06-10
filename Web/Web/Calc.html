@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>计算器</title>
+<style type="text/css">
+    div,input{ margin:0px; padding:0px;}
+    #showExpression{ font-weight:bold; font-size:16px; height:30px;}
+    .tab{width: 100%; text-align:center; font-weight:bold; height:500px; font-size:20px;}
+    .tab td{ background-color:#D4D0C8; cursor:hand;}
+    .tab td:hover{ background-color:yellow;}    
+    .thisValue{width:80%; height:50px; line-height:50px; font-size:20px;}
+    .calc{height:55px; line-height:55px; font-size:20px; width:18%;}
+</style>
+<script language="javascript">
+    var existDot = false; //彻查.是否存在
+    var thisNumber = parseFloat("0.000"); //当前数值
+    var isInput = true; //是否输入数值
+    var preExp = "";//点击表达式的时候判断上一个表达式符号
+
+    function input(val) {
+
+        if (isInput == false) {
+            document.getElementById("thisValue").value = "";
+            isInput = true;
+        }
+
+        if (val == "." && existDot == true) {
+            return;
+        }
+        if (val == ".") {
+            existDot = true;
+        }
+        document.getElementById("thisValue").value += val;
+        document.getElementById("showExpression").innerHTML += val;     
+    }
+
+    function statistics(exp) {     
+        //不能连续使用等号
+        if (preExp == "=" && exp == "=") {
+            return;
+        }
+
+        var value = document.getElementById("thisValue").value;        
+
+        //显示表达式对象
+        var showExpression = document.getElementById("showExpression");
+        var thisHtml = showExpression.innerHTML;
+        if (thisHtml == "") {
+            showExpression.innerHTML = value + exp;
+        }
+        else {
+            showExpression.innerHTML = thisHtml + exp;
+        }
+
+        //第一次点击操作符号的时候，上一个符号为空,
+        if (preExp == "") {
+            thisNumber = parseFloat(value);
+            if (exp == "/") {                
+                value = 1;
+            }            
+        }
+        else {
+            switch (preExp) {
+                case "+":
+                    thisNumber = parseFloat(value) + thisNumber;
+                    break;
+                case "-":
+                    thisNumber = thisNumber - parseFloat(value);
+                    break;
+                case "*":
+                    thisNumber = parseFloat(value) * thisNumber;
+                    break;
+                case "/":
+                    thisNumber = thisNumber / parseFloat(value);
+                    break;
+            }
+
+            //当点击等号时
+            if (exp != "=") {
+                showExpression.innerHTML = "(" + thisHtml + "=" + thisNumber + ")" + exp;
+            }
+            else {
+                showExpression.innerHTML = thisHtml + "=" + thisNumber;
+                exp = "";
+            }
+        }
+        preExp = exp;
+      
+        document.getElementById("thisValue").value = thisNumber;
+
+        isInput = false;
+        existDot = false;
+    }
+
+    function clearAll() {
+        existDot = false; //彻查.是否存在
+        thisNumber = parseFloat("0.000"); //当前数值
+        isInput = true; //是否输入数值
+        preExp = ""; //点击表达式的时候判断上一个表达式符号
+        document.getElementById("showExpression").innerHTML = "";
+        document.getElementById("thisValue").value = "";
+    }
+</script>
+</head>
+<body>
+    <div id="showExpression"></div>
+    <div class="numberDiv">
+        <input type="text" id="thisValue" class="thisValue" />
+        <input type="button" value="=" class="calc" onclick="statistics('=')" />
+    </div>
+    <table class="tab" border="0">
+        <tr>
+            <td onclick="input(this.innerHTML)">1</td>
+            <td onclick="input(this.innerHTML)">2</td>
+            <td onclick="input(this.innerHTML)">3</td>
+            <td onclick="statistics('+')">+</td>
+        </tr>
+        <tr>
+            <td onclick="input(this.innerHTML)">4</td>
+            <td onclick="input(this.innerHTML)">5</td>
+            <td onclick="input(this.innerHTML)">6</td>
+            <td onclick="statistics('-')">-</td>
+        </tr>
+        <tr>
+            <td onclick="input(this.innerHTML)">7</td>
+            <td onclick="input(this.innerHTML)">8</td>
+            <td onclick="input(this.innerHTML)">9</td>
+            <td onclick="statistics('*')">*</td>
+        </tr>
+        <tr>
+            <td onclick="input(this.innerHTML)">0</td>
+            <td onclick="input(this.innerHTML)">.</td>
+            <td onclick="clearAll()">C</td>
+            <td onclick="statistics('/')">/</td>
+        </tr>
+    </table>
+
+    <script language="javascript" type="text/javascript">
+        //使用键盘
+        document.getElementById("thisValue").onkeydown = function () {
+  
+            if ((event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105) || event.keyCode == 8) {
+
+                for (var i = 0; i < 10; i++) {
+                    if (event.keyCode == 48 + i) {
+                        input(i);
+                    }
+                    if (event.keyCode == 96 + i) {
+                        input(i);
+                    }
+                    if (event.keyCode == 8) {
+                        input(".");
+                    }
+                }
+                return event.returnValue = false;
+            }
+            else {
+                if (event.keyCode == 187 || event.keyCode == 13) {
+                    statistics("=");
+                }
+                if (event.keyCode == 107) {
+                    statistics("+");
+                }
+                if (event.keyCode == 109) {
+                    statistics("-");
+                }
+                if (event.keyCode == 106) {
+                    statistics("*");
+                }
+                if (event.keyCode == 111) {
+                    statistics("/");
+                }
+                return event.returnValue = false;
+            }
+        }
+    </script>
+</body>
+</html>

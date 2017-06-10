@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TB_Products>
+  <ProInfo>
+    <ID>1</ID>
+    <ProName>产品</ProName>
+    <Price>100</Price>
+    <Count>1000</Count>
+    <SumPrice>100000</SumPrice>
+    <ImgUrl>Url</ImgUrl>
+  </ProInfo>
+</TB_Products>

@@ -1,0 +1,31 @@
+﻿body{margin:0px;padding:0px;font-size:12px;}
+a{ text-decoration:none;}
+.inputCss{	border:1px solid #CBE2F4;font-size:13px;}
+
+/*按钮公共样式*/
+.buttonCss{ background-color:#ace2fa;padding-left:20px; padding-right:20px; height:22px; line-height:22px; border:0px;}
+
+/*头部导航*/
+.navigation{height:36px;background-image:url(../images/titlebg.jpg);padding-left:6px; line-height:20px; display:none;}
+.navigation a{color:Black;}
+.navigation a:hover{color:Blue;}
+
+/*顶部操作按钮*/
+.topOpration{ padding-left:5px; height:28px; padding-top:5px;}
+
+/*表单样式*/
+.fromTable,.listTable {border:1px solid #CBE2F4; width:100%;border-spacing:0px; border-collapse:collapse; border-left:0px; line-height:20px;margin-bottom:10px;font-size:12px; border-bottom:0px; border-left:0px;}
+.fromTable th {border-bottom:1px solid #CBE2F4;border-left:1px solid #CBE2F4;padding-left:10px; text-align:right; background-color:#DCE9FA;}
+.fromTable td {border-bottom:1px solid #CBE2F4;border-left:1px solid #CBE2F4;padding-left:10px; text-align:left;}
+.fromTable th{ width:100px;}
+.fromTable span{ color:Red;}
+
+.listTable th {border-bottom:1px solid #CBE2F4;border-left:1px solid #CBE2F4;padding-left:10px; text-align:center; background-color:#DCE9FA;}
+.listTable td {border-bottom:1px solid #CBE2F4;border-left:1px solid #CBE2F4;padding-left:10px; text-align:left;}
+.listTable img{ border:0px;}
+.listTable .edit{ cursor:pointer;}
+
+.SubmitClass{ text-align:left; padding-left:10px; display:none;}
+
+/*底部设置样式*/
+.bottomSet{ text-align:left; padding-left:10px;}

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{998A873D-959C-475C-ABB8-8163107F9D37}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YK.Model.CRM</RootNamespace>
+    <AssemblyName>YK.Model.CRM</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Customer\TB_Customer_Customers.cs" />
+    <Compile Include="Customer\TB_Customer_Order.cs" />
+    <Compile Include="Customer\TB_Customer_VisitRcord.cs" />
+    <Compile Include="Employee\TB_Employee_Attendance.cs" />
+    <Compile Include="Employee\TB_Employee_Departments.cs" />
+    <Compile Include="Employee\TB_Employee_Duty.cs" />
+    <Compile Include="Employee\TB_Employee_Employees.cs" />
+    <Compile Include="Employee\TB_Employee_Info.cs" />
+    <Compile Include="Employee\TB_Employee_InfoCategory.cs" />
+    <Compile Include="Employee\TB_Employee_Laborage.cs" />
+    <Compile Include="Employee\TB_Employee_Leave.cs" />
+    <Compile Include="Employee\TB_Employee_OfficeSupplies.cs" />
+    <Compile Include="Employee\TB_Employee_Overtime.cs" />
+    <Compile Include="Employee\TB_Employee_WorkStatement.cs" />
+    <Compile Include="Project\TB_Project_Bug.cs" />
+    <Compile Include="Project\TB_Project_Projects.cs" />
+    <Compile Include="Project\TB_Project_Task.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkFlow\TB_WorkFlow_Approval.cs" />
+    <Compile Include="WorkFlow\TB_WorkFlow_ApprovalRecord.cs" />
+    <Compile Include="WorkFlow\TB_WorkFlow_Main.cs" />
+    <Compile Include="WorkFlow\TB_WorkFlow_Nodes.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

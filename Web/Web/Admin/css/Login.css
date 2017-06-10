@@ -1,0 +1,28 @@
+﻿	body
+      {
+        text-align:center; 
+        background-color:#E2EEFC;
+        color:#0744B7;
+        font-weight:bold;
+      }
+      #LoginDiv
+      {
+          background-image:url(../images/UserLogin.jpg); width:492px; height:218px; padding-top:80px;
+      }
+      #LoginTable
+      {
+          width: 300px; 
+          height:100px;
+          text-align:left; 
+          font-size:13px;
+      }
+      .left
+      {
+      	text-align:right;
+      	}
+      input
+      { 
+        border:1px solid gray;
+        background-color:#DBEBFA;
+        /*{filter:alpha(opacity=50)};  */     
+      }

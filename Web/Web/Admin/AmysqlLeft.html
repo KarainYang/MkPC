@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="js/templet/Default/silverStyle.css" />
+    <script src="js/AmysqlFun.js"></script>
+    <script src="js/AmysqlLeft.js"></script>
+    <script src="js/AmysqlLeftNavigation.js"></script>
+    <style>
+        body,html { overflow-x:hidden; }
+    </style>
+
+    <script>
+        var AmysqlLNO = new AmysqlLN();
+        var AmysqlLeftList = new AmysqlLeftListObject();
+        window.onload = function ()
+        {
+	        // 窗口重新加载时执行
+	        if (parent.AmysqlMainObject.AmysqlLoadComplete)
+	        {
+		        parent._AmysqlTagLoad = false;
+		        parent.AmysqlMainObject.AmysqlLeftRun();
+		        parent.AmysqlMainObject.AmysqlExtendInitialConfigRun();	// 重新初始化
+	        }
+	        else if(parent._AmysqlLeftLoad && parent._AmysqlTagLoad) 	// 首次加载完成运行
+	        {
+		        parent._AmysqlTagLoad = false;
+		        parent.AmysqlMainObject.AmysqlRun();
+	        }
+	
+        }
+    </script>
+</head>
+<body id="left">
+<div id="left_navigation"></div>
+<div id="left_logo"><!--LOGIN--></div>
+<div id="AmysqlLeftList">
+    <!--<ul>
+        <li id="MyTable">
+            <dl>
+                <dd class="closelist"></dd>
+                <dt style="white-space: nowrap; "><i class="ico_database"></i>
+                <a>Amysql MyTable</a></dt>
+            </dl>
+            <ul style="display: block; ">
+                <li id="MyUser">
+                   <dl>
+                        <dd></dd>
+                        <dt style="white-space: nowrap; ">
+                            <i class="ico_tabel"></i>
+                            <a>MyUser</a>
+                        </dt>
+                    </dl>
+                </li>
+                <li id="MyAddress">
+                   <dl>
+                        <dd></dd>
+                        <dt style="white-space: nowrap; ">
+                            <i class="ico_tabel"></i>
+                            <a>MyAddress</a>
+                        </dt>
+                    </dl>
+                </li>
+                <li id="MyLog">
+                   <dl>
+                        <dd class="closelist"></dd>
+                        <dt style="white-space: nowrap; ">
+                            <i class="ico_tabel"></i>
+                            <a>MyLog</a>
+                        </dt>
+                    </dl>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <ul style="display: block; ">
+        <li id="MyLog2009">
+            <dl>
+                <dd></dd>
+                <dt style="white-space: nowrap; ">
+                    <i class="ico_tabel"></i><a>MyLog MyLog2009</a>
+                </dt>
+            </dl>
+        </li>
+        <li id="MyLog2011">
+            <dl>
+                <dd class="openlist"></dd>
+                <dt style="white-space: nowrap; ">
+                    <i class="ico_tabel"></i>
+                    <a>MyLog MyLog2011</a>
+                </dt>
+            </dl>
+            <ul style="display: none; ">
+                <li id="2011-02">
+                    <dl>
+                        <dd></dd>
+                        <dt style="white-space: nowrap; ">
+                            <i class="ico_tabel"></i>
+                            <a>2011-02</a>
+                        </dt>
+                    </dl>
+                </li>
+                <li id="2011-03">
+                    <dl>
+                        <dd></dd>
+                        <dt style="white-space: nowrap; ">
+                            <i class="ico_tabel"></i>
+                            <a>2011-03</a>
+                        </dt>
+                    </dl>
+                </li>
+                <li id="2011-07">
+                    <dl>
+                        <dd></dd>
+                        <dt style="white-space: nowrap; ">
+                            <i class="ico_tabel"></i>
+                            <a>2011-07</a>
+                        </dt>
+                    </dl>
+                </li>
+            </ul>
+        </li>
+    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>-->
+</div>
+</body>
+</html>

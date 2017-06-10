@@ -1,0 +1,36 @@
+<?xml version="1.0" standalone="yes"?>
+<TB_Products>
+  <ProInfo>
+    <type>0</type>
+    <id>5</id>
+    <proNumber>20121213000001</proNumber>
+    <name>三星（SAMSUNG）Galaxy SIII I9300 3G手机（云石白）WCDMA/GSM</name>
+    <img>Userfiles/Products/201212132177793630.jpg</img>
+    <marketPrice>3800</marketPrice>
+    <price>3800</price>
+    <count>1</count>
+    <amount>3800</amount>
+  </ProInfo>
+  <ProInfo>
+    <type>0</type>
+    <id>20</id>
+    <proNumber>2012121200002</proNumber>
+    <name>联想 K860 四核 3G手机（星夜黑）WCDMA/GSM </name>
+    <img>Userfiles/Products/201212122250309996.jpg</img>
+    <marketPrice>2500</marketPrice>
+    <price>2500</price>
+    <count>1</count>
+    <amount>2500</amount>
+  </ProInfo>
+  <ProInfo>
+    <type>0</type>
+    <id>18</id>
+    <proNumber>2012121200001</proNumber>
+    <name>华为（HUAWEI）荣耀四核 爱享版 U9508 3G手机（黑色）WCDMA/GSM 2G RAM</name>
+    <img>Userfiles/Products/201212122277586655.jpg</img>
+    <marketPrice>2200</marketPrice>
+    <price>2000</price>
+    <count>1</count>
+    <amount>2000</amount>
+  </ProInfo>
+</TB_Products>

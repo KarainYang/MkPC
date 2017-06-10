@@ -1,0 +1,151 @@
+@charset "utf-8";
+/* CSS Document */
+@import url("css_global.css");
+.Contain{ width:993px; margin:0 auto;}
+.Current{ height:40px; line-height:40px;}
+.Current font{ font-size:12px; color:#af6305;}
+
+.Wrap_Search{ margin:0px; padding:0px;}
+.search_top{ background:url(images/groupbuy/seachbox_top.gif) no-repeat left top; width:993px; height:29px; overflow:hidden;}
+.search_top span{ font-size:12px; font-weight:bold; color:#333333; line-height:29px; padding-left:10px; display:inline-block;}
+.search_box{ width:991px; border:1px solid #ffc44c; background:#fff; border-top:0px; border-bottom:0px; padding-bottom:10px;display:inline-block;}
+
+.select_list{ display:inline-block; margin:0px 10px; padding-top:5px; padding-bottom:5px;border-bottom:1px  dashed #d2d2d2; width:772px; position:relative;}
+.select_list dt{ float:left;display:inline-block; width:130px;  line-height:23px; }
+.select_list dt span{ color:#333333; width:70px; text-align:center; display:inline-block;}
+.select_list dt em a{ line-height:25px; color:#0063dc;font-weight:normal; display:inline-block; border-right:1px solid #ccc;}
+.select_list dd{line-height:25px; display:inline-block; float:left; width:628px;}
+.select_list dd b{ float:left;}
+.select_list dd a{ line-height:25px; color:#0063dc; padding-left:10px; padding-right:10px; font-weight:normal; margin-right:3px; margin-left:3px; white-space:nowrap;}
+.select_list dd a:hover{color:#333333; text-decoration:none;}
+.select_list dd span { line-height:25px; height:25px; position:relative;}
+.select_list dd span font { height:25px; line-height:25px; font-size:12px; display:inline-block; color:#0063dc; position:relative; margin-top:-4px;}
+
+.select_list dt em a{color:#0063dc; display:inline-block; line-height:23px; padding-left:10px; padding-right:10px; margin-right:3px; margin-left:3px;}
+.select_list dt em.all a{color:#d60000; display:inline-block; line-height:23px; padding-left:10px; padding-right:10px; margin-right:3px; margin-left:3px;}
+.select_list b.all a{ color:#d60000; display:inline-block; line-height:25px; padding-left:10px; padding-right:10px;margin-right:3px; margin-left:3px; white-space:nowrap;}
+
+.s_input{ border:1px solid #cccccc; width:60px; overflow:hidden; line-height:20px; height:20px; }
+.s_btn02{ background:url(images/groupbuy/btn_04.jpg)  no-repeat  left top; width:66px; height:22px; line-height:25px; border:0px; color:#333333; margin-left:5px;}
+
+#gaoji_search{ display:none;}
+
+.search_bottom{ background:url(images/groupbuy/show_box_bg.gif) no-repeat left top; width:993px; height:31px; overflow:hidden; text-align:center;}
+
+.search_bottom span{ background:url(images/groupbuy/ShowAllSearch.jpg) no-repeat bottom; width:116px; height:28px; color:#7d7d7d; line-height:28px; display:inline-block; padding-top:5px; padding-left:8px; margin-top:-2px; cursor:pointer;}
+.search_bottom span.hide{ background:url(images/groupbuy/HideAllSearch.jpg) no-repeat bottom;}
+
+
+/**---Wrap_GroupBuyList----**/
+
+
+.Wrap_GroupBuyList{ margin:0px; padding:0px; background:url(images/groupbuy/Wrap_PriceList_bt.jpg) no-repeat left bottom; padding-bottom:4px;}
+
+.Wrap_GroupBuyList .GroupBuy_tab{ background:url(images/groupbuy/point_tiltebg.gif) no-repeat left -112px; height:29px;}
+.Wrap_GroupBuyList .GroupBuy_tab span a{ text-align:center; font-size:14px; color:#c74d00; cursor:pointer; display:inline-block; width:92px; height:29px; background:url(images/TagList.gif) no-repeat right; margin-right:3px; margin-top:-1px; line-height:29px;}
+.Wrap_GroupBuyList .GroupBuy_tab span.show a{display:inline-block; color:#fff; background:url(images/groupbuy/TagList.gif) no-repeat left;}
+
+
+.Wrap_GroupBuyList_cont{ background:#efefef; border:1px solid #e4e4e4; border-top:0px; border-bottom:0px;}
+
+.GroupBuy_List{ margin:0px; padding:0px; display:inline-block; padding-left:5px; padding-bottom:10px;}
+.GroupBuy_List li{ background:url(images/groupbuy/buy_boxbg.gif) no-repeat left top; width:297px;height:371px; float:left; margin-top:10px; padding:10px  5px 10px  16px; margin-right:10px;position:relative;}
+.GroupBuy_List .Group_img{ width:290px; height:206px;}
+.GroupBuy_List .Group_img img{ width:290px; height:206px;}
+.GroupBuy_List .Group_Txt{ font-family:"微软雅黑"; color:#333; font-size:18px; font-weight:normal; line-height:24px; padding-top:8px; height:57px; overflow:hidden; }
+.new_ico{ display:inline-block; background:url(images/new.gif) no-repeat left top; position:absolute; left:-5px; top:-10px; width:96px; height:96px;  z-index:5;}
+
+.GroupBuy_List li h3{ height:38px; overflow:hidden; padding-top:10px; padding-bottom:20px;_padding-top:6px; }
+.GroupBuy_List li h3 b{ display:inline-block; width:113px;font-family:Arial, Helvetica, sans-serif; color:#fff; font-size:31px; padding-left:10px; line-height:38px; font-weight:normal; overflow:hidden; float:left;}
+.GroupBuy_List li h3 .Buynow_btn{ background:none;  width:110px; height:39px; border:0px; margin-left:5px; _margin-left:3px; cursor:pointer; overflow:hidden; }
+.GroupBuy_List li h3 .Buynow_endbtn{ background:url(images/end_buy01.jpg); _margin-left:3px; width:110px; height:38px; border:0px; margin-left:5px; cursor:not-allowed; overflow:hidden;}
+.GroupBuy_List li h3 span{ display:inline-block; width:90px;  font-weight:normal; color:#7d7d7d; float:right;overflow:hidden; }
+.GroupBuy_List li h3 span em{ font-weight:bold; color:#ff0000;letter-spacing:-1px;}
+.GroupBuy_List li h3 span font{ white-space:nowrap; font-size:12px;}
+
+.GroupBuy_List li h4{ height:32px; line-height:32px; overflow:hidden; font-weight:bold; font-size:15px; color:#7d7d7d;}
+.GroupBuy_List li h4 span{ font-weight:normal;}
+.GroupBuy_List li h4 b{ color:#ff0000;}
+
+
+/***GroupBuyDetails Css Start***/
+
+.Wrap_Group{ padding:10px;  display:inline-block; }
+.Wrap_GroupBuyTop{ background:url(images/groupbuy/GroupBuy_boxbg.jpg) no-repeat left top; width:993px; height:14px; overflow:hidden;}
+.Wrap_GroupBuyBottom{ background:url(images/groupbuy/GroupBuy_boxbg.jpg) no-repeat left bottom; width:993px; height:14px; overflow:hidden;}
+
+.Wrap_GroupBuyBox{ background:#fff; width:970px;}
+
+.GroupBuy_Name{ padding:0px 10px; color:#333333; font-size:25px; font-family:"微软雅黑"; line-height:30px;text-align:justify; text-justify:inter-ideograph;}
+.GroupBuy_Name span{ padding:10px; color:#fe9900; font-size:25px; font-family:"微软雅黑"; line-height:30px;}
+
+.GroupBuyInfo{ padding:10px 10px 0px 0px; height:300px; overflow:hidden;}
+.GroupBuy_operate{ width:310px; float:left; position:relative;}
+.GroupBuy_imgBox{ float:right; width:600px;}
+.GroupBuy_imgBox img{width:450px; height:260px;}
+
+
+.GroupBuyBox{ background:url(images/groupbuy/GroupBuy_infobox.gif) no-repeat left top; width:316px; height:136px; position:relative; left:-6px; display:inline-block;}
+#GroupBuyBox2{ background:url(images/groupbuy/GroupBuy_infobox2.gif) no-repeat left top; width:316px; height:136px; position:relative; left:-6px; display:inline-block;}
+.GroupBuyBox h1{margin-top:11px; line-height:38px; height:38px; font-weight:normal;}
+.GroupBuyBox h1 span{ float:left; display:inline-block; line-height:38px; font-size:35px; font-family:Arial; color:#fff; padding-left:40px; width:140px; letter-spacing:-1px;}
+.GroupBuyBox h1 .GroupBuy_btn{ background:none; width:110px; height:38px; border:0px; cursor:pointer;}
+.GroupBuyBox h1 .GroupBuy_endbtn{ background:url(images/end_buy01.jpg) no-repeat left top; width:110px; height:38px; border:0px; cursor:pointer;}
+
+.GroupBuyBox h2{ margin-top:20px; font-weight:normal; padding-left:5px;}
+.GroupBuyBox h2 span{ display:inline-block; float:left; width:96px; text-align:center; line-height:25px; color:#333333; }
+.GroupBuyBox h2 span s{ font-size:14px; font-weight:bold; display:inline-block; text-align:center;}
+.GroupBuyBox h2 span b{ font-size:14px; font-weight:bold;display:inline-block; text-align:left;}
+
+
+.GroupBuyTime{ border:1px solid #e3dc9a; margin-top:10px; width:282px;text-align:center; border-bottom:0px;}
+.GroupBuyTime h1{ background:url(images/time_ico.jpg) no-repeat 50px  center; color:#333333; font-family:"微软雅黑"; font-size:18px; font-weight:normal; line-height:35px;}
+.GroupBuyTime h2{ font-weight:normal;}
+.GroupBuyTime h2 span{ color:#ff0000; font-family:Arial; font-size:22px; line-height:35px; padding-left:5px; padding-right:5px;}
+
+
+.GroupBuyNum{border:1px solid #e3dc9a; width:282px;text-align:center; padding:5px 0px;}
+.GroupBuyNum h1{ font-family:"微软雅黑"; color:#333333; font-size:16px; line-height:32px;}
+.GroupBuyNum h1 span{ font-size:22px; color:#66b024; font-family:Arial; display:inline-block; padding-right:10px;}
+.GroupBuyNum h2{ font-family:"微软雅黑"; color:#333333; font-size:16px; line-height:30px;}
+.GroupBuyNum h2 span{ font-size:22px; color:#66b024; font-family:Arial; display:inline-block; padding-right:10px;}
+
+.GroupBuy_txt{ padding:10px; line-height:25px; color:#000000;}
+
+
+/***************  activityList.aspx  Css  start ******************/
+
+.Wrap_PromotionBox{ margin:0px auto; width:930px; margin-top:0px; background:url(images/Wrap_PromotionBox_top.jpg) no-repeat left top #fff; padding:5px;}
+.Wrap_PromotionBottom{ margin:0px auto; width:778px;  background:url(images/Wrap_PromotionBox_bottom.jpg) no-repeat left bottom; height:8px; overflow:hidden; font-size:0px;}
+
+.Wrap_ProTxt{ padding:10px; padding-bottom:0px;}
+.Wrap_ProTxt h1 a{ font-size:14px; color:#404040; line-height:25px;}
+.Wrap_ProTxt h1 a:hover{ color:#ff0000; }
+.Wrap_ProTxt h2{ line-height:25px; font-weight:normal; color:#7d7d7d;}
+.Wrap_ProTxt h2 span{ color:#ff0000; font-weight:bold; display:inline-block; padding-left:5px; padding-right:5px;}
+
+
+.col a{color:#cc0000;}
+.Wrap_PromotionHot .BulletinHot_list{ height:auto;}
+
+
+/**--------------Pages----------------**/
+
+.Pages{ position:relative; height:40px; padding-top:15px;line-height:19px;}
+.Pages .page_total{ position:absolute; left:160px; text-align:right; width:230px;}
+.Pages .page_total span{ color:#dd111a; font-weight:bold; font-family:Arial;}
+.Pages .page_num{ position:absolute; right:80px; width:500px; }
+.Pages .page_num a{ display:block; float:left; border:solid 1px #cccccc; padding:0px 6px; margin-right:5px; text-align:center;}
+.Pages .page_num span{ float:left;}
+.Pages .page_num .input{ }
+
+.Pages .page_num .select{border:solid 1px #fff;}
+.Pages .page_num .prev{ background:url(images/Page_prev.jpg) no-repeat; width:67px; height:21px; border:none; padding:0px;}
+.Pages .page_num .next{ background:url(images/Page_next.jpg) no-repeat; width:67px; height:21px; border:none; padding:0px;}
+.Pages .page_goto{ position:absolute; right:0px;}
+.Pages .page_goto .text{ border:solid 1px #d0d0d0; width:23px; height:14px; background:#fff;}
+.Pages .page_goto .button{ background:url(images/Page_submit.jpg) no-repeat; width:49px; height:19px; color:#fff; border:none; cursor:pointer;}
+
+.Pages .page_num .text{ border:solid 1px #d0d0d0; width:23px; height:14px; background:#fff;}
+.Pages .page_num .button{ background:url(images/Page_submit.jpg) no-repeat; width:49px; height:19px; color:#fff; border:none; cursor:pointer; margin-left:3px;}
+

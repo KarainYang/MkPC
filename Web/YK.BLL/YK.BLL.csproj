@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{35343C16-DB5B-48A5-8969-EE8A75AB9C20}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YK.BLL</RootNamespace>
+    <AssemblyName>YK.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activity\Activity_Activity_BLL.cs" />
+    <Compile Include="Activity\Activity_CouponNos_BLL.cs" />
+    <Compile Include="Admin\Admin_Log_BLL.cs" />
+    <Compile Include="Admin\Admin_Resources_BLL.cs" />
+    <Compile Include="Admin\Admin_RoleInResources_BLL.cs" />
+    <Compile Include="Admin\Admin_Roles_BLL.cs" />
+    <Compile Include="Admin\Admin_UserInRole_BLL.cs" />
+    <Compile Include="Admin\Admin_User_BLL.cs" />
+    <Compile Include="BasePageBLL.cs" />
+    <Compile Include="Info\Info_HelpCategory_BLL.cs" />
+    <Compile Include="Info\Info_Help_BLL.cs" />
+    <Compile Include="Info\Info_HotSearch_BLL.cs" />
+    <Compile Include="Info\Info_Links_BLL.cs" />
+    <Compile Include="Info\Info_NewsCategory_BLL.cs" />
+    <Compile Include="Info\Info_News_BLL.cs" />
+    <Compile Include="Info\Info_Page_BLL.cs" />
+    <Compile Include="Member\Member_BuyerInfo_BLL.cs" />
+    <Compile Include="Member\Member_CouponNos_BLL.cs" />
+    <Compile Include="Member\Member_Coupon_BLL.cs" />
+    <Compile Include="Member\Member_Intergral_BLL.cs" />
+    <Compile Include="Member\Member_Levels_BLL.cs" />
+    <Compile Include="Member\Member_Members_BLL.cs" />
+    <Compile Include="Member\Member_TransRecord_BLL.cs" />
+    <Compile Include="Order\Order_Consigument_BLL.cs" />
+    <Compile Include="Order\Order_Distribution_BLL.cs" />
+    <Compile Include="Order\Order_OrderDetails_BLL.cs" />
+    <Compile Include="Order\Order_OrderState_BLL.cs" />
+    <Compile Include="Order\Order_Orders_BLL.cs" />
+    <Compile Include="Order\Order_Payment_BLL.cs" />
+    <Compile Include="Order\ReturnGood_OrderDetails_BLL.cs" />
+    <Compile Include="Order\ReturnGood_Order_BLL.cs" />
+    <Compile Include="Products\Product_Brands_BLL.cs" />
+    <Compile Include="Products\Product_BrowerRecord_BLL.cs" />
+    <Compile Include="Products\Product_Cart_BLL.cs" />
+    <Compile Include="Products\Product_CategoryBrand_BLL.cs" />
+    <Compile Include="Products\Product_Categorys_BLL.cs" />
+    <Compile Include="Products\Product_Collection_BLL.cs" />
+    <Compile Include="Products\Product_Combination_BLL.cs" />
+    <Compile Include="Products\Product_Comments_BLL.cs" />
+    <Compile Include="Products\Product_Group_BLL.cs" />
+    <Compile Include="Products\Product_Picture_BLL.cs" />
+    <Compile Include="Products\Product_ProductProperties_BLL.cs" />
+    <Compile Include="Products\Product_Products_BLL.cs" />
+    <Compile Include="Products\Product_Properties_BLL.cs" />
+    <Compile Include="Products\Product_Questions_BLL.cs" />
+    <Compile Include="Products\Product_Reply_BLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\Excel_Fields_BLL.cs" />
+    <Compile Include="System\Excel_Model_BLL.cs" />
+    <Compile Include="System\System_AdverCategory_BLL.cs" />
+    <Compile Include="System\System_AdverPic_BLL.cs" />
+    <Compile Include="System\System_Adver_BLL.cs" />
+    <Compile Include="System\System_DictionaryType_BLL.cs" />
+    <Compile Include="System\System_Dictionary_BLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\02.YK.Interfaces\YK.Interface.Common\YK.Interface.Common.csproj">
+      <Project>{9b6f62b4-44c3-4d21-a9b6-8c013771846b}</Project>
+      <Name>YK.Interface.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.Common\YK.Common.csproj">
+      <Project>{B2AC6C0E-1121-4242-A6FE-39606EF7C694}</Project>
+      <Name>YK.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.Core\YK.Core.csproj">
+      <Project>{79045B32-6AFF-4418-8236-EE89F0430CFD}</Project>
+      <Name>YK.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.Interface\YK.Interface.csproj">
+      <Project>{45C63EB2-DD92-4FD1-BFF6-A447629C3CF6}</Project>
+      <Name>YK.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.Model\YK.Model.csproj">
+      <Project>{E48E8E78-D351-46B5-BC48-C4C82D2CD998}</Project>
+      <Name>YK.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

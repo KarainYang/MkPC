@@ -1,0 +1,102 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="副本 WebSet.aspx.cs" Inherits="Admin_WebSet_WebSet" %>
+<%@ Import Namespace="YK.Common" %>
+<!DOCTYPE html PUBLIC "-//W3C//Dtd XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/Dtd/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>无标题页</title>
+    <%= "<link href=" + CommonClass.AppPath + "Admin/css/Style.css" + " rel=\"stylesheet\" type=\"text/css\" />"%> 
+    <script language="javascript" type="Text/javascript" src="<%=CommonClass.AppPath %>Admin/js/jquery.js"></script>
+    <script language="javascript" type="Text/javascript" src="<%=CommonClass.AppPath %>Admin/js/Common.js"></script>      
+    
+    <script type="text/javascript" src="<%=CommonClass.AppPath %>Admin/lhgdialog/lhgcore.min.js"></script>
+	<script type="text/javascript" src="<%=CommonClass.AppPath %>Admin/lhgdialog/lhgdialog.min.js?s=default,chrome"></script> 
+	<script type="text/javascript" src="<%=CommonClass.AppPath %>Admin/js/DialogCommon.js"></script> 
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="navigation">
+           网站信息设置
+        </div>
+         <table class="fromTable" width="100%" border="0" cellpadding="0" cellspacing="0" style="line-height:30px;">
+               <tr style="display:none;">
+                    <td class="order_title" style="width:100px;">网站开关：</td>
+                    <td class="order_title">
+                        <asp:RadioButtonList ID="RadioBtnOpenOrClose" runat="server" RepeatDirection="Horizontal">
+                            <asp:ListItem Text="开启" Value="0"></asp:ListItem>
+                            <asp:ListItem Text="关闭" Value="1"></asp:ListItem>
+                        </asp:RadioButtonList>                      
+                    </td>
+               </tr>
+               <tr>
+                    <td class="order_title" align="right">网站网址：</td>
+                    <td class="order_title" colspan="3">
+                        <asp:TextBox ID="TbWebSite" runat="server" Width="300px"></asp:TextBox>
+                    </td>
+               </tr>
+                <tr>
+                   <td class="order_title" align="right">网站名称：</td>
+                   <td class="order_title"><asp:TextBox ID="TbWebName" runat="server" Width="300px"></asp:TextBox></td>
+               </tr>
+               <tr>
+                   <td class="order_title" align="right">公司邮箱：</td>
+                   <td class="order_title">
+                        <asp:TextBox ID="TbMail" runat="server"></asp:TextBox>
+                   </td>
+               </tr>              
+               <tr>
+                    <td class="order_title" align="right">公司地址：</td>
+                    <td class="order_title"><asp:TextBox ID="TbAddress" runat="server" Width="300px"></asp:TextBox></td>
+               </tr>
+               <tr>
+                     <td class="order_title" align="right">公司邮编：</td>
+                    <td class="order_title"><asp:TextBox ID="TbZipCode" runat="server"></asp:TextBox></td>                     
+               </tr>
+               <tr>
+                    <td class="order_title" align="right">公司电话：</td>
+                    <td class="order_title"><asp:TextBox ID="TbPhone" runat="server"></asp:TextBox></td>
+               </tr>
+               <tr>
+                    <td class="order_title" align="right">传真：</td>
+                    <td class="order_title"><asp:TextBox ID="TbFax" runat="server"></asp:TextBox></td>
+               </tr>
+               <tr> 
+                     <td class="order_title" align="right">公司版权：</td>
+                    <td class="order_title"><asp:TextBox ID="TbCopyright" runat="server"   TextMode="MultiLine"  Rows="3"  Width="600px"></asp:TextBox></td>
+               </tr>
+                 <tr style="display:none;">
+                    <td class="order_title" align="right">是否允许复制网页：</td>
+                    <td class="order_title">
+                        <asp:RadioButtonList ID="RadioBtnDuplicateWebpage" runat="server" RepeatDirection="Horizontal">
+                            <asp:ListItem Text="允许" Value="0"></asp:ListItem>
+                            <asp:ListItem Text="不允许" Value="1"></asp:ListItem>
+                        </asp:RadioButtonList>       
+                    </td>
+              </tr>
+               <tr>
+                     <td class="order_title" align="right">ICP备案号：</td>
+                    <td class="order_title"><asp:TextBox ID="TbIcp" runat="server"  TextMode="MultiLine"  Rows="3"  Width="600px"></asp:TextBox></td>
+               </tr>               
+                <tr>
+                    <td class="order_title" align="right">网站关键字：</td>
+                    <td class="order_title"><asp:TextBox ID="TbKeyWord" runat="server" TextMode="MultiLine" Rows="3"  Width="600px"></asp:TextBox></td>
+               </tr>
+                 <tr>
+                    <td class="order_title" align="right">网站描述：</td>
+                    <td class="order_title"><asp:TextBox ID="TbDescirption" runat="server" TextMode="MultiLine" Rows="3"  Width="600px"></asp:TextBox></td>
+               </tr>
+               <tr>
+                    <td class="order_title" align="right">TQ代码：</td>
+                    <td class="order_title"><asp:TextBox ID="TbTQ" runat="server" TextMode="MultiLine" Rows="3"  Width="600px"></asp:TextBox></td>
+               </tr>
+                <tr>
+                     <td></td>
+                    <td align="left">
+                         <asp:Button ID="BtnSave" runat="server"  BackColor="#CBE2F4" BorderColor="#2B73C7" BorderWidth="1" Text="  保 存  " Width="100px" Height="25px" OnClick="BtnSave_Click"/>                    
+                    </td>
+                </tr>
+            </table>    
+            <div runat="Server" id="MessageDiv"></div> 
+    </form>
+</body>
+</html>
