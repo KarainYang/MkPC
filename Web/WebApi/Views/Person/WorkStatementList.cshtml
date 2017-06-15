@@ -1,0 +1,25 @@
+﻿@model List<YK.Model.TB_Employee_WorkStatement>
+@{
+    ViewBag.Title = "工作报告管理";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+<script type="text/javascript">
+    function detail(id)
+    {
+        window.location = "@Url.Action("WorkStatementDetail", "Person")?id=" + id;
+    }
+</script>
+@{
+    ViewData["Url"] = Url.Action("WorkStatementEdit", "Person");
+    }
+@Html.Partial("~/Views/Component/Frontend/AddButton.cshtml",ViewData)
+
+@foreach (var item in Model)
+{ 
+    <div class="list_item  border-1px" onclick="detail(@item.ID)">
+        <div class="list_title  border-1px">@YK.Service.EmployeeService.WorkStatementService.GetWorkStatementType(@item.Type)：@item.Title</div>
+        <div class="list_info  border-1px">
+            汇报日期：@item.StatementDate.ToShortDateString()       
+        </div>
+    </div>
+}

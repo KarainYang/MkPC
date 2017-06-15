@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "应用中心";
+    Layout = "~/Views/Shared/_IndexLayout.cshtml";
+}
+<div class="app_center">
+    <div onclick="urlLocation('@Url.Action("Index","Approval")')">
+        <img src="@Url.Content("~/Images/pig/leave.png")" /><br />
+        流程
+    </div>    
+    <div onclick="urlLocation('@Url.Action("MyCustomer","Customer")')">
+        <img src="@Url.Content("~/Images/pig/overtime.png")"/><br />
+        客户
+    </div>
+@*    <div onclick="urlLocation('@Url.Action("MyProject","Project")')">
+        <img src="@Url.Content("~/Images/pig/workstatement.png")" /><br />
+        项目中心
+    </div>*@
+    <div onclick="urlLocation('@Url.Action("TaskList","Plan")')">
+        <img src="@Url.Content("~/Images/pig/5.png")" /><br />
+        计划
+    </div>
+    <div onclick="urlLocation('@Url.Action("WorkStatementList","Person")')">
+        <img src="@Url.Content("~/Images/pig/workstatement.png")" /><br />
+        报告
+    </div>
+    <div onclick="urlLocation('@Url.Action("Person","Person")')">
+        <img src="@Url.Content("~/Images/pig/buka.png")" /><br />
+        成员
+    </div>    
+    <div onclick="urlLocation('@Url.Action("LaborageList","Person")')">
+        <img src="@Url.Content("~/Images/pig/money.png")" /><br />
+        工资
+    </div>
+    <div onclick="urlLocation('@Url.Action("MyAttendanceList","Person")')">
+        <img src="@Url.Content("~/Images/pig/overtime.png")" /><br />
+        考勤
+    </div>
+</div>
+<div class="clearFloatDiv appspace"></div>

@@ -1,0 +1,26 @@
+﻿@model List<YK.Model.TB_Employee_Laborage>
+@{
+    ViewBag.Title = "我的工资";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+<style>
+    .month {
+        margin-left:10px;
+    }
+    .amount {
+        float:right;
+        margin-right:10px;
+    }
+</style>
+<script type="text/javascript">
+    function detail(id)
+    {
+        window.location = "@Url.Action("LaborageDetail", "Person")?id=" + id;
+    }
+</script>
+@foreach (var item in Model)
+{ 
+    <div class="list_item border-1px" onclick="detail(@item.ID)">
+        <span class="month">月份：@item.LaborageMonth.ToString("yyyy-MM")</span>  <span class="amount">金额：@item.TotalAmount 元</span>
+    </div>
+}

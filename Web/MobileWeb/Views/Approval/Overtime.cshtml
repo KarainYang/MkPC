@@ -1,0 +1,92 @@
+﻿@model YK.Model.TB_Employee_Overtime
+@{
+    ViewBag.Title = "加班申请";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+
+@Scripts.Render("~/My97DatePicker/WdatePicker.js")
+@Html.Partial("~/Views/Component/Frontend/dialog.cshtml")
+
+@using (Html.BeginForm("SaveOvertime", "Approval", FormMethod.Post, new { name = "form", id = "formObject" }))
+{   
+    
+    <div class="form_content">
+
+        <div class="form_content_title">开始时间</div>
+        <div class="form_content_control">
+                @Html.TextBoxFor(f => f.StartDate, new
+                   {
+                       GroupName = "Validator",
+                       @class = "inputCss",
+                       title = "开始时间",
+                       LabelID = "LbStartDate",
+                       onclick = "WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})"
+                   })                 
+                 <span id="LbStartDate">*</span>
+        </div>
+
+        <div class="form_content_title">结束时间</div>
+        <div class="form_content_control">
+            @Html.TextBoxFor(f => f.EndDate, new
+                   {
+                       GroupName = "Validator",
+                       @class = "inputCss",
+                       title = "结束时间",
+                       LabelID = "LbEndDate",
+                       onclick = "WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})"
+                   })                              
+             <span id="LbEndDate">*</span>
+        </div>
+
+        <div class="form_content_title">请假小时</div>
+        <div class="form_content_control">
+            @Html.TextBoxFor(f => f.Hours, new
+                   {
+                       GroupName = "Validator",
+                       CssClass = "inputCss",
+                       title = "请假小时",
+                       LabelID = "LbHours",
+                       Validator = "小数"
+                   })
+            <span id="LbHours">*</span>
+        </div>
+
+        <div class="form_content_title">备注</div>
+        <div class="form_content_control">
+            @Html.TextAreaFor(f => f.Remark, new {  @class="inputCss",
+                        maxlength="1000",style="width:80%;height:80px;" })
+        </div>      
+    </div>   
+    
+    <div class="submitCss">
+        @*<input type="submit" value="提交" onclick="return yk.core.validator.VerificationForm('Validator')" />*@
+        <input type="button" value="提交" onclick="submitForm()" />
+    </div>    
+}
+<script type="text/javascript">
+    function submitForm() {
+        var validation = yk.core.validator.VerificationForm('Validator');
+        if (validation) {
+            var formEntity = yk.core.common.getFormEntity("formObject");
+
+            //ajax提交
+            yk.core.common.ajaxSubmit("SaveOvertime", formEntity, function (_data) {
+                if (_data.isSuccess == 1) {
+                    $.dialog({
+                        closetime: 2000,
+                        loading: {
+                            text: '提交成功，请手动发起审批'
+                        }
+                    });
+                    window.location.replace("@Url.Action("MyApply", "Approval")");
+                    } else {
+                        $.dialog({
+                            title: '操作失败',
+                            content: _data.message,
+                            btncancel: false
+                        });
+                    }
+            });
+            }
+        }
+</script>

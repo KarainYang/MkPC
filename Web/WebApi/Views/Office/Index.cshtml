@@ -1,0 +1,101 @@
+﻿@model CRMMvc.Models.OfficeTodoModel
+@using YK.Common;
+@{
+    ViewBag.Title = "我的待办";
+    Layout = "~/Views/Shared/_IndexLayout.cshtml";
+}
+@Styles.Render("~/css/swiper.min.css")
+<style>
+    .swiper-container {
+        width: 100%;
+    }
+</style>
+<div class="todo" style="display:none;">
+    <div class="tabDivs">
+        <div class="border-1px">流程</div>
+        <div class="border-1px">工作</div>
+        <div class="border-1px">客户</div>
+    </div>
+</div>
+<div class="clearFloatDiv appspace"></div>
+
+<script type="text/javascript">
+    function detail(approvalTypeCode, id) {
+        //请假: 0001,加班:0002,报销:0003,办公用品:0004,出差:0005
+        if (approvalTypeCode == "0001") {
+            window.location = "@Url.Action("LeaveDetail", "Approval")?id=" + id;
+        }
+        if (approvalTypeCode == "0002") {
+            window.location = "@Url.Action("OvertimeDetail", "Approval")?id=" + id;
+        }
+        if (approvalTypeCode == "0003") {
+            window.location = "@Url.Action("ExpensesDetail", "Approval")?id=" + id;
+        }
+        if (approvalTypeCode == "0004") {
+            window.location = "@Url.Action("OfficeSuppliesDetail", "Approval")?id=" + id;
+        }
+        if (approvalTypeCode == "0005") {
+            window.location = "@Url.Action("Leave", "Approval")?id=" + id;
+        }
+    }
+</script>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"> 
+            @if(Model.approvalInfoList!=null)
+            {
+                foreach (var item in Model.approvalInfoList)
+                { 
+                    <div class="list_item border-1px" onclick="detail('@item.ApprovalTypeCode',@item.ObjectID)">
+                        <div class="list_title">@item.Title</div>
+                        <div class="list_info">
+                            <span class="float-left">@YK.Service.WorkFlowService.NodesService.GetCurrentStateInfo(item.NodeId,item.IsThrough)</span>
+                            @item.AddDate
+                        </div>
+                    </div>
+                }
+            }            
+        </div>
+        <div class="swiper-slide">
+            @if(Model.taskList!=null)
+            {
+                foreach (var item in Model.taskList)
+                { 
+                    <a href="@Url.Action("TaskDetail","Plan", new { id=item.ID })">
+                        <div class="list_item border-1px">
+                            <div class="list_title">@item.Name</div>
+                            <div class="list_info">                                
+                                <span class="float-left">@(item.StartDate!=null?item.EndDate.Value.ToString("yyyy-MM-dd"):"")</span>   
+                                <span class="state-@item.State"> @YK.Service.PlanService.TaskInfoService.GetTaskStateText(item.State)</span>
+                            </div>
+                        </div>
+                    </a>
+                }
+            }
+        </div>
+        <div class="swiper-slide">
+            @if (Model.cstList!=null)
+            {
+                foreach (var item in Model.cstList)
+                { 
+                    <a href="@Url.Action("CustomerDetail", "Customer",new { id=item.ID })">
+                        <div class="list_item border-1px" onclick="detail(@item.ID)">
+                            <div class="list_title">@item.CustomerName</div>
+                            <div class="list_info">            
+                                公司:@item.CompanyName
+                            </div>
+                        </div>
+                    </a>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Swiper JS -->
+@Scripts.Render("~/js/swiper.min.js")
+@Scripts.Render("~/js/swiper.tools.js")
+
+<script type="text/javascript">
+    $(".todo").show();
+</script>

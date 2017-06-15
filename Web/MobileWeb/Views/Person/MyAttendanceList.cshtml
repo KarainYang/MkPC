@@ -1,0 +1,72 @@
+﻿@model CRMMvc.Models.AttendanceModel
+@{
+    ViewBag.Title = "我的考勤";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+<style>
+    .attendance {
+        width:58px;
+        height:58px;
+        background-color:#33CC66;
+        color:#ffffff;
+        text-align:center;
+        line-height:58px;
+        position:fixed;
+        bottom:20px;
+        right:20px;
+        z-index:10;        
+        border-radius:30px;
+    }
+</style>
+<script type="text/javascript">
+    function detail(id)
+    {
+        window.location = "@Url.Action("AttendanceDetail", "Person")?id=" + id;
+    }
+</script>
+@Html.Partial("~/Views/Component/Frontend/dialog.cshtml")
+@if (Model.isSignIn)
+{
+    <div class="attendance off" onclick="submitForm(1)">退签</div>
+}
+else
+{
+    <div class="attendance on" onclick="submitForm(0)">签到</div>
+}
+
+
+@foreach (var item in Model.list)
+{ 
+    <div class="list_item  border-1px" onclick="detail(@item.ID)">
+        <div class="list_title  border-1px">@item.AddDate.Value.ToString("yyyy-MM-dd")</div>
+        <div class="list_info  border-1px">
+            签到时间：@item.OnDutyDate.Value.ToLongTimeString() 退签时间：@(item.OffDutyDate == null ? "未退签" : item.OffDutyDate.Value.ToLongTimeString())
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+    function submitForm(type) {
+        var validation = yk.core.validator.VerificationForm('Validator');
+        if (validation) {
+            //ajax提交
+            yk.core.common.ajaxSubmit("AjaxAttendanceHandle", { type: type }, function (_data) {
+                if (_data.isSuccess == 1) {
+                        $.dialog({
+                            closetime: 2000,
+                            loading: {
+                                text: type==0 ? "签到成功":"退签成功"
+                            }
+                        });
+                        window.location.reload();
+                    } else {
+                        $.dialog({
+                            title: '操作失败',
+                            content: _data.message,
+                            btncancel: false
+                        });
+                    }
+            });
+            }
+        }
+</script>

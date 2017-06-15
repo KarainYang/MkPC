@@ -1,0 +1,118 @@
+﻿@model CRMMvc.Models.OfficeLeaveModel
+@{
+    ViewBag.Title = "请假详情";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+
+<div class="detail_title">@Model.leave.Title</div>
+
+<div class="detail_proposer">    
+    <table class="fromTable">
+        <tr>
+            <th>申请人：</th>
+            <td>
+                @Model.employee.EmployeeName
+            </td>
+        </tr>
+        <tr>
+            <th>类型：</th>
+            <td>@YK.Service.EmployeeService.LeaveService.GetLeaveType(Model.leave.Type)
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="detail_info">
+    <table class="fromTable">
+        <tr>
+            <th>开始时间：</th>
+            <td>
+                @Model.leave.StartDate
+            </td>
+        </tr>
+        <tr>
+            <th>结束时间：</th>
+            <td>
+                @Model.leave.EndDate
+            </td>
+        </tr>
+        <tr>
+            <th>加班小时：</th>
+            <td>
+                @Model.leave.Hours
+            </td>
+        </tr>
+        <tr>
+            <th>备注：</th>
+            <td>
+                @Model.leave.Remark
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="detail_proposer">
+    <table class="fromTable">
+        <tr>
+            <th>审批状态：</th>
+            <td>@YK.Service.WorkFlowService.NodesService.GetCurrentStateInfo(Model.approvalInfo.NodeId,Model.approvalInfo.IsThrough)
+            </td>
+        </tr>
+        @if(Model.approvalInfo.IsThrough==2)
+        {
+            <tr>
+                <th>不通过原因：</th>
+                <td>
+                    @Model.approvalInfo.Reason
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+@if(Model.approvalRecords.Count>0)
+{
+<div class="approval">
+    <div class="approval_title">审批流程</div>
+    @foreach(var item in Model.approvalRecords)
+    {
+        <div class="approval_info">
+            <div class="approval_info_state">@YK.Service.WorkFlowService.NodesService.GetCurrentStateInfo(item.NodeId,item.IsThrough)</div>
+            <div class="approval_info_approver">审批人：@item.Creater</div>
+            <div class="approval_info_approvaltime">审批时间：@item.AddDate</div>
+        </div>
+    }
+</div>
+}
+
+
+@if(Model.approvalInfo.NodeId==0)
+{
+    <div class="submitCss">
+        <input type="button" value="发起审批" onclick="launchApproval(@Model.approvalInfo.ID)" />
+    </div> 
+}
+@if(Model.isApproval==true)
+{
+    <div class="form_content">        
+        <div class="approval_title">审批</div>    
+        <div class="form_content_title">状态</div>
+        <div class="form_content_control">
+            <select id="statu" title = "状态" GroupName = "Validator" class = "inputCss" LabelID = "LbCategoryCode" style="width:50%"  onchange="stateChange()">
+                <option value="">请选择</option>
+                <option value="1">通过</option>
+                <option value="2">不通过</option>
+            </select>
+            <span id="LbCategoryCode">*</span>
+        </div> 
+        <div class="noThroughReason">
+            <div class="form_content_title">说明</div>
+            <div class="form_content_control">
+                <textarea id="reaon" style="width:90%; height:50px;"></textarea>
+            </div>
+        </div>  
+    </div>  
+    <div class="submitCss">
+        <input type="button" value="审批" onclick="approval(@Model.approvalInfo.ID)" />
+    </div>
+}

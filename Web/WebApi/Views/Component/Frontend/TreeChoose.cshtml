@@ -1,0 +1,137 @@
+﻿<style>   
+    .tree {
+        width:100%;
+        height:100%;
+        display:none;
+        position:fixed;
+        background-color:#ffffff;
+        line-height:40px;
+        z-index:2;
+        top:0;
+        left:0;
+    }
+    .name {
+        border-bottom-width:1px;
+        padding-left:10px;
+    }
+    .child {
+        margin-left:20px;
+    }
+    .glyphicon {
+        float:right;
+        margin-right:10px;
+        font-weight:normal;
+        font-size:12px;
+        line-height:40px;
+    }
+    .active {
+        color:#00ABEC;
+    }
+</style>
+
+<div class="tree">
+    <div class="treelist"></div>
+    <div class="bottomButton">
+        <a class="border-1px ok">确定</a>
+        <a class="border-1px cancle">取消</a>
+    </div>
+</div>
+
+<script type="text/html" id="treelist_template">
+    {{each list as v i}}
+        <div class="treeitem">
+            <div class="name border-1px {{v.list.length>0?"parent":"end"}}" data-name="{{v.name}}" data-value="{{v.value}}">
+                {{v.name }}
+                <span class="{{v.list.length>0?"glyphicon glyphicon-chevron-up":""}}"></span>
+            </div>            
+            {{if v.list.length>0}}
+            <div class="child border-1px">
+                 {{include 'treelist_template' v}}
+            </div>
+        {{/if}}
+        </div>
+        
+    {{/each}}
+</script>
+
+<script type="text/javascript">    
+    yk.core.common.registerNamespace("yk.core.component.tree");
+    (function(ns){
+        //是否多选
+        ns.isCheckbox = true;
+        //最终操作完的数据
+        ns.datasource=[];
+        //初始化
+        ns.init = function (data, callback) {
+            $(".treelist").html(template("treelist_template", { list: data }));
+            $(".tree").show();
+            $.hash.setHash('tree', 'treelist');
+            ns.bindEvent(callback);
+        },
+        //获取数据
+        ns.getdata = function () {
+            var data = [];
+            $(".active").each(function () {
+                var obj = { name: $(this).data("name"), value: $(this).data("value") };
+                data.push(obj);
+            });
+            return data;
+        },
+        //绑定事件
+        ns.bindEvent = function (callback) {
+            //父级展开收缩
+            $(".treelist .parent").each(function () {
+                this.onclick = function () {
+                    var upClass = "glyphicon-chevron-up";
+                    var downClass = "glyphicon-chevron-down";
+
+                    var up = $(this).find("." + upClass);
+                    var span = $(this).find("span");
+                    if (up.length > 0) {
+                        span.removeClass(upClass);
+                        span.addClass(downClass);
+                        $(this).parent().find(".child").eq(0).hide();
+                    }
+                    else {
+                        span.removeClass(downClass);
+                        span.addClass(upClass);
+                        $(this).parent().find(".child").eq(0).show();
+                    }
+                }
+            });
+            //末级取值
+            $(".treelist .end").each(function () {
+                this.onclick = function () {
+                    var obj = { name: $(this).data("name"), value: $(this).data("value") };
+                    //是否选中，如果是选中则取消选中
+                    if ($(this).hasClass('active')) {
+                        $(this).removeClass("active");
+                        return;
+                    }
+                    $(this).addClass("active");
+                }
+            });
+            //确定
+            $(".ok").each(function () {
+                this.onclick = function () {
+                    $(".tree").hide();
+                    ns.datasource = ns.getdata();
+                    //多选则返回所有
+                    if (ns.isCheckbox) {
+                        callback(ns.datasource);
+                    } else {
+                        callback(ns.datasource.length > 0 ? ns.datasource[0] : null);
+                    }
+                    history.back(-1);
+                };
+            });
+            //取消
+            $(".cancle").each(function () {
+                this.onclick = function () {
+                    $(".tree").hide();
+                    history.back(-1);
+                }
+            });
+        }
+    })(yk.core.component.tree);
+</script>

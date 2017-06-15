@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "审批中心";
+    Layout = "~/Views/Shared/_IndexLayout.cshtml";
+}
+<div class="app_center">
+    <div onclick="urlLocation('@Url.Action("Leave","Approval")')">
+        <img src="@Url.Content("~/Images/pig/leave.png")" /><br />
+        请假
+    </div>
+    <div onclick="urlLocation('@Url.Action("Overtime","Approval")')">
+        <img src="@Url.Content("~/Images/pig/overtime.png")" /><br />
+        加班
+    </div>
+    <div onclick="urlLocation('@Url.Action("OfficeSupplies","Approval")')">
+        <img src="@Url.Content("~/Images/pig/buka.png")" /><br />
+        办公用品
+    </div>     
+    <div onclick="urlLocation('@Url.Action("Expenses","Approval")')">
+        <img src="@Url.Content("~/Images/pig/money.png")" /><br />
+        费用报销
+    </div>
+    <div onclick="urlLocation('@Url.Action("MyApply","Approval")')">
+        <img src="@Url.Content("~/Images/pig/workstatement.png")" /><br />
+        我的申请
+    </div>
+    <div onclick="urlLocation('@Url.Action("MyApproval","Approval")')">
+        <img src="@Url.Content("~/Images/pig/person.png")" /><br />
+        我的审批
+    </div>
+</div>
+<div class="clearFloatDiv appspace"></div>

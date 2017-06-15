@@ -1,0 +1,192 @@
+﻿@model CRMMvc.Models.CustomerDetailModel
+@using CRMMvc
+@{
+    ViewBag.Title = "客户详情";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+<style>
+    .visit {
+        margin-top:10px;
+        background-color:#F9F9F9;
+    }
+</style>
+
+@{
+    ViewData["Url"] = Url.Action("Visit", "Customer", new { cstId = Model.cstEntity.ID });
+    }
+@Html.Partial("~/Views/Component/Frontend/AddButton.cshtml",ViewData)
+@Html.Partial("~/Views/Component/Frontend/dialog.cshtml")
+
+<div class="detail_title">@Model.cstEntity.CustomerName</div>
+
+<div class="detail_proposer">    
+    <table class="fromTable">
+        <tr>
+            <th>手机：</th>
+            <td>
+                <a href='tel:@Model.cstEntity.Mobile'>@Model.cstEntity.Mobile</a>
+            </td>
+        </tr>
+        <tr>
+            <th>公司名称：</th>
+            <td>
+                @Model.cstEntity.CompanyName
+            </td>
+        </tr>
+        <tr>
+            <th>行业：</th>
+            <td>
+                @Common.GetDictionary(Model.cstEntity.Industry).Name
+            </td>
+        </tr>
+        <tr>
+            <th>规模：</th>
+            <td>
+                @Common.GetDictionary(Model.cstEntity.Scale).Name
+            </td>
+        </tr>
+        <tr>
+            <th>来源：</th>
+            <td>
+                @Common.GetDictionary(Model.cstEntity.Source).Name
+            </td>
+        </tr>        
+    </table>
+</div>
+
+<div class="detail_info">
+    <table class="fromTable">
+       <tr>
+            <th>电话：</th>
+            <td>
+                <a href='tel:@Model.cstEntity.Phone'>@Model.cstEntity.Phone</a>
+            </td>
+        </tr>  
+        @*<tr>
+            <th>传真：</th>
+            <td>
+                @Model.cstEntity.Fax
+            </td>
+        </tr>   *@ 
+        <tr>
+            <th>邮箱：</th>
+            <td>
+                @Model.cstEntity.Email
+            </td>
+        </tr>  
+        <tr>
+            <th>地址：</th>
+            <td>
+                @Model.cstEntity.Address
+            </td>
+        </tr>  
+    </table>
+</div>
+
+<div class="detail_proposer"> 
+    <table class="fromTable">
+        @*<tr>
+            <th>QQ：</th>
+            <td>
+                @Model.cstEntity.QQ
+            </td>
+        </tr>   
+        <tr>
+            <th>网址：</th>
+            <td>
+                @Model.cstEntity.WebSite
+            </td>
+        </tr> *@
+        <tr>
+            <th>状态：</th>
+            <td>
+                @Common.GetDictionary(Model.cstEntity.State).Name
+            </td>
+        </tr>  
+        <tr>
+            <th>备注：</th>
+            <td>
+                @Model.cstEntity.Remark
+            </td>
+        </tr>  
+    </table>
+</div>
+
+<div class="detail_title">客户跟进</div>
+<div class="visitRcordList">
+
+</div>
+<script type="text/html" id="list_template">
+    {{each visitRcordList as v i}}
+        <div class="detail_proposer visit">    
+            <table class="fromTable">
+                <tr>
+                    <th>联系人：</th>
+                    <td>
+                        {{v.ContractName}}
+                    </td>
+                </tr>
+                <tr>
+                    <th>联系电话：</th>
+                    <td>
+                        <a href='tel:{{v.Phone}}'>{{v.Phone}}</a>
+                    </td>
+                </tr>  
+                <tr>
+                    <th>跟进方式：</th>
+                    <td>
+                        {{v.FollowType}}
+                    </td>
+                </tr>
+                <tr>
+                    <th>跟进/回访时间：</th>
+                    <td>
+                        {{v.VisitDate}}                        
+                    </td>
+                </tr>       
+                <tr>
+                    <th>名称：</th>
+                    <td>
+                        {{v.Name}}
+                    </td>
+                </tr>  
+                <tr>
+                    <th>备注：</th>
+                    <td>
+                        {{v.VisitContent}}
+                    </td>
+                </tr>       
+            </table>
+        </div>
+    {{/each}}
+</script>
+
+<script type="text/ecmascript">
+    $.ajax({
+        url: "@Url.Action("AjaxCustomerDetail")",
+        type: 'post',
+        data: {cstId:@Model.cstEntity.ID},
+        dataType: 'json',
+        success: function (_data) {
+            if (_data.isSuccess == 1) {
+                $(".visitRcordList").html(template("list_template", _data.data));
+            } else {
+                $.dialog({
+                    title: '操作失败',
+                    content: _data.message,
+                    btncancel: false
+                });
+            }
+            ajaxLock = 0;
+        },
+        error: function () {
+            $.dialog({
+                closetime: 2000,
+                loading: {
+                    text: '请求失败，请稍后重试'
+                }
+            });
+            ajaxLock = 0;
+        }
+    });
+</script>

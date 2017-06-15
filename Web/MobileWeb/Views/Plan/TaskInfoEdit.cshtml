@@ -1,0 +1,150 @@
+﻿
+@model CRMMvc.Models.Plan.TaskEditModel
+@{
+    ViewBag.Title = "任务编辑";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+
+@Scripts.Render("~/My97DatePicker/WdatePicker.js")
+@Html.Partial("~/Views/Component/Frontend/dialog.cshtml")
+@Html.Partial("~/Views/Component/Frontend/ChooseUser.cshtml")
+
+@using (Html.BeginForm("SaveTaskInfo", "Plan", FormMethod.Post, new { name = "form" }))
+{   
+    
+    <div class="form_content">
+
+        <div class="form_content_title">任务类型</div>
+        <div class="form_content_control">
+             @Html.DropDownListFor(f => f.task.TypeCode, new List<SelectListItem>() { 
+                    new SelectListItem(){ Text="一般工作项",Value="0" },
+                    new SelectListItem(){ Text="关键节点",Value="1" },
+                    new SelectListItem(){ Text="阶段性成果",Value="2" }
+                }, new
+                   {
+                       GroupName = "Validator",
+                       @class = "inputCss",
+                       title = "任务类型",
+                       LabelID = "LbType",
+                       style = "width:50%"
+                   })   
+              <span id="LbType">*</span>
+        </div>
+
+        <div class="form_content_title">名称</div>
+        <div class="form_content_control">
+             @Html.TextBox("Name",Model.task == null ? null : Model.task.Name, new
+                   {
+                       GroupName = "Validator",
+                       @class = "inputCss",
+                       title = "名称",
+                       LabelID = "LbTitle",
+                       style="width:80%"
+                   })   
+              <span id="LbTitle">*</span>
+        </div>
+
+        <div class="form_content_title">计划开始日期</div>
+        <div class="form_content_control">
+                @Html.TextBox("StartDate", Model.task == null ? null : Model.task.StartDate.Value.ToString("yyyy-MM-dd"), new
+                   {
+                       GroupName = "Validator",
+                       @class = "inputCss",
+                       title = "计划开始日期",
+                       LabelID = "LbStartDate",
+                       onclick = "WdatePicker({dateFmt:'yyyy-MM-dd'})"
+                   })                 
+                 <span id="LbStartDate">*</span>
+        </div>
+
+        <div class="form_content_title">计划截止日期</div>
+        <div class="form_content_control">
+                @Html.TextBox("EndDate",Model.task == null ? null : Model.task.EndDate.Value.ToString("yyyy-MM-dd"), new
+                   {
+                       GroupName = "Validator",
+                       @class = "inputCss",
+                       title = "计划截止日期",
+                       LabelID = "LbEndDate",
+                       onclick = "WdatePicker({dateFmt:'yyyy-MM-dd'})"
+                   })                 
+                 <span id="LbEndDate">*</span>
+        </div>
+
+        <div class="form_content_title">责任人</div>
+        <div class="form_content_control">                
+                @Html.TextBox("Zrr", (Model.zrr != null ? Model.zrr.EmployeeName : null), new
+                   {
+                       GroupName = "Validator",
+                       @class = "inputCss",
+                       title = "责任人",
+                       LabelID = "LbZrr",
+                       onclick = "yk.core.component.user.showChooseUser()"
+                   })                 
+                 <span id="LbZrr">*</span>
+        </div>
+
+        <div class="form_content_title">描述</div>
+        <div class="form_content_control">
+            @Html.TextAreaFor(f => f.task.Description, new
+                   {
+                       @class = "inputCss",
+                       title = "描述",
+                       maxlength="1000",
+                       style="width:80%;height:80px;" 
+                   })                              
+        </div>  
+    </div>   
+    
+    <div class="submitCss">
+        <input type="button" value="提交" onclick="submitForm()" />
+    </div>    
+}
+<script>
+    $(function () {
+        yk.core.component.user.isCheckbox = false;
+        yk.core.component.user.addUser('@(Model.zrr != null ? Model.zrr.ID : 0)','@(Model.zrr != null ? Model.zrr.EmployeeName : null)');
+        yk.core.component.user.init(function (_data) {
+            $("#Zrr").val(_data.userName);
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    function submitForm() {
+        var validation = yk.core.validator.VerificationForm('Validator');
+        if (validation) {
+            var formEntity = {};// yk.core.common.getFormEntity("formObject");
+            formEntity["info.ID"] = "@Request["taskId"]";
+            formEntity["info.TypeCode"] = $("#TypeCode").val();
+            formEntity["info.Name"] = $("#Name").val();
+            formEntity["info.StartDate"] = $("#StartDate").val();
+            formEntity["info.EndDate"] = $("#EndDate").val();
+            formEntity["info.Description"] = $("#Description").val();
+            formEntity["info.Year"] = "@Request["Year"]";
+            formEntity["info.Month"] = "@Request["Month"]";
+            formEntity["info.Quarter"] = "@Request["Week"]";
+
+            var users = yk.core.component.user.getChooseUsers();
+            formEntity["zrr"] = users[0].userId;
+
+            //ajax提交
+            yk.core.common.ajaxSubmit("SaveTaskInfo", formEntity, function (_data) {
+                if (_data.isSuccess == 1) {
+                        $.dialog({
+                            closetime: 2000,
+                            loading: {
+                                text: '提交成功'
+                            }
+                        });
+                        history.go(-1);
+                    } else {
+                        $.dialog({
+                            title: '操作失败',
+                            content: _data.message,
+                            btncancel: false
+                        });
+                    }
+            });
+            }
+        }
+</script>

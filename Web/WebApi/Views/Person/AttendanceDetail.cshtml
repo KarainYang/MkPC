@@ -1,0 +1,32 @@
+﻿@model YK.Model.TB_Employee_Attendance
+
+@{
+    ViewBag.Title = "考勤详情";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+
+<br />
+<div class="detail_proposer">
+    <table class="fromTable">
+        <tr>
+            <th>日期：</th>
+            <td>@Model.AddDate.Value.ToString("yyyy-MM")</td>
+        </tr>
+        <tr>
+            <th>签到时间：</th>
+            <td>@Model.OnDutyDate.Value.ToLongTimeString()</td>
+        </tr>
+        <tr>
+            <th>退签时间：</th>
+            <td>@(Model.OffDutyDate==null?"未退签":Model.OffDutyDate.Value.ToLongTimeString())</td>
+        </tr>
+        <tr>
+            <th>迟到原因：</th>
+            <td>@Model.LateRemark</td>
+        </tr>
+        <tr>
+            <th>早退原因：</th>
+            <td>@Model.LeaveEarRemark</td>
+        </tr>
+    </table>
+</div>

@@ -85,3 +85,10 @@ E:\颜锟\最新模板全新\Web\01.YK.Models\YK.Model.Systems\bin\Debug\YK.Mode
 E:\颜锟\最新模板全新\Web\01.YK.Models\YK.Model.Systems\obj\Debug\YK.Model.Systems.csprojResolveAssemblyReference.cache
 E:\颜锟\最新模板全新\Web\01.YK.Models\YK.Model.Systems\obj\Debug\YK.Model.Systems.dll
 E:\颜锟\最新模板全新\Web\01.YK.Models\YK.Model.Systems\obj\Debug\YK.Model.Systems.pdb
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Model.Systems\bin\Debug\YK.Model.Systems.dll
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Model.Systems\bin\Debug\YK.Model.Systems.pdb
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Model.Systems\bin\Debug\YK.Model.dll
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Model.Systems\bin\Debug\YK.Model.pdb
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Model.Systems\obj\Debug\YK.Model.Systems.csprojResolveAssemblyReference.cache
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Model.Systems\obj\Debug\YK.Model.Systems.dll
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Model.Systems\obj\Debug\YK.Model.Systems.pdb

@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "EditWorkStatement";
+}
+
+@model YK.Model.TB_Employee_WorkStatement
+@{
+    ViewBag.Title = "工作报告编辑";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+
+@Scripts.Render("~/My97DatePicker/WdatePicker.js")
+
+@using (Html.BeginForm("SaveWorkStatement", "Person", FormMethod.Post, new { name = "form" }))
+{   
+    
+    <div class="form_content">
+
+        <div class="form_content_title">报告类型</div>
+        <div class="form_content_control">
+             @Html.DropDownListFor(f => f.Type, new List<SelectListItem>() { 
+                    new SelectListItem(){ Text="日报",Value="0" },
+                    new SelectListItem(){ Text="周报",Value="1" },
+                    new SelectListItem(){ Text="月报",Value="2" }
+                }, new
+                   {
+                       GroupName = "Validator",
+                       @class = "inputCss",
+                       title = "报告类型",
+                       LabelID = "LbType",
+                       style = "width:80%"
+                   })   
+              <span id="LbType">*</span>
+        </div>
+
+        <div class="form_content_title">标题</div>
+        <div class="form_content_control">
+             @Html.TextBoxFor(f => f.Title, new
+                   {
+                       GroupName = "Validator",
+                       @class = "inputCss",
+                       title = "标题",
+                       LabelID = "LbTitle",
+                       style="width:80%"
+                   })   
+              <span id="LbTitle">*</span>
+        </div>
+
+        <div class="form_content_title">汇报日期</div>
+        <div class="form_content_control">
+                @Html.TextBoxFor(f => f.StatementDate, new
+                   {
+                       GroupName = "Validator",
+                       @class = "inputCss",
+                       title = "汇报日期",
+                       LabelID = "LbStatementDate",
+                       onclick = "WdatePicker({dateFmt:'yyyy-MM-dd'})"
+                   })                 
+                 <span id="LbStatementDate">*</span>
+        </div>
+
+        <div class="form_content_title">工作报告</div>
+        <div class="form_content_control">
+            @Html.TextAreaFor(f => f.WorkSummary, new
+                   {
+                       GroupName = "Validator",
+                       @class = "inputCss",
+                       title = "工作报告",
+                       LabelID = "LbWorkSummary",
+                       maxlength="1000",
+                       style="width:80%;height:80px;" 
+                   })                              
+             <span id="LbWorkSummary">*</span>
+        </div>
+
+        <div class="form_content_title">工作计划</div>
+        <div class="form_content_control">
+            @Html.TextAreaFor(f => f.WorkPlan, new 
+                    {  @class="inputCss",
+                        maxlength="1000",
+                        style="width:80%;height:80px;" 
+                     })
+        </div>      
+    </div>   
+    
+    <div class="submitCss">
+        <input type="submit" value="提交" onclick="return yk.core.validator.VerificationForm('Validator')" />
+    </div>    
+}
+

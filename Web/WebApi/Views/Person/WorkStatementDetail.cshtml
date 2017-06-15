@@ -1,0 +1,47 @@
+﻿@model CRMMvc.Models.OfficeWorkStatementModel 
+@{
+    ViewBag.Title = "工作报告详情";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+
+<div class="detail_title">@Model.workStatement.Title</div>
+
+<div class="detail_proposer">    
+    <table class="fromTable">
+        <tr>
+            <th>报告人：</th>
+            <td>
+                @Model.employee.EmployeeName
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="detail_info">
+    <table class="fromTable">
+        <tr>
+            <th>类型：</th>
+            <td>
+                @YK.Service.EmployeeService.WorkStatementService.GetWorkStatementType(Model.workStatement.Type)
+            </td>
+        </tr>
+        <tr>
+            <th>汇报日期：</th>
+            <td>
+                @Model.workStatement.StatementDate.ToShortDateString()
+            </td>
+        </tr>
+        <tr>
+            <th>工作总结：</th>
+            <td>
+                @Model.workStatement.WorkSummary
+            </td>
+        </tr>
+        <tr>
+            <th>工作计划：</th>
+            <td>
+                @Model.workStatement.WorkPlan
+            </td>
+        </tr>
+    </table>
+</div>

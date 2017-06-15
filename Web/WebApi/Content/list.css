@@ -1,0 +1,30 @@
+﻿.list_item {
+    margin-bottom:10px;   
+    line-height:30px;    
+    border-bottom-width:1px;
+}
+.list_item:first-child {
+    margin-top:0px;   
+}
+.list_title {         
+    padding-left:6px;
+    padding-right:6px;
+    
+}
+.list_info {
+    color:#777777;
+    text-align:right;
+    font-size:13px;
+    line-height:25px;
+    padding:3px;
+}
+
+.state-1 {
+    color:#777777;
+}
+.state-3 {
+    color:#f0664b;
+}
+.state-2, .state-4, .state-5 {
+    color:#40cebc;
+}

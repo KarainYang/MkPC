@@ -108,3 +108,14 @@ E:\颜锟\最新模板全新\Web\02.YK.Interfaces\YK.Interface.CRM\bin\Debug\YK.
 E:\颜锟\最新模板全新\Web\02.YK.Interfaces\YK.Interface.CRM\obj\Debug\YK.Interface.CRM.csprojResolveAssemblyReference.cache
 E:\颜锟\最新模板全新\Web\02.YK.Interfaces\YK.Interface.CRM\obj\Debug\YK.Interface.CRM.dll
 E:\颜锟\最新模板全新\Web\02.YK.Interfaces\YK.Interface.CRM\obj\Debug\YK.Interface.CRM.pdb
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interface.CRM\bin\Debug\YK.Interface.CRM.dll
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interface.CRM\bin\Debug\YK.Interface.CRM.pdb
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interface.CRM\bin\Debug\YK.Interface.Common.dll
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interface.CRM\bin\Debug\YK.Model.CRM.dll
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interface.CRM\bin\Debug\YK.Model.dll
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interface.CRM\bin\Debug\YK.Model.CRM.pdb
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interface.CRM\bin\Debug\YK.Interface.Common.pdb
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interface.CRM\bin\Debug\YK.Model.pdb
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interface.CRM\obj\Debug\YK.Interface.CRM.csprojResolveAssemblyReference.cache
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interface.CRM\obj\Debug\YK.Interface.CRM.dll
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interface.CRM\obj\Debug\YK.Interface.CRM.pdb

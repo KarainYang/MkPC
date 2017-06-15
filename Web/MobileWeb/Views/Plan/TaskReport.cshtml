@@ -1,0 +1,158 @@
+﻿@model CRMMvc.Models.Plan.TaskReportModel
+
+@{
+    ViewBag.Title = "任务反馈";
+ Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+
+<style>
+    .SjStartDate,.SjEndDate,.YjEndDate,.CompleteRate {
+        display:none;
+    }
+</style>
+
+@Scripts.Render("~/My97DatePicker/WdatePicker.js")
+
+<script type="text/javascript">
+    function stateChange() {
+        //dic.Add(1, "未开始");
+        //dic.Add(2, "正常进行");
+        //dic.Add(3, "延期");
+        //dic.Add(4, "延期完成");
+        //dic.Add(5, "按期完成");
+        //dic.Add(6, "取消");
+        var state = $("#State").val();
+        if (state != "0" && state != "1" && state != "6") {
+            $(".SjStartDate").show();
+            $("#SjStartDate").attr("GroupName", "Validator");
+
+            $(".CompleteRate").show();
+            $("#CompleteRate").attr("GroupName", "Validator");
+        }
+        else {
+            $(".SjStartDate").hide();
+            $("#SjStartDate").attr("GroupName", "");
+
+            $(".CompleteRate").hide();
+            $("#CompleteRate").attr("GroupName", "");            
+        }
+        if (state == "3") {
+            $(".YjEndDate").show();
+        }
+        else {
+            $(".YjEndDate").hide();
+        }
+        if (state == "4" || state == "5" ) {
+            $(".SjEndDate").show();
+            $("#SjEndDate").attr("GroupName", "Validator");
+
+            $("#CompleteRate").val(100);
+        }
+        else {
+            $(".SjEndDate").hide();
+            $("#SjEndDate").attr("GroupName", "");
+        }
+    }
+</script>
+
+@using (Html.BeginForm("SaveTaskReport", "Plan", FormMethod.Post, new { name = "form" }))
+{   
+    List<SelectListItem> list = new List<SelectListItem>();
+    var dic = YK.Service.PlanService.TaskInfoService.GetTaskStateDic();
+    foreach (var item in dic)
+    {
+        list.Add(new SelectListItem() { Text = item.Value, Value = item.Key.ToString() });
+    }
+    
+    @Html.HiddenFor(f=>f.TaskID)
+    
+    <div class="form_content">
+
+        <div class="form_content_title">状态</div>
+        <div class="form_content_control">
+             @Html.DropDownListFor(f => f.State, list, new
+                   {
+                       GroupName = "Validator",
+                       @class = "inputCss",
+                       title = "状态",
+                       LabelID = "LbState",
+                       style = "width:50%",
+                       onchange = "stateChange()"
+                   })   
+              <span id="LbState">*</span>
+        </div>
+
+        <div class="CompleteRate">
+            <div class="form_content_title">进度</div>
+            <div class="form_content_control">
+                 @Html.TextBoxFor(f => f.CompleteRate, new
+                       {
+                           GroupName = "Validator",
+                           @class = "inputCss",
+                           title = "进度",
+                           LabelID = "LbCompleteRate",
+                           style="width:50%"
+                       })   
+                  <span id="LbCompleteRate">*</span>
+            </div>
+        </div>
+
+        <div class="SjStartDate">
+            <div class="form_content_title">实际开始日期</div>
+            <div class="form_content_control">
+                    @Html.TextBoxFor(f => f.SjStartDate, new
+                       {
+                           @class = "inputCss",
+                           title = "计划开始日期",
+                           LabelID = "LbSjStartDate",
+                           onclick = "WdatePicker({dateFmt:'yyyy-MM-dd'})"
+                       })                 
+                     <span id="LbSjStartDate">*</span>
+            </div>
+        </div>        
+
+        <div class="YjEndDate">
+            <div class="form_content_title">预计完成日期</div>
+            <div class="form_content_control">
+                    @Html.TextBoxFor(f => f.YjEndDate, new
+                       {
+                           @class = "inputCss",
+                           title = "预计完成日期",
+                           LabelID = "LbYjEndDate",
+                           onclick = "WdatePicker({dateFmt:'yyyy-MM-dd'})"
+                       })                 
+                     <span id="LbYjEndDate">*</span>
+            </div>
+        </div>      
+
+        <div class="SjEndDate">
+            <div class="form_content_title">实际完成日期</div>
+            <div class="form_content_control">
+                    @Html.TextBoxFor(f => f.SjEndDate, new
+                       {
+                           @class = "inputCss",
+                           title = "计划截止日期",
+                           LabelID = "LbSjEndDate",
+                           onclick = "WdatePicker({dateFmt:'yyyy-MM-dd'})"
+                       })                 
+                     <span id="LbSjEndDate">*</span>
+            </div>
+        </div>        
+
+        <div class="form_content_title">完成情况说明</div>
+        <div class="form_content_control">
+            @Html.TextAreaFor(f => f.Description, new
+                   {
+                       @class = "inputCss",
+                       title = "完成情况说明",
+                       maxlength="1000",
+                       style="width:80%;height:80px;" 
+                   })                              
+        </div>  
+    </div>   
+    
+    <div class="submitCss">
+        <input type="submit" value="提交" onclick="return yk.core.validator.VerificationForm('Validator')" />
+    </div>    
+}
+

@@ -1,0 +1,69 @@
+﻿body,div,a,span,p,img,input {
+    font-size:15px;
+    margin:0px;
+    padding:0px;
+    text-decoration:none;      
+    font-family:"Microsoft YaHei";
+    text-decoration:none;
+}
+body,a {
+    color:#444444;
+}
+.clearFloatDiv {
+    clear:both;
+}
+.border-1px {
+    border-width: 0;
+    -webkit-border-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAxMS8yMC8xNWexeuQAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAAALklEQVQImWN8+vTpfwYsgIWBgYFBSkqKEVnw2bNn/5mwqWZgYGAgXYIFZia6BAAHMQtvWmlyJAAAAABJRU5ErkJggg==") 2 2 stretch;
+}
+/*选项卡*/
+.tabDiv{ 
+    display:none; 
+}
+.tabTitle div,.tabDivs div{
+   display:block;
+   height:50px; 
+   line-height:50px; 
+   background-color:#999999; 
+   text-align:center;
+   color:white;
+   float:left;
+   border-right-width:1px;
+}
+.tabTitle div:last-child,.tabDivs div:last-child{
+   border-right-width:0;
+}
+.tabTitle .tabOn,.tabDivs .tabOn{ 
+    background-color:#2791DE; 
+}
+/**底部按钮*/
+.bottomButton {
+   position:fixed;
+   bottom:0;
+   left:0;
+}
+.bottomButton a{   
+   height:50px; 
+   line-height:50px; 
+   display:block;
+   background-color:#F6F6F6; 
+   text-align:center;
+   color:#00ABEC;
+   float:left;
+   border-right-width:1px;
+}
+.bottomButton a:last-child{
+   border-right-width:0;
+}
+.color-white {
+    color:#ffffff;
+}
+.bg-white {
+    background-color:#ffffff;
+}
+.float-left {
+    float:left;
+}
+.float-right {
+    float:right;
+}

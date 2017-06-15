@@ -1,0 +1,308 @@
+﻿
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="edge" />
+    <link href="/dest/backend/css/bootstrap.min.css?v=1461322942" rel="stylesheet">
+    <link href="/dest/backend/css/common.css?v=1461322942" rel="stylesheet">
+    <script src="/dest/backend/js/jquery.min.js?v=1461322942"></script>
+    <script src="/dest/backend/js/toastr.min.js?v=1461322942"></script>
+    <link href="/dest/backend/css/toastr.min.css?v=1461322942" rel="stylesheet">
+    <script src="/dest/backend/js/common.js?v=1461322942"></script>
+    <title>应用中心-致力于企业计划管理目标的达成、推进、运营、管控，快乐工作，快乐生活。</title>
+    <!--[if lt IE 9]>
+    <script src="/dest/backend/js/browser-not-supported.js?v=1461322942"></script>
+    <![endif]-->
+    <!--[if IE 9]>
+    <style>.placeholder{color: #aaa !important;}</style>
+    <script src="/dest/backend/js/ieplaceholder.js?v=1461322942"></script>
+    <script src="/dest/backend/js/respond.min.js?v=1461322942"></script>
+    <script src="/dest/backend/js/html5.js?v=1461322942"></script>
+    <![endif]-->
+    <link href="/dest/backend/css/index.css?v=1461322942" rel="stylesheet">
+</head>
+<body>
+    <script class="tplData">
+        var tplData = {
+            "suites": [
+                {
+                    "apps": [
+                        {
+                            "app_id": "6",
+                            "app_name": "移动报表",
+                            "app_bundleid": "",
+                            "app_code": "3023",
+                            "app_key": "Mysoft95938",
+                            "openurl": "http:\/\/qy-ci.mysoft.com.cn\/report-micro\/$TENANT_ID$\/home\/site\/index",
+                            "app_redirect_domain": "qy-ci.mysoft.com.cn",
+                            "app_callback_url": "",
+                            "app_backend_url": "http:\/\/qy-ci.mysoft.com.cn\/report\/my56a9c966df069\/home\/report\/list?__from=wx",
+                            "app_type": "0",
+                            "app_logo_url": "http:\/\/qy-ci.mysoft.com.cn\/images\/mReport_640.png",
+                            "app_memo": "可视化数据分析，辅助企业决策",
+                            "suite_id": "2",
+                            "wx_app_id": "3",
+                            "create_time": "2015-07-30 18:15:59",
+                            "update_time": "2016-02-17 17:03:12",
+                            "app_api_site": "http:\/\/qy-ci.mysoft.com.cn\/report",
+                            "app_frontend_domain": "http:\/\/qy-ci.mysoft.com.cn\/report-micro",
+                            "app_backend_domain": null,
+                            "app_modules_api": "$TENANT_ID$\/api\/report\/getrolereportbyusercode",
+                            "isAuth": 1,
+                            "isBind": 1,
+                            "wx_app_log": "http:\/\/oss-mytest.mysoft.com.cn\/0000\/agent_square_logo_url6tj3e73ab922f32ff78wx51b9a9581c992abf",
+                            "wx_app_logo_r": "http:\/\/oss-mytest.mysoft.com.cn\/0000\/agent_round_logo_url6tj3e73ab922f32ff78wx51b9a9581c992abf"
+                        },
+                        {
+                            "app_id": "7",
+                            "app_name": "移动计划",
+                            "app_bundleid": "",
+                            "app_code": "3042",
+                            "app_key": "Mysoft95938",
+                            "openurl": "http:\/\/qy-ci.mysoft.com.cn\http://qy-ci.mysoft.com.cn/plan-micro\/$TENANT_ID$\/task\/home\/index",
+                            "app_redirect_domain": "qy-ci.mysoft.com.cn",
+                            "app_callback_url": "",
+                            "app_backend_url": "http:\/\/qy-ci.mysoft.com.cn\/plan\/my56a9c966df069\/settings\/basic\/data-init",
+                            "app_type": "0",
+                            "app_logo_url": "http:\/\/qy-ci.mysoft.com.cn\/images\/mPlan_1228.png",
+                            "app_memo": "个人计划，部门计划，项目计划",
+                            "suite_id": "2",
+                            "wx_app_id": "2",
+                            "create_time": "2015-07-30 18:15:59",
+                            "update_time": "2016-02-16 16:38:32",
+                            "app_api_site": "http:\/\/qy-ci.mysoft.com.cn\/plan",
+                            "app_frontend_domain": "http:\/\/qy-ci.mysoft.com.cn\http://qy-ci.mysoft.com.cn/plan-micro",
+                            "app_backend_domain": null,
+                            "app_modules_api": "$TENANT_ID$\/apis\/models\/get-models",
+                            "isAuth": 1,
+                            "isBind": 1,
+                            "wx_app_log": "http:\/\/oss-mytest.mysoft.com.cn\/0000\/agent_square_logo_url7tj3e73ab922f32ff78wx51b9a9581c992abf",
+                            "wx_app_logo_r": "http:\/\/oss-mytest.mysoft.com.cn\/0000\/agent_round_logo_url7tj3e73ab922f32ff78wx51b9a9581c992abf"
+                        },
+                        {
+                            "app_id": "8",
+                            "app_name": "移动审批",
+                            "app_bundleid": "",
+                            "app_code": "3022",
+                            "app_key": "Mysoft95938",
+                            "openurl": "http:\/\/qy-ci.mysoft.com.cn\/workflow-micro\/$TENANT_ID$\/workflow\/process-list\/index?kindType=5",
+                            "app_redirect_domain": "qy-ci.mysoft.com.cn",
+                            "app_callback_url": "",
+                            "app_backend_url": "",
+                            "app_type": "0",
+                            "app_logo_url": "http:\/\/qy-ci.mysoft.com.cn\/images\/mWorkflow_640.png",
+                            "app_memo": "随时随地，轻松审批",
+                            "suite_id": "2",
+                            "wx_app_id": "1",
+                            "create_time": "2015-07-30 18:16:00",
+                            "update_time": "2016-02-17 18:06:08",
+                            "app_api_site": "http:\/\/qy-ci.mysoft.com.cn\/workflow-micro",
+                            "app_frontend_domain": "http:\/\/qy-ci.mysoft.com.cn\/workflow-micro",
+                            "app_backend_domain": null,
+                            "app_modules_api": "$TENANT_ID$\/api\/wzs\/get-modules",
+                            "isAuth": 1,
+                            "isBind": 1,
+                            "wx_app_log": "http:\/\/oss-mytest.mysoft.com.cn\/0000\/agent_square_logo_url8tj3e73ab922f32ff78wx51b9a9581c992abf",
+                            "wx_app_logo_r": "http:\/\/oss-mytest.mysoft.com.cn\/0000\/agent_round_logo_url8tj3e73ab922f32ff78wx51b9a9581c992abf"
+                        },
+                        {
+                            "app_id": "9",
+                            "app_name": "管理简讯",
+                            "app_bundleid": "",
+                            "app_code": "3021",
+                            "app_key": "Mysoft95938",
+                            "openurl": "http:\/\/qy-ci.mysoft.com.cn\/report-micro\/$TENANT_ID$\/home\/msg\/index",
+                            "app_redirect_domain": "qy-ci.mysoft.com.cn",
+                            "app_callback_url": "",
+                            "app_backend_url": "",
+                            "app_type": "0",
+                            "app_logo_url": "http:\/\/qy-ci.mysoft.com.cn\/images\/mNews_640.png",
+                            "app_memo": "数据动态，及时掌握",
+                            "suite_id": "2",
+                            "wx_app_id": "4",
+                            "create_time": "2015-07-30 18:16:25",
+                            "update_time": "2016-01-08 14:45:29",
+                            "app_api_site": null,
+                            "app_frontend_domain": "http:\/\/qy-ci.mysoft.com.cn\/report-micro",
+                            "app_backend_domain": null,
+                            "app_modules_api": null,
+                            "isAuth": 1,
+                            "isBind": 1,
+                            "wx_app_log": "http:\/\/oss-mytest.mysoft.com.cn\/0000\/agent_square_logo_url9tj3e73ab922f32ff78wx51b9a9581c992abf",
+                            "wx_app_logo_r": "http:\/\/oss-mytest.mysoft.com.cn\/0000\/agent_round_logo_url9tj3e73ab922f32ff78wx51b9a9581c992abf"
+                        },
+                        {
+                            "app_id": "11",
+                            "app_name": "公告",
+                            "app_bundleid": "",
+                            "app_code": "10000",
+                            "app_key": "Mysoft95938",
+                            "openurl": "",
+                            "app_redirect_domain": "",
+                            "app_callback_url": "",
+                            "app_backend_url": "http:\/\/qy-ci.mysoft.com.cn\/my56a9c966df069\/notice\/index\/new-add",
+                            "app_type": "0",
+                            "app_logo_url": "http:\/\/qy-ci.mysoft.com.cn\/images\/mNotice_640.png",
+                            "app_memo": "企业重要消息",
+                            "suite_id": "2",
+                            "wx_app_id": "5",
+                            "create_time": "2015-09-17 09:50:08",
+                            "update_time": "2016-02-17 15:58:03",
+                            "app_api_site": "",
+                            "app_frontend_domain": "",
+                            "app_backend_domain": "",
+                            "app_modules_api": null,
+                            "isAuth": 1,
+                            "isBind": 0,
+                            "wx_app_log": "",
+                            "wx_app_logo_r": ""
+                        }
+                    ],
+                    "suite": {
+                        "suite_id": "2",
+                        "wx_suite_id": "tj3e73ab922f32ff78",
+                        "suite_name": "明源云办公",
+                        "suite_logo_url": "\/images\/app.png",
+                        "suite_secret": "bbgvo95shj2DK9FdDaP8rGiTg4qaayHlVVNqVjsc4iBYsny04YdSML5lzqodk6C4",
+                        "suite_domain": "qy-ci.mysoft.com.cn",
+                        "suite_callback": "http:\/\/qy-ci.mysoft.com.cn\/wxqy\/qy\/suiteticket",
+                        "suite_ticket": "IUjDZQKA91Zye237uC_QBghgwytwzuUzTHdiHVjHdV83KhqRAswToEbk2uviyWY-",
+                        "suite_access_token": "8LuwhY3s1B7DeH2ueaj7ry2hkxFERifcQ5asDn1WhHz3zrWh8bvPojxiOMJdpbNW",
+                        "suite_access_token_expire": "01461346508",
+                        "suite_pre_auth_code": "kcqeeDtYK81M-UFfz5v6OyqyyqquLDiGuu9t4clB_HC-8mLmt4W04YUtSvhxkJbd",
+                        "suite_pre_auth_code_expire": "01461339897",
+                        "token": "mysoft-ci",
+                        "aeskey": "CuTIMD5xKbEGtN10bSw5zd28huT7W5or4JHkWaAEHLv",
+                        "create_time": "2015-07-30 18:14:56",
+                        "update_time": "2016-04-22 23:35:08",
+                        "isHosted": 1
+                    }
+                }
+            ],
+            "thirdapps": [
+                {
+                    "id": "2",
+                    "app_name": "APITEST",
+                    "app_code": "9002",
+                    "app_logo_url": "http:\/\/oss-mytest.mysoft.com.cn\/0000\/applogos\/91494b8770d1d7d5993b32c7c7f2f5d5.png",
+                    "app_memo": "APITEST",
+                    "openurl": "http:\/\/qy-ci.mysoft.com.cn\/my56a9c966df069\/demo\/dd\/index?",
+                    "backend_url": "",
+                    "app_key": "third56ef648a2da92",
+                    "create_time": "2016-04-20 15:53:40",
+                    "app_modules_api": null
+                }
+            ],
+            "urlParams": {
+                "__orgcode": "my56a9c966df069"
+            },
+            "ua": {
+                "platform": "",
+                "version": "",
+                "from": null,
+                "client": ""
+            },
+            "SITES": {
+                "preview_site": "http:\/\/view.mysoft.com.cn\/redirect\/embed.aspx?src=",
+                "api_site": "http:\/\/qy-ci.mysoft.com.cn"
+            },
+            "APP_CODE": "0000"
+        } || {
+
+        };
+    </script>
+    <script>
+        deptseletorConfig = ["/my56a9c966df069/addressbook/address-book/depts", "/my56a9c966df069/addressbook/userbind/load-erp-dept", "/my56a9c966df069/addressbook/userbind/load-wx-dept"];
+    </script>
+    <div class="header">
+        <nav class="nav-bar clearfix">
+            <div class="logo pull-left">
+                <h1>
+                    <a href="/my56a9c966df069/appcenter/app/index" class="link-home"><span id="logo"></span><span class="slogan">明源移动</span>企业平台</a>
+                </h1>
+            </div>
+            <div class="userbar pull-right">
+                <div class="portrait pull-left">
+                    <img src="/dest/backend/img/icon_admin_v3.png" alt="">
+                </div>
+                <div class="menu pull-right dropdown">
+                    <div id="usermenu" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="username">系统管理员</span>
+                        <span class="caret"></span>
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="usermenu">
+                        <li><a href="/my56a9c966df069/settings/user/index">修改密码</a></li>
+                        <li><a href="/my56a9c966df069/home/site/logout">注销</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="navtabs pull-right">
+                <li><a href="/my56a9c966df069/addressbook/address-book/index">计划编制</a></li>
+                <li class="active"><a href="/my56a9c966df069/appcenter/app/index">计划监控</a></li>
+                <li><a href="/my56a9c966df069/statistic/app-analysis/index">我的工作</a></li>
+                <li><a href="/my56a9c966df069/settings/basic/params">设置中心</a></li>
+                <li><a href="/help/index.html?__orgcode=my56a9c966df069" target="_blank">帮助</a></li>
+            </div>
+        </nav>
+    </div>
+    @RenderBody()
+    <style>
+        footer, .footer {
+            display: block;
+            background: #fff;
+            text-align: center;
+            line-height: 62px;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+    <footer>
+        <div class="footer">
+            Copyright © 2016 明源云
+        </div>
+    </footer>
+    <script>
+        $('.cancel-deposit').on('click', function () {
+            //appUI.confirm('请登录微信企业号管理后台，在应用中心->托管的应用，打开应用点击右上角的取消托管。<a href="">点击打开登录网站</a>')
+            Modal.alert({
+                msg: '请登录微信企业号管理后台，在应用中心->托管的应用，打开应用点击右上角的取消托管。<a target="_blank" href="https://qy.weixin.qq.com">点击打开登录网站</a>',
+                title: '操作提醒',
+                okBtn: '确定',
+                canceBtnl: '取消',
+                type: 'info'
+            });
+        });
+
+        $(function () {
+            if (tplData.urlParams.__err_msg) {
+                Modal.alert({
+                    msg: tplData.urlParams.__err_msg,
+                    title: '托管失败',
+                    okBtn: '确定',
+                    canceBtnl: '取消',
+                    type: 'info'
+                });
+            }
+        });
+        function openReportBackendUrl() {
+            var suites = tplData.suites;
+            var url = "";
+            for (var i = 0; i < suites.length; i++) {
+                var apps = suites[i].apps;
+                for (var j = 0; j < apps.length; j++) {
+                    if (apps[j].app_name == "移动报表") {
+                        url = apps[j].app_backend_url;
+                        break;
+                    }
+                }
+                if (url) break;
+            }
+            if (url) location.href = url;
+        }
+
+    </script>
+    <script src="/dest/backend/js/bootstrap.min.js?v=1461322942"></script>
+</body>
+</html>

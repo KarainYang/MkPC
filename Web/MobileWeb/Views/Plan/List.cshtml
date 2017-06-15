@@ -1,0 +1,107 @@
+﻿@model CRMMvc.Models.Plan.TaskListModel
+@{
+    ViewBag.Title = "我的工作项";
+    Layout = "~/Views/Shared/_IndexLayout.cshtml";
+}
+
+@{
+    ViewData["Url"] = Url.Action("TaskInfoEdit", "Plan");
+    }
+@Html.Partial("~/Views/Component/Frontend/AddButton.cshtml",ViewData)
+@Html.Partial("~/Views/Component/Frontend/dialog/index.cshtml")
+
+@Styles.Render("~/css/swiper.min.css")
+<style>
+    .swiper-container {
+        width: 100%;
+    }
+    .bottomNav {
+        display:none;    
+    }    
+</style>
+@Html.Partial("~/Views/Component/Frontend/TaskSearch.cshtml")
+<div class="clearFloatDiv appspace"></div>
+
+<script type="text/html" id="list_template">
+    {{each list as v i}}
+        <a href="@Url.Action("TaskDetail")?id={{v.ID }}">
+        <div class="list_item border-1px">
+            <div class="list_title">{{v.Name }}
+            </div>
+            <div class="list_info">
+                <span class="float-left">{{v.EndDate }}</span>   <span class="state-{{v.State }}">{{v.StateText }}</span>              
+            </div>
+        </div>
+        </a>
+    {{/each}}
+</script>
+
+<div class="task-list">
+</div>
+
+<script type="text/ecmascript">
+    var data = {};
+    data.type = {
+        name: "进行中",
+        value: 0
+    };
+    data.year = {
+        name: "2016年",
+        value: 2016
+    };
+    data.month = {
+        name: "11月",
+        value: 11
+    };
+    data.week = {
+        name: "4周",
+        value: 4
+    };
+    yk.core.component.search.init(data, function (value) {
+        initUrl();
+        loadData();
+    });
+
+    initUrl();
+    function initUrl() {
+        var url = $(".addImg").attr("href");
+        url = url.split("?")[0];
+        url += "?year=" + yk.core.component.search.value.year;
+        url += "&month=" + yk.core.component.search.value.month;
+        url += "&week=" + yk.core.component.search.value.week;
+        $(".addImg").attr("href", url);
+    }
+
+    loadData();
+    function loadData() {
+        $.loading({ width: "7.143em", text: '加载中...' });
+        $.ajax({
+            url: "AjaxList",
+            type: 'post',
+            data: yk.core.component.search.value,
+            dataType: 'json',
+            success: function (_data) {
+                $.loading.close();//关闭等待
+                if (_data.isSuccess == 1) {
+                    $(".task-list").html(template("list_template", { list: _data.data }));
+                } else {
+                    $.dialog({
+                        title: '操作失败',
+                        content: _data.message,
+                        btncancel: false
+                    });
+                }
+                ajaxLock = 0;
+            },
+            error: function () {
+                $.dialog({
+                    closetime: 2000,
+                    loading: {
+                        text: '请求失败，请稍后重试'
+                    }
+                });
+                ajaxLock = 0;
+            }
+        });
+    }
+</script>

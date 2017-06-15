@@ -43,3 +43,7 @@ E:\颜锟\最新模板全新\Web\01.YK.Models\YK.Model.CRM\bin\Debug\YK.Model.CR
 E:\颜锟\最新模板全新\Web\01.YK.Models\YK.Model.CRM\obj\Debug\YK.Model.CRM.csprojResolveAssemblyReference.cache
 E:\颜锟\最新模板全新\Web\01.YK.Models\YK.Model.CRM\obj\Debug\YK.Model.CRM.dll
 E:\颜锟\最新模板全新\Web\01.YK.Models\YK.Model.CRM\obj\Debug\YK.Model.CRM.pdb
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Model.CRM\bin\Debug\YK.Model.CRM.dll
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Model.CRM\bin\Debug\YK.Model.CRM.pdb
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Model.CRM\obj\Debug\YK.Model.CRM.dll
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Model.CRM\obj\Debug\YK.Model.CRM.pdb

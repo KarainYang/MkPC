@@ -1,0 +1,644 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{460F4EEF-6FD2-491D-8927-41BBEA52F095}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CRMMvc</RootNamespace>
+    <AssemblyName>CRMMvc</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging, Version=3.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\最新模板全新\Web\DLL\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\最新模板全新\Web\DLL\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net1213, Version=3.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\最新模板全新\Web\DLL\Common.Logging.Log4Net1213.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\最新模板全新\Web\DLL\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\Common.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\MyViewEngine.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="App_Start\BasePage.cs" />
+    <Compile Include="App_Start\BaseApi.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\ApiDefaultController.cs" />
+    <Compile Include="Controllers\Backend\DefaultController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Organization.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\index.css" />
+    <Content Include="Content\global.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\office.css" />
+    <Content Include="Content\list.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\swiper.css" />
+    <Content Include="css\swiper.min.css" />
+    <Content Include="dest\backend\css\index.css" />
+    <Content Include="dest\backend\img\icon_admin_v3.png" />
+    <Content Include="dest\backend\img\logo_mycloud.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\demo.css" />
+    <Content Include="fonts\demo.html" />
+    <Content Include="fonts\iconfont.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\ajax\login.ashx" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\office\nav_todo--.png" />
+    <Content Include="Images\office\nav_todo.png" />
+    <Content Include="js\maps\swiper.jquery.min.js.map" />
+    <Content Include="js\maps\swiper.jquery.umd.min.js.map" />
+    <Content Include="js\maps\swiper.min.js.map" />
+    <Content Include="js\swiper.tools.js" />
+    <Content Include="Views\Component\Frontend\BottomNav.cshtml" />
+    <Content Include="fonts\iconfont.eot" />
+    <Content Include="fonts\iconfont.svg" />
+    <Content Include="fonts\iconfont.ttf" />
+    <Content Include="fonts\iconfont.woff" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Images\bg.jpg" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\office\home_index_approval.png" />
+    <Content Include="Images\office\home_index_customer.png" />
+    <Content Include="Images\office\home_index_person.png" />
+    <Content Include="Images\office\home_index_project.png" />
+    <Content Include="Images\office\nav_app.png" />
+    <Content Include="Images\office\nav_db.png" />
+    <Content Include="Images\office\nav_me.png" />
+    <Content Include="Images\pig\000.png" />
+    <Content Include="Images\pig\3.png" />
+    <Content Include="Images\pig\4.png" />
+    <Content Include="Images\pig\5.png" />
+    <Content Include="Images\pig\back.png" />
+    <Content Include="Images\pig\buka.png" />
+    <Content Include="Images\pig\heart.png" />
+    <Content Include="Images\pig\icon_close.png" />
+    <Content Include="Images\pig\leave.png" />
+    <Content Include="Images\pig\money.png" />
+    <Content Include="Images\pig\add_default.png" />
+    <Content Include="Images\pig\new_add_focus.png" />
+    <Content Include="Images\pig\overtime.png" />
+    <Content Include="Images\pig\person.png" />
+    <Content Include="Images\pig\workstatement.png" />
+    <Content Include="js\swiper.jquery.js" />
+    <Content Include="js\swiper.jquery.min.js" />
+    <Content Include="js\swiper.jquery.umd.js" />
+    <Content Include="js\swiper.jquery.umd.min.js" />
+    <Content Include="js\swiper.js" />
+    <Content Include="js\swiper.min.js" />
+    <Content Include="My97DatePicker\calendar.js" />
+    <Content Include="My97DatePicker\config.js" />
+    <Content Include="My97DatePicker\lang\en.js" />
+    <Content Include="My97DatePicker\lang\zh-cn.js" />
+    <Content Include="My97DatePicker\lang\zh-tw.js" />
+    <Content Include="My97DatePicker\My97DatePicker.htm" />
+    <Content Include="My97DatePicker\skin\datePicker.gif" />
+    <Content Include="My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="My97DatePicker\skin\default\img.gif" />
+    <Content Include="My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="My97DatePicker\WdatePicker.js" />
+    <Content Include="My97DatePicker\开发包\lang\en.js" />
+    <Content Include="My97DatePicker\开发包\lang\zh-cn.js" />
+    <Content Include="My97DatePicker\开发包\lang\zh-tw.js" />
+    <Content Include="My97DatePicker\开发包\readme.txt" />
+    <Content Include="My97DatePicker\开发包\skin\datePicker.gif" />
+    <Content Include="My97DatePicker\开发包\skin\default\datepicker.css" />
+    <Content Include="My97DatePicker\开发包\skin\default\img.gif" />
+    <Content Include="My97DatePicker\开发包\skin\WdatePicker.css" />
+    <Content Include="My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
+    <Content Include="My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
+    <Content Include="My97DatePicker\开发包\skin\whyGreen\img.gif" />
+    <Content Include="Scripts\base.min.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\.gitignore" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\01-default.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\02-responsive.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\03-vertical.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\04-space-between.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\05-slides-per-view.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\06-slides-per-view-auto.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\07-centered.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\08-centered-auto.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\09-freemode.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\10-slides-per-column.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\11-nested.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\12-grab-cursor.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\13-scrollbar.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\14-nav-arrows.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\15-infinite-loop.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\16-effect-fade.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\17-effect-cube.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\18-effect-coverflow.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\19-keyboard-control.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\20-mousewheel-control.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\21-autoplay.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\22-dynamic-slides.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\23-thumbs-gallery-loop.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\23-thumbs-gallery.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\24-multiple-swipers.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\25-hash-navigation.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\26-rtl.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\27-jquery.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\28-parallax.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\29-custom-pagination.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\30-lazy-load-images.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\31-custom-plugin.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\32-scroll-container.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\33-responsive-breakpoints.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\34-autoheight.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\35-effect-flip.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\36-pagination-fraction.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\demos\37-pagination-progress.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\dist\css\swiper.css" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\dist\css\swiper.min.css" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\dist\js\swiper.jquery.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\dist\js\swiper.jquery.min.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\dist\js\swiper.jquery.umd.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\dist\js\swiper.jquery.umd.min.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\dist\js\swiper.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\dist\js\swiper.min.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\gulpfile.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\package.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\playground\index.html" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\a11y.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\amd.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\controller.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\core.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\dom-plugins.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\dom.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\effects.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\emitter.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\get-dom-lib.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\get-jquery.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\hashnav.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\init.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\keyboard.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\lazy-load.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\mousewheel.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\parallax.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\plugins.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\scrollbar.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\swiper-intro-f7.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\swiper-intro.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\swiper-outro.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\swiper-proto.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\wrap-end-umd.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\wrap-end.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\wrap-start-umd.js" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\js\wrap-start.js" />
+    <Content Include="Scripts\yk.core.common.js" />
+    <Content Include="Scripts\yk.core.validator.js" />
+    <Content Include="Scripts\yk.js" />
+    <Content Include="dest\backend\css\bootstrap.min.css" />
+    <Content Include="dest\backend\css\common.css" />
+    <Content Include="dest\backend\css\toastr.min.css" />
+    <Content Include="dest\backend\js\common.js" />
+    <Content Include="dest\backend\js\jquery.min.js" />
+    <Content Include="dest\backend\js\toastr.min.js" />
+    <None Include="Views\Component\Frontend\dialog.cshtml" />
+    <Content Include="Views\Component\Frontend\simple.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Office\Index.cshtml" />
+    <Content Include="Views\Shared\_OfficeLayout.cshtml" />
+    <Content Include="Views\Person\WorkStatementDetail.cshtml" />
+    <Content Include="Views\Person\WorkStatementList.cshtml" />
+    <Content Include="Views\Office\Login.cshtml" />
+    <Content Include="Views\Person\Person.cshtml" />
+    <Content Include="Views\Person\PersonDtl.cshtml" />
+    <Content Include="Views\Person\LaborageList.cshtml" />
+    <Content Include="Views\Person\LaborageDetail.cshtml" />
+    <Content Include="Views\Approval\Index.cshtml" />
+    <Content Include="Views\Approval\MyApply.cshtml" />
+    <Content Include="Views\Approval\MyApproval.cshtml" />
+    <Content Include="Views\Approval\Leave.cshtml" />
+    <Content Include="Views\Approval\Overtime.cshtml" />
+    <Content Include="Views\Approval\LeaveDetail.cshtml" />
+    <Content Include="Views\Approval\OvertimeDetail.cshtml" />
+    <Content Include="Views\Person\Index.cshtml" />
+    <Content Include="Views\Person\Me.cshtml" />
+    <Content Include="Views\Approval\OfficeSupplies.cshtml" />
+    <Content Include="Views\Approval\OfficeSuppliesDetail.cshtml" />
+    <Content Include="Views\Approval\Expenses.cshtml" />
+    <Content Include="Views\Approval\ExpensesDetail.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="Views\Customer\MyCustomer.cshtml" />
+    <Content Include="Views\Customer\CustomerDetail.cshtml" />
+    <Content Include="Views\Project\ProjectDetail.cshtml" />
+    <Content Include="Views\Project\MyProject.cshtml" />
+    <Content Include="Views\Shared\_IndexLayout.cshtml" />
+    <Content Include="Views\Backend\Default\Index.cshtml" />
+    <Content Include="Views\Backend\Shared\_Layout.cshtml" />
+    <Content Include="Views\Backend\Shared\Error.cshtml" />
+    <Content Include="Views\Backend\_ViewStart.cshtml" />
+    <Content Include="Views\Backend\Shared\_DefaultLayout.cshtml" />
+    <Content Include="Views\Office\App.cshtml" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\.jshintrc" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\.travis.yml" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\bower.json" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\CHANGELOG.md" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\component.json" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\dist\js\maps\swiper.jquery.min.js.map" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\dist\js\maps\swiper.jquery.umd.min.js.map" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\dist\js\maps\swiper.min.js.map" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\LICENSE" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\package.json" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\README.md" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\less\core.less" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\less\effects.less" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\less\mixins.less" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\less\navigation-f7.less" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\less\navigation.less" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\less\preloader-f7.less" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\less\preloader.less" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\less\scrollbar.less" />
+    <Content Include="Scripts\Swiper-3.3.1\Swiper-3.3.1\src\less\swiper.less" />
+    <Content Include="Views\Component\Frontend\AddButton.cshtml" />
+    <Content Include="Views\Person\WorkStatementEdit.cshtml" />
+    <Content Include="Views\Plan\TaskList.cshtml" />
+    <Content Include="Views\Plan\TaskInfoEdit.cshtml" />
+    <Content Include="Views\Plan\TaskDetail.cshtml" />
+    <Content Include="Views\Customer\CustomerEdit.cshtml" />
+    <Content Include="Views\Customer\Visit.cshtml" />
+    <Content Include="Views\Plan\TaskReport.cshtml" />
+    <Content Include="Views\Person\MyAttendanceList.cshtml" />
+    <Content Include="Views\Person\AttendanceDetail.cshtml" />
+    <Content Include="Views\Component\Frontend\ChooseUser.cshtml" />
+    <Content Include="Views\Component\Frontend\TreeChoose.cshtml" />
+    <Content Include="Views\Plan\Tree.cshtml" />
+    <None Include="Views\Component\Frontend\dialog\index.cshtml" />
+    <Content Include="Views\Component\Frontend\SearchTools.cshtml" />
+    <Content Include="Views\Component\Frontend\layer.cshtml" />
+    <Content Include="Views\Component\Frontend\TaskSearch.cshtml" />
+    <Content Include="Views\Plan\List.cshtml" />
+    <Content Include="Views\Component\Frontend\search.cshtml" />
+    <Content Include="Views\Plan\副本 TaskList.cshtml" />
+    <Content Include="Views\Component\Frontend\choose.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Component\Backend\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\03.YK.BLLs\YK.BLL.Common\YK.BLL.Common.csproj">
+      <Project>{2bf814b1-974a-4f3a-8d87-9eb70ad7f078}</Project>
+      <Name>YK.BLL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.Cache\YK.Cache.csproj">
+      <Project>{0ba1c14a-b63a-45bd-afe7-ca35d52d801e}</Project>
+      <Name>YK.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.Core\YK.Core.csproj">
+      <Project>{79045b32-6aff-4418-8236-ee89f0430cfd}</Project>
+      <Name>YK.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.BLLs.Common\YK.BLLs.Common.csproj">
+      <Project>{4fba0c3f-2ae5-4f91-8391-a1a250a2017b}</Project>
+      <Name>YK.BLLs.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.BLLs.Plan\YK.BLLs.Plan.csproj">
+      <Project>{965b012b-7b6d-4b95-86e5-86b9e6e01ffd}</Project>
+      <Name>YK.BLLs.Plan</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.Common\YK.Common.csproj">
+      <Project>{b2ac6c0e-1121-4242-a6fe-39606ef7c694}</Project>
+      <Name>YK.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.Interfaces.Common\YK.Interfaces.Common.csproj">
+      <Project>{e79f6873-718e-46f4-9407-ff9bd98cd7c1}</Project>
+      <Name>YK.Interfaces.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.Interfaces.Plan\YK.Interfaces.Plan.csproj">
+      <Project>{46afb5b6-579b-42bf-af28-01b83a5fc853}</Project>
+      <Name>YK.Interfaces.Plan</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.Interface\YK.Interface.csproj">
+      <Project>{fc71507a-130f-458f-9f47-654ae827d152}</Project>
+      <Name>YK.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.Models.Plan\YK.Models.Plan.csproj">
+      <Project>{81b2df54-7873-4c91-af7a-a88a4215643b}</Project>
+      <Name>YK.Models.Plan</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.Model\YK.Model.csproj">
+      <Project>{e48e8e78-d351-46b5-bc48-c4c82d2cd998}</Project>
+      <Name>YK.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.Service\YK.Service.csproj">
+      <Project>{25a6df1c-75b3-4897-b4e1-c0ba54ed27e8}</Project>
+      <Name>YK.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64247</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:47721/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,87 @@
+﻿@model YK.Model.TB_Employee_Employees
+
+@{
+    ViewBag.Title = "员工详情";
+    Layout = "~/Views/Shared/_IndexLayout.cshtml";
+}
+@Styles.Render("~/Content/office.css")
+<style>    
+    .employeeMain {
+        line-height:40px;
+        margin-bottom:6px;
+        margin-top:10px;
+    }
+    .leftCircle {
+        width:40px;
+        height:40px;        
+        text-align:center;
+        color:white;
+        border-radius:25px;
+        float:left;
+        font-size:12px;
+        background-color:#1993E2;
+        margin-right:6px;
+    }    
+    .employeeAttr {
+        padding:0px 10px 0px 10px;
+        line-height:40px;
+        border-bottom-width:1px;
+    }
+    .employeeAttr span {
+        float:right;
+    }   
+    .loginOut {
+        width: 100%;
+        display: block;
+        background-color:#f00;
+        border-radius:3px;
+        height:38px;
+        line-height:38px;
+        text-align:center; 
+        color:white;
+        font-weight:bold;
+        margin-top:20px;
+    }
+</style>
+
+<div class="employeeMain">
+    <span class="leftCircle">@(Model.EmployeeName.Length > 2 ? Model.EmployeeName.Substring(Model.EmployeeName.Length - 2, 2) : Model.EmployeeName)</span>
+    @Model.EmployeeName
+</div>  
+@if (!string.IsNullOrEmpty(Model.PhotoUrl))
+{
+    <div class="employeeAttr">
+        头像 
+        <span><img src="@Url.Content("~/"+Model.PhotoUrl)" style="width:60px;" /></span>
+    </div>
+}
+<div class="employeeAttr border-1px">
+    电话
+    <span><a href='tel:@Model.Phone'>@Model.Phone</a></span>
+</div>
+<div class="employeeAttr border-1px">
+    邮箱
+    <span>@Model.Email</span>
+</div>
+<div class="employeeAttr border-1px">
+    性别
+    <span>@(Model.Sex==0?"男":"女")</span>
+</div>
+<div class="employeeAttr border-1px">
+    年龄
+    <span>@Model.Age</span>
+</div>
+<div class="employeeAttr border-1px">
+    婚姻状况
+    <span>@(Model.Marriage==0?"未婚":"已婚")</span>
+</div>
+<div class="employeeAttr border-1px">
+    生日
+    <span>@Model.Birthday</span>
+</div>
+<div class="employeeAttr border-1px">
+    地址
+    <span>@Model.Address</span>
+</div>
+
+<a href="@Url.Action("LoginOut","Office")" class="loginOut">注 销</a>

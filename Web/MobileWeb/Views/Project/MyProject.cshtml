@@ -1,0 +1,21 @@
+﻿@model List<YK.Model.TB_Project_Projects>
+@{
+    ViewBag.Title = "我的客户";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+<script type="text/javascript">
+    function detail(id) {
+        window.location = "@Url.Action("ProjectDetail","Project")?id=" + id;
+    }
+</script>
+@foreach (var item in Model)
+{ 
+    <div class="list_item  border-1px" onclick="detail(@item.ID)">
+        <div class="list_title  border-1px">@item.Name</div>
+        <div class="list_info  border-1px">            
+            开始时间:@item.StartDate.ToShortDateString()
+            &nbsp;
+            结束时间:@item.EndDate.ToShortDateString()
+        </div>
+    </div>
+}

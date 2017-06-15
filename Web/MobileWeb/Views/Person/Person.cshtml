@@ -1,0 +1,67 @@
+﻿@model List<YK.Model.TB_Employee_Employees>
+
+@{
+    ViewBag.Title = "个人中心";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+<style>
+    .empItem {
+        line-height:35px;
+        margin-top:20px;
+        border-bottom-width:1px;    
+    }
+    .leftCircle {
+        width:35px;
+        height:35px;
+        text-align:center;
+        color:white;
+        border-radius:20px;
+        float:left;
+        font-size:12px;
+    }
+    .rightTxt {
+        padding-left:45px;
+    }
+    .rightTxt img{
+        width:38px;
+        float:right;
+        margin-right:10px;
+        margin-top:-3px;
+    }
+</style>
+<script type="text/javascript">
+    var colors = new Array("#9FB32E", "#97009F", "#EF6769", "#1993E2", "#616161", "#008000", "#2D89F0", "#DA542E");
+    $(function () {
+        var arrIndex = 0;
+        $(".leftCircle").each(function (i) {
+            if (arrIndex > colors.length - 1)
+            {
+                arrIndex = 0;
+            }
+            $(this).css("background-color", colors[arrIndex]);
+            arrIndex++;
+        });
+        $(".empItem").each(function (i) {
+            this.onclick = function () {
+                window.location = "@Url.Action("PersonDtl", "Person")?id=" + $(this).attr("employeeId");
+            }
+            arrIndex++;
+        });
+    });            
+</script>
+
+@foreach(var item in Model)
+{
+    int len=item.EmployeeName.Length;
+    string empName = len > 2 ? item.EmployeeName.Substring(len - 2, 2) : item.EmployeeName;    
+    <div class="empItem  border-1px" employeeId="@item.ID">
+        <div class="leftCircle">@empName</div>        
+        <div class="rightTxt">
+            @item.EmployeeName 
+            @if (!string.IsNullOrEmpty(item.Phone))
+            { 
+                <a href='tel:@item.Phone'><img src="@Url.Content("~/Images/pig/tel.png")" /></a>
+            }
+         </div>       
+    </div>
+}

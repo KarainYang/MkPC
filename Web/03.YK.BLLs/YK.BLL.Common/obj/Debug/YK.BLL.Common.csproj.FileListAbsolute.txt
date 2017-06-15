@@ -132,3 +132,15 @@ E:\颜锟\最新模板全新\Web\03.YK.BLLs\YK.BLL.Common\bin\Debug\YK.Model.pdb
 E:\颜锟\最新模板全新\Web\03.YK.BLLs\YK.BLL.Common\obj\Debug\YK.BLL.Common.csprojResolveAssemblyReference.cache
 E:\颜锟\最新模板全新\Web\03.YK.BLLs\YK.BLL.Common\obj\Debug\YK.BLL.Common.dll
 E:\颜锟\最新模板全新\Web\03.YK.BLLs\YK.BLL.Common\obj\Debug\YK.BLL.Common.pdb
+E:\mysoft\git-me\MkPC\Web\03.YK.BLLs\YK.BLL.Common\bin\Debug\YK.BLL.Common.dll
+E:\mysoft\git-me\MkPC\Web\03.YK.BLLs\YK.BLL.Common\bin\Debug\YK.BLL.Common.pdb
+E:\mysoft\git-me\MkPC\Web\03.YK.BLLs\YK.BLL.Common\bin\Debug\YK.Core.dll
+E:\mysoft\git-me\MkPC\Web\03.YK.BLLs\YK.BLL.Common\bin\Debug\YK.Model.dll
+E:\mysoft\git-me\MkPC\Web\03.YK.BLLs\YK.BLL.Common\bin\Debug\MySql.Data.dll
+E:\mysoft\git-me\MkPC\Web\03.YK.BLLs\YK.BLL.Common\bin\Debug\Oracle.DataAccess.dll
+E:\mysoft\git-me\MkPC\Web\03.YK.BLLs\YK.BLL.Common\bin\Debug\log4net.dll
+E:\mysoft\git-me\MkPC\Web\03.YK.BLLs\YK.BLL.Common\bin\Debug\YK.Core.pdb
+E:\mysoft\git-me\MkPC\Web\03.YK.BLLs\YK.BLL.Common\bin\Debug\YK.Model.pdb
+E:\mysoft\git-me\MkPC\Web\03.YK.BLLs\YK.BLL.Common\obj\Debug\YK.BLL.Common.csprojResolveAssemblyReference.cache
+E:\mysoft\git-me\MkPC\Web\03.YK.BLLs\YK.BLL.Common\obj\Debug\YK.BLL.Common.dll
+E:\mysoft\git-me\MkPC\Web\03.YK.BLLs\YK.BLL.Common\obj\Debug\YK.BLL.Common.pdb

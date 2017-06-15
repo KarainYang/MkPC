@@ -1,0 +1,104 @@
+﻿@model CRMMvc.Models.MyCustomerModel
+@{
+    ViewBag.Title = "我的客户";
+    Layout = "~/Views/Shared/_IndexLayout.cshtml";
+}
+<style>
+    .list_title {
+        padding-top:3px;
+        padding-bottom:3px;
+    }
+    .list_title img{
+        width:30px;        
+        float:right;
+        margin-right:10px;
+    }
+    .bottomNav {
+        display:none;    
+    }
+    .swiper-container {
+        width: 100%;
+    }
+</style>
+
+@{
+    ViewData["Url"] = Url.Action("CustomerEdit", "Customer");
+    }
+@Html.Partial("~/Views/Component/Frontend/AddButton.cshtml",ViewData)
+@Html.Partial("~/Views/Component/Frontend/dialog.cshtml")
+@Styles.Render("~/css/swiper.min.css")
+
+<div class="todo">
+    <div class="tabDivs">
+        <div class="border-1px">我的客户</div>
+        <div class="border-1px">共享客户</div>
+    </div>
+</div>
+<div class="clearFloatDiv appspace"></div>
+
+<script type="text/html" id="myCstListTemplate">
+    {{each list as v i}}
+        <div class="list_item border-1px" onclick="detail({{v.ID}})">
+            <div class="list_title border-1px">
+                {{v.CustomerName}}
+                <a href='tel:{{v.Mobile}}'><img src="@Url.Content("~/Images/pig/tel.png")" /></a>
+            </div>
+            <div class="list_info border-1px">            
+                公司:{{v.CompanyName}}
+            </div>
+        </div>
+    {{/each}}
+</script>
+
+<script type="text/javascript">
+    function detail(id) {
+        window.location = "@Url.Action("CustomerDetail","Customer")?id=" + id;
+    }
+</script>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
+    </div>
+</div>
+
+<!-- Swiper JS -->
+@Scripts.Render("~/js/swiper.min.js")
+@Scripts.Render("~/js/swiper.tools.js")
+
+<script type="text/ecmascript">
+    $.ajax({
+        url: "AjaxMyCustomer",
+        type: 'post',
+        data: null,
+        dataType: 'json',
+        success: function (_data) {
+            if (_data.isSuccess == 1) {
+                $(".swiper-slide").eq(0).html(template("myCstListTemplate",{ list: _data.data.myCstList }));
+                $(".swiper-slide").eq(1).html(template("myCstListTemplate",{ list: _data.data.sharingCstList }));
+                //$.dialog({
+                //    closetime: 2000,
+                //    loading: {
+                //        text: _data.message
+                //    }
+                //});
+            } else {
+                $.dialog({
+                    title: '操作失败',
+                    content: _data.message,
+                    btncancel: false
+                });
+            }
+            ajaxLock = 0;
+        },
+        error: function () {
+            $.dialog({
+                closetime: 2000,
+                loading: {
+                    text: '请求失败，请稍后重试'
+                }
+            });
+            ajaxLock = 0;
+        }
+    });
+</script>

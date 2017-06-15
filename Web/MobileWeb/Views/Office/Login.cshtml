@@ -1,0 +1,110 @@
+﻿@{
+    Layout = null;
+}
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        @Scripts.Render("~/Scripts/jquery-1.7.1.js")
+        @Scripts.Render("~/Scripts/yk.js")
+        <style>
+            body,div,a,span,p {
+                margin:0px;
+                padding:0px;
+                text-decoration:none;  
+            }
+            .logo {
+                width:100%;
+                text-align:center;
+                margin-top:20px;                
+            }
+            .loginTb {
+                margin-top:10px;
+                line-height:38px;
+            }
+            .loginTbItem {
+                clear:both;
+                padding-top:10px;
+            }
+            .lable {
+                width:20%;
+                float:left;
+                text-align:right;
+            }
+            .inputdiv {
+                width:75%;
+                float:right;
+                text-align:left;
+            }
+            .loginTb input {
+                width:80%;
+                height:30px;
+                font-size:16px;
+                border:0px;
+                border-bottom:1px solid gray;
+            }
+            .loginBtn {
+                padding-top:30px;
+                clear:both;
+            }
+            .loginBtn a {
+                display:block;
+                background-color:#009BEF;
+                width:90%;
+                line-height:38px;
+                margin:auto;
+                color:white;
+            }
+            .tooltip {
+                color:red;
+                padding-top:10px;
+            }
+        </style>
+        <script type="text/javascript">
+            function login() {
+                var isOk = true;
+                var orgCode = document.getElementById("orgCode").value;
+                var userName = document.getElementById("userName").value;
+                var userPwd = document.getElementById("userPwd").value;
+                if (userName == "") {
+                    $("#userName").css("border-bottom", "1px solid red");
+                    isOk = false;
+                }
+                if (userPwd == "") {
+                    $("#userPwd").css("border-bottom", "1px solid red");
+                    isOk = false;
+                }
+                if (isOk == true) {
+                    var returnMsg = yk.post("@Url.Action("Login","Office")", "orgCode=" + orgCode + "&userName=" + userName + "&userPwd=" + userPwd, null);
+                    if (returnMsg == "1") {
+                        window.location = "@Url.Action("Index","Office")";
+                    }
+                    else {
+                        $(".tooltip").html(returnMsg);
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="logo"><img src="/Images/logo.jpg"</div>
+        <div class="loginTb">
+            <div class="loginTbItem">
+                <div class="lable">租户</div>
+                <div class="inputdiv"><input type="text" id="orgCode" value="default" /></div>                 
+            </div>
+            <div class="loginTbItem">
+                <div class="lable">账号</div>   
+                <div class="inputdiv"><input type="text" id="userName" value="yankun" /></div>  
+            </div>
+            <div class="loginTbItem">
+                <div class="lable">密码</div>   
+                <div class="inputdiv"><input type="password" id="userPwd" value="yankun" /></div>  
+            </div>
+            <div class="loginBtn">
+                <a href="javascript:login()">登 陆</a>
+            </div>
+            <div class="tooltip"></div>
+        </div>
+    </body>
+</html>

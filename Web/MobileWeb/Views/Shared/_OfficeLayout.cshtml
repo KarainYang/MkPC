@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+        <title>@ViewBag.Title</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        @Scripts.Render("~/Scripts/base.min.js")
+        @Styles.Render("~/Content/global.css")
+        @Styles.Render("~/Content/office.css")
+        @Styles.Render("~/Content/list.css")
+        @Styles.Render("~/css/bootstrap.min.css")
+        @Styles.Render("~/fonts/iconfont.css")
+        @Scripts.Render("~/Scripts/yk.core.common.js")
+        @Scripts.Render("~/Scripts/yk.core.validator.js")
+        
+        <script type="text/javascript">
+            function launchApproval(approvalInfoId) {
+                $(".submitCss").css("display","none");
+                var result = yk.core.common.get('@Url.Action("LaunchApproval","Approval")' + "?id=" + approvalInfoId);
+                if (result == "True") {
+                    window.location.href = window.location.href;
+                }
+            }
+            function approval(approvalInfoId) {
+                $(".submitCss").css("display", "none");
+                var result = yk.core.validator.VerificationForm('Validator');
+                if (result == true) {
+                    var id = approvalInfoId;
+                    var isthrougth = $("#statu").val();
+                    var reason = $("#reaon").val();
+                    var result = yk.core.common.post('@Url.Action("Approval","Approval")', "id=" + id + "&isThrough=" + isthrougth + "&reason=" + escape(reason));
+                    if (result == "True") {
+                        window.location.href = window.location.href;
+                    }
+                }
+            }
+            function stateChange() {
+                var state = $("#statu").val();
+                if (state == "2") {
+                    $(".noThroughReason").css("display", "block");
+                }
+                else {
+                    $(".noThroughReason").css("display", "none");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="wrap">
+            @RenderBody()
+        </div>   
+    </body>
+</html>

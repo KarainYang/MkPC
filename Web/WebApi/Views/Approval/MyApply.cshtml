@@ -1,0 +1,41 @@
+﻿@model List<YK.Model.TB_WorkFlow_ApprovalInfo>
+@{
+    ViewBag.Title = "我的申请";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+
+<script type="text/javascript">
+    function detail(approvalTypeCode,id)
+    {
+        //请假: 0001,加班:0002,报销:0003,办公用品:0004,出差:0005
+        if (approvalTypeCode == "0001") {
+            window.location = "@Url.Action("LeaveDetail", "Approval")?id=" + id;
+        }
+        if (approvalTypeCode == "0002") {
+            window.location = "@Url.Action("OvertimeDetail", "Approval")?id=" + id;
+        }
+        if (approvalTypeCode == "0003") {
+            window.location = "@Url.Action("ExpensesDetail", "Approval")?id=" + id;
+        }
+        if (approvalTypeCode == "0004") {
+            window.location = "@Url.Action("OfficeSuppliesDetail", "Approval")?id=" + id;
+        }
+        if (approvalTypeCode == "0005") {
+            window.location = "@Url.Action("Leave", "Approval")?id=" + id;
+        }
+    }
+</script>
+
+@foreach (var item in Model)
+{ 
+    <div class="list_item  border-1px" onclick="detail('@item.ApprovalTypeCode',@item.ObjectID)">
+        <div class="list_title  border-1px">@item.Title</div>
+        <div class="list_info  border-1px">
+            类型：@YK.Service.WorkFlowService.ApprovalTypeService.GetApprovalTypeNameByCode(item.ApprovalTypeCode)
+            &nbsp;
+            状态：@YK.Service.WorkFlowService.NodesService.GetCurrentStateInfo(item.NodeId,item.IsThrough)
+            <br />
+            申请时间：@item.AddDate
+        </div>
+    </div>
+}

@@ -1,0 +1,188 @@
+﻿
+@model CRMMvc.Models.Plan.TaskEditModel
+@{
+    ViewBag.Title = "任务编辑";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+
+@Html.Partial("~/Views/Component/Frontend/dialog.cshtml")
+@Html.Partial("~/Views/Component/Frontend/TreeChoose.cshtml")
+
+
+<style>
+    .search {
+        position: relative;
+        z-index: 10;
+        display: -webkit-box;
+        background-color: #00ABEC;
+        box-sizing: border-box;
+        padding: 0.127em 12px;
+    }
+    .search-fixed{
+        position: fixed;
+        width:100%;
+        top:0px;
+        left:0px;
+        z-index: 100;
+    }
+    .search-icon:before{
+        content: '\e60e';
+    }
+    .icon-switch.font-switch:before{
+        content:'\e60b';
+    }
+    .search table {
+        width:100%;
+    }
+    .search input {
+        width: 100%;
+        padding-top: 0.57em;
+        padding-bottom: 0.57em;
+        padding-right: 30px;
+        padding-left: 2.55rem;
+        font-size: 14px;
+        border: 0;
+        -webkit-appearance: none;
+        -webkit-user-select: text;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    .icon-font-size{
+        font-size: 21px;
+        text-align: center;
+        color:white;
+    }
+    .search-icon-td {
+        width:20px;
+        padding-left:5px;
+    }
+</style>
+
+@*<div class="search-div">
+	<div class="search search-fixed">
+        <table>
+            <tr>
+                <td><input type="text" placeholder="搜索计划/工作项名称" name="k" value="" /></td>
+                <td class="search-icon-td"><span class="search-icon iconfont icon-font-size"></span></td>
+            </tr>
+        </table>  
+	</div>
+</div>*@
+
+
+
+<input type="button" value="选择" onclick="show()" />
+<script type="text/javascript">
+
+    var from = '';
+    var key = '';
+    var search = $('.search');
+    var searchResult = $('.search-result');
+    var searchBox = $('.search-cover,.search-result');
+    var clearSearch = $('.search .clear-search');
+    var searchInput = $('.search input');
+    var historySearch = $('#history-search');
+    var onlineSearch = $('#online-search');
+    var switchBox = $('.switch-cover,.switch');
+    var keyword = '';
+
+
+
+    /* 普通搜索图标 */
+    search.on('click', '.part2', function (e) {
+        $('#list-group').hide();
+
+        $(".search-icon-cla").show();
+        e.stopPropagation();
+        e.preventDefault();
+        search.find('.part0,.part2').hide();
+        toggleSwitchBox(0);
+        //因为focus放在延迟函数里面，会导致IOS部分概率无法自动调用聚焦函数,通过将touchstart改为tap解决此问题
+        searchInput.show();
+        if (tplData.ua.platform != "android") {
+            $('.search').addClass('fixed');
+        }
+        window.scrollTo(0, 0);
+        searchInput.focus();
+    });
+
+    searchInput.on({
+        focus: function () {
+            //如果去掉此处会导致后面搜索结果页面搜索框消失 ;
+            if (tplData.ua.platform != "android") {
+                $('.search').addClass('fixed');
+            }
+
+            $('.advance-search').hide();
+            $('.cancel-search').show();
+            $('#list-group').hide();
+            //IOS情况下
+            searchBox.show();
+            window.scrollMode = 'search';
+            $.hash.setHash('page', 'part2');
+            if (tplData.ua.platform == "iphone" || mysoft_jh.judgePlatform() == "iphone") {
+                if (!onlineSearch.hasClass("ios-pos-empty")) {
+                    onlineSearch.addClass("ios-pos-empty");
+                }
+            }
+        },
+        input: function () {
+            keyword = $(this).val();
+
+            // 控制 清空搜索输入图标显示/隐藏
+            //     在线搜索显示/隐藏
+            //     历史搜索显示/隐藏
+            if ('' == keyword) {
+                clearSearch.hide();
+                onlineSearch.hide().empty().removeClass('empty-sweat');
+                historySearch.show();
+            } else {
+                clearSearch.show();
+                historySearch.hide();
+                onlineSearch.empty().removeClass('empty-sweat').show();
+                doOnlineSearch(keyword);
+            }
+        }
+    });
+
+
+
+    var data = [];
+    data.push({
+        name: "项目1",
+        value: 1,
+        list: [
+            {
+                name: "项目1分期1",
+                value: 2,
+                list: [{
+                    name: "项目1分期1楼栋1",
+                    value: 121,
+                    list: []
+                }]
+            },
+            {
+                name: "项目1分期2",
+                value: 5,
+                list: []
+            }
+        ]
+    });
+    data.push({
+        name: "项目2",
+        value: 3,
+        list: [
+            {
+                name: "项目2分期1",
+                value: 4,
+                list: []
+            }
+        ]
+    });
+    function show() {
+        yk.core.component.tree.isCheckbox = false;
+        yk.core.component.tree.init(data, function (_data) {
+            var res = _data;
+        });
+    }
+</script>

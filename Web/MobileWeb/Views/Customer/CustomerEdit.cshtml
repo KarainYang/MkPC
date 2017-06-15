@@ -1,0 +1,141 @@
+﻿
+@model YK.Model.TB_Customer_Customers
+@{
+    ViewBag.Title = "客户编辑";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+
+@using (Html.BeginForm("SaveCustomer", "Customer", FormMethod.Post, new { name = "form" }))
+{    
+    <div class="form_content">
+
+        <div class="form_content_title">客户名称</div>
+        <div class="form_content_control">
+             @Html.TextBoxFor(f => f.CustomerName, new
+                   {
+                       GroupName = "Validator",
+                       @class = "inputCss",
+                       title = "客户姓名",
+                       LabelID = "LbCustomerName",
+                       style="width:80%"                       
+                   })   
+              <span id="LbCustomerName">*</span>
+        </div>
+
+        <div class="form_content_title">手机号</div>
+        <div class="form_content_control">
+             @Html.TextBoxFor(f => f.Mobile, new
+                   {
+                       GroupName = "Validator",
+                       @class = "inputCss",
+                       title = "手机号",
+                       LabelID = "LbMobile",
+                       style="width:80%",
+                       Validator="手机"
+                   })   
+              <span id="LbMobile">*</span>
+        </div>
+
+        <div class="form_content_title">公司名称</div>
+        <div class="form_content_control">
+             @Html.TextBoxFor(f => f.CompanyName, new
+                   {
+                       @class = "inputCss",
+                       title = "公司名称",
+                       style="width:80%"
+                   })  
+        </div>
+
+        <div class="form_content_title">邮箱</div>
+        <div class="form_content_control">
+             @Html.TextBoxFor(f => f.Email, new
+                   {
+                       @class = "inputCss",
+                       title = "邮箱",
+                       style="width:80%"
+                   })   
+        </div>
+
+        <div class="form_content_title">QQ</div>
+        <div class="form_content_control">
+             @Html.TextBoxFor(f => f.QQ, new
+                   {
+                       @class = "inputCss",
+                       title = "QQ",
+                       style="width:80%"
+                   })   
+        </div>
+
+        <div class="form_content_title">行业</div>
+        <div class="form_content_control">
+             @Html.DropDownListFor(f => f.Industry, CRMMvc.Common.GetDictionarys("C0001"), new
+                   {
+                       @class = "inputCss",
+                       title = "行业",
+                       style="width:50%"
+                   })
+        </div>
+
+        <div class="form_content_title">规模</div>
+        <div class="form_content_control">
+             @Html.DropDownListFor(f => f.Scale, CRMMvc.Common.GetDictionarys("C0002"), new
+                   {
+                       @class = "inputCss",
+                       title = "规模",
+                       style="width:50%"
+                   })
+        </div>
+
+        <div class="form_content_title">来源</div>
+        <div class="form_content_control">
+             @Html.DropDownListFor(f => f.Source, CRMMvc.Common.GetDictionarys("C0003"), new
+                   {
+                       @class = "inputCss",
+                       title = "来源",
+                       style="width:50%"
+                   })
+        </div>
+
+        <div class="form_content_title">地址</div>
+        <div class="form_content_control">
+             @Html.TextBoxFor(f => f.Address, new
+                   {
+                       @class = "inputCss",
+                       title = "地址",
+                       style="width:80%"
+                   })   
+        </div>
+
+        <div class="form_content_title">状态</div>
+        <div class="form_content_control">
+             @Html.DropDownListFor(f => f.State, CRMMvc.Common.GetDictionarys("C0004"), new
+                   {
+                       @class = "inputCss",
+                       title = "状态",
+                       style="width:50%"
+                   })
+        </div>
+
+        <div class="form_content_title">是否共享</div>
+        <div class="form_content_control">
+             @Html.RadioButtonFor(f => f.IsSharing, 1, new { @checked=true })   是
+             @Html.RadioButtonFor(f => f.IsSharing, 0, new { @checked=true })   否 
+        </div>
+
+        <div class="form_content_title">备注</div>
+        <div class="form_content_control">
+            @Html.TextAreaFor(f => f.Remark, new
+                   {
+                       @class = "inputCss",
+                       title = "备注",
+                       maxlength="1000",
+                       style="width:80%;height:80px;" 
+                   })                              
+        </div>  
+    </div>   
+    
+    <div class="submitCss">
+        <input type="submit" value="提交" onclick="return yk.core.validator.VerificationForm('Validator')" />
+    </div>    
+}
+

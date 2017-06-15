@@ -82,3 +82,10 @@ E:\颜锟\最新模板全新\Web\02.YK.Interfaces\YK.Interface.Common\bin\Debug\
 E:\颜锟\最新模板全新\Web\02.YK.Interfaces\YK.Interface.Common\obj\Debug\YK.Interface.Common.csprojResolveAssemblyReference.cache
 E:\颜锟\最新模板全新\Web\02.YK.Interfaces\YK.Interface.Common\obj\Debug\YK.Interface.Common.dll
 E:\颜锟\最新模板全新\Web\02.YK.Interfaces\YK.Interface.Common\obj\Debug\YK.Interface.Common.pdb
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interface.Common\bin\Debug\YK.Interface.Common.dll
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interface.Common\bin\Debug\YK.Interface.Common.pdb
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interface.Common\bin\Debug\YK.Model.dll
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interface.Common\bin\Debug\YK.Model.pdb
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interface.Common\obj\Debug\YK.Interface.Common.csprojResolveAssemblyReference.cache
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interface.Common\obj\Debug\YK.Interface.Common.dll
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interface.Common\obj\Debug\YK.Interface.Common.pdb

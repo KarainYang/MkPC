@@ -1,0 +1,217 @@
+
+    .wrapper {
+        margin-left: 0;
+    }
+    .sidebar {
+        width: 200px;
+    }
+    .outer-wrapper {
+        background: #fff;
+        width: 1200px;
+        margin: 0 auto;
+        height: 100%;
+        border: 1px solid #ddd;
+        position: relative;
+        overflow:auto;
+    }
+.main {
+    border-radius: 10px;
+}
+.suite-center .guide {
+    padding-left: 30px;
+    font-size: 14px;
+    color: #666;
+    line-height: 70px;
+    background: #f3f5f7;
+}
+.suite-type {
+    background: #fff;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-top: 30px;
+}
+.u_app {
+    padding-left: 15px;
+}
+.suite-app {
+    position: relative;
+    padding-top: 20px;
+    border-radius: 4px;
+}
+.app-detail {
+    float: left;
+    margin: 0 25px 10px 25px;
+    position: relative;
+}
+.icon_triangle {
+    width: 26px;
+    height: 16px;
+    background: url(../img/icon_arrow.png) no-repeat center;
+    position: absolute;
+    top: -14px;
+    left: 20px;
+}
+.icon-authorize {
+    line-height: 0;
+    position: relative;
+}
+.icon-remove {
+    position: absolute;
+    background: url(/img/btn_appdel.png) no-repeat center;
+    width: 22px;
+    height: 22px;
+    top:-11px;
+    right: -6px;
+    cursor: pointer;
+}
+.icon_help_guide {
+    margin-left: 16px;
+    padding: 10px 40px;
+    background: url(/img/icon_help_guide.png) no-repeat center
+}
+.suites {
+    padding-bottom: 30px;
+}
+.suite-icon img {
+    width: 60px;
+    height: 60px;
+}
+.app-icon {
+    text-align: center;
+}
+.app-icon img {
+    display: block;
+    width: 80px;
+    height: 80px;
+}
+.suite-detail {
+    padding-left: 18px;
+    padding-top: 12px;
+}
+.suite-name { 
+    font-size: 16px;
+    margin: 0;
+}
+.suite-name .app-num {
+    color: #999;
+}
+.icon-deposit {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(/img/icon_deposit.png) no-repeat center;
+    margin-right: 5px;
+    margin-bottom: -3px;
+    line-height: 0;
+
+}
+.deposit-status span {
+    color: #999;
+}
+.icon_link {
+    width: 52px;
+    height: 50px;
+    background: url(/img/icon_link.png) no-repeat center
+}
+.icon-add {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    background: url(/img/icon_add.png) no-repeat center;
+}
+.icon-add:hover {
+    background: url(/img/icon_add2.png) no-repeat center;
+
+}
+.app-name,.authorize-status {
+    line-height: 32px;
+}
+
+
+.authorized   {
+    text-align: center;
+}
+.icon-authorize img{
+    width:48px;
+    height: 48px;
+}
+.unhosted {
+    color: #999;
+}
+.authorized,.app-name,.unAuthorize  {
+    width: 80px;
+    height: 32px;
+    word-break:break-all;
+    text-align: center;
+    white-space: normal;
+    overflow: hidden;
+    word-break:break-all;
+}
+.app-menu {
+    display: none;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: #F5F6F7;
+    padding: 10px;
+    top: 0;
+    left: -15px;
+}
+
+.app-detail:hover  .app-menu {
+    display: block;
+    top: 0;
+}
+.app-setting {
+    background: #428BCA;
+    margin-bottom: 10px;
+}
+.app-setting:hover {
+    background: #2C71AF;
+}
+.app-backend {
+    background: #FF9900;
+    margin-bottom: 10px;
+}
+.app-backend:hover {
+    background: #D8830D;
+}
+.deposit {
+    background: #00CC66;
+}
+.deposit:hover {
+    background: #0AAA5A;
+}
+.app-menu li{
+    height: 30px;
+    line-height: 30px;
+}
+.app-menu a {
+    color: #fff;
+}
+.app-menu a:hover {
+    text-decoration: none;
+}
+.suite-item {
+    padding-bottom: 60px;
+    border-bottom: 1px solid #ddd;
+}
+.suite-item.third-part{
+    border-bottom: 0;
+}
+.add-app {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background: url(/img/icon_add_wzsapp.png) no-repeat center;
+}
+.add-app:hover {
+    background: url(/img/icon_add_wzsapp2.png) no-repeat center;
+}
+.deposit-status.bind {
+    color: #00CC33;
+}
+.deposit-status.unbind {
+    color: #FF9900;
+}

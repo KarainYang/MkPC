@@ -45,7 +45,7 @@ namespace YK.Model
         /// <summary> 
         ///生日
         /// </summary>
-        public DateTime Birthday { get; set; }
+        public DateTime? Birthday { get; set; }
         /// <summary> 
         ///照片
         /// </summary>
@@ -101,7 +101,7 @@ namespace YK.Model
         /// <summary> 
         ///最后登录时间
         /// </summary>
-        public DateTime LastLoginTime { get; set; }
+        public DateTime? LastLoginTime { get; set; }
         /// <summary> 
         ///最后登录IP
         /// </summary>

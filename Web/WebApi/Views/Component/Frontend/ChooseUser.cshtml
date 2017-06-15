@@ -1,0 +1,111 @@
+﻿
+<style>
+    .userChoose {
+        display:none;
+    }
+    .addUser {
+        width:30px;
+    }
+    .user {
+        margin-right:6px;
+        line-height:20px;
+    }    
+    .ChooseUser {
+        width:100%;
+        height:100%;
+        display:none;
+        position:fixed;
+        background-color:#ffffff;
+        line-height:50px;
+        z-index:2;
+        top:0;
+        left:0;
+    }
+    .department,.employee {
+        border-bottom-width:1px;
+        padding-left:10px;
+    }
+    .employees {
+        margin-left:20px;
+    }
+</style>
+<div class="ChooseUser"></div>
+
+<div class="userChoose">
+    <span class="users"></span>
+    <img class="addUser" onclick="yk.core.component.user.showChooseUser()" src="@Url.Content("~/Images/pig/new_add_focus.png")"/>    
+</div>
+
+<script type="text/html" id="employeeslist_template">
+    {{each list as v i}}
+        <div class="department border-1px">{{v.deptName }}</div>
+        <div class="employees border-1px">
+            {{each v.employees as v2 }}
+            <div class="employee border-1px" value="{{v2.id }}">{{v2.name }}</div>
+            {{/each}}
+        </div>
+    {{/each}}
+</script>
+
+<script type="text/javascript">
+    yk.core.common.registerNamespace("yk.core.component.user");
+    (function (ns) {
+        //是否多选
+        ns.isCheckbox = true;
+        //初始化
+        ns.init = function (callback) {
+            //ajax提交
+            yk.core.common.ajaxSubmit("@Url.Action("GetUsers","Employees")", null, function (_data) {
+                if (_data.isSuccess == 1) {
+                    $(".ChooseUser").html(template("employeeslist_template", { list: _data.data }));
+                    $(".employee").each(function () {
+                        this.onclick = function () {
+                            var userId = $(this).attr("value");
+                            var username = $(this).html();
+                            yk.core.component.user.addUser(userId, username);
+                            $(".ChooseUser").hide();
+
+                            callback({
+                                userId: $(this).attr("value"),
+                                userName: $(this).html()
+                            });
+                        }
+                    });
+                } else {
+                    $.dialog({
+                        title: '操作失败',
+                        content: _data.message,
+                        btncancel: false
+                    });
+                }
+            });
+        }
+        ns.showChooseUser = function () {
+            $(".ChooseUser").show();
+        }
+        ns.getChooseUsers = function () {
+            var users = [];
+            $(".user").each(function () {
+                users.push({
+                    userId: $(this).attr("value"),
+                    userName: $(this).html()
+                });
+            });
+            return users;
+        }
+        ns.addUser = function (userId, username) {
+            if (userId) {
+                var user = "<span class='user' value='" + userId + "' onclick='yk.core.component.user.removeUser(this)'>" + username + "</span>";
+                if (ns.isCheckbox) {
+                    $(".users").append(user);
+                }
+                else {
+                    $(".users").html(user);
+                }
+            }
+        }
+        ns.removeUser = function (obj) {
+            $(obj).remove();
+        }
+    })(yk.core.component.user);    
+</script>

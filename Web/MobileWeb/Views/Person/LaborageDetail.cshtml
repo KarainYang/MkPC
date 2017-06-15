@@ -1,0 +1,67 @@
+﻿@model YK.Model.TB_Employee_Laborage
+
+@{
+    ViewBag.Title = "薪资详情";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+
+<br />
+<div class="detail_proposer">
+    <table class="fromTable">
+        <tr>
+            <th>工资月份：</th>
+            <td>@Model.LaborageMonth.ToString("yyyy-MM")</td>
+        </tr>
+        <tr>
+            <th>基本工资：</th>
+            <td>@Model.Laborage</td>
+        </tr>
+        <tr>
+            <th>提成工资：</th>
+            <td>@Model.Commission</td>
+        </tr>
+        <tr>
+            <th>绩效工资：</th>
+            <td>@Model.Performance</td>
+        </tr>
+        <tr>
+            <th>考勤工资：</th>
+            <td>@Model.Attendance</td>
+        </tr>
+        <tr>
+            <th>餐补：</th>
+            <td>@Model.SubsidizedMeals</td>
+        </tr>
+    </table>
+</div>
+
+<div class="detail_info">
+    <table class="fromTable">
+                <tr>
+            <th>扣费：</th>
+            <td>@Model.Charged</td>
+        </tr>
+        <tr>
+            <th>扣社保：</th>
+            <td>@Model.Social</td>
+        </tr>
+        <tr>
+            <th>扣个税：</th>
+            <td>@Model.IncomeTax</td>
+        </tr>
+    </table>
+</div>
+
+<div class="detail_proposer">
+    <table class="fromTable">    
+        <tr>
+            <th>合计工资：</th>
+            <td>@Model.TotalAmount</td>
+        </tr>
+        <tr>
+            <th>发放日期：</th>
+            <td>@Model.PayDate.ToLongDateString()</td>
+        </tr>
+    </table>
+</div>
+

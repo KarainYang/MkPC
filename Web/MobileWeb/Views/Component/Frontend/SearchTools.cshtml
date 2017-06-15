@@ -1,0 +1,87 @@
+﻿<style>
+    .search-div {             
+        background-color: #00ABEC;        
+        padding:0px 15px;
+        height:50px;
+        line-height:50px; 
+    }
+    .search-choose-text {
+        color:#ffffff;
+        margin-top:-4px;
+    }
+    .search-choose-icon:before {
+        content: "\e625";
+        color: #efefef;
+    }
+    .search-btn-icon {
+        float:right;
+    }
+    .search-btn-icon:before {
+        content: '\e60e';
+        color: #efefef;
+    }
+    .search-choose {
+        background-color:#ffffff;
+        width:100%;
+        display:none;
+        z-index:10;
+        position: absolute;
+    }
+    .search-choose-item {
+        border-bottom-width:1px;
+        height:50px;
+        line-height:50px;
+        padding:0px 15px;
+    }
+</style>
+@Html.Partial("~/Views/Component/Frontend/layer.cshtml")
+<div class="search-div">
+    <span class="search-choose-display">
+        <span class="search-choose-icon icon iconfont"></span>
+        <span class="search-choose-text"></span>
+    </span>
+    <span class="search-btn-icon iconfont"></span>
+</div>
+<div class="search-choose"></div>
+<script type="text/html" id="search_choose_template">
+    {{each list as v i}}
+        <div class="search-choose-item border-1px" data-value="{{v.value}}" data-name="{{v.name}}" >
+        {{v.name}}
+        </div>        
+    {{/each}}
+</script>
+
+<script type="text/javascript">    
+    yk.core.common.registerNamespace("yk.core.component.search");
+    yk.core.component.layer.eventBind(function () {
+        yk.core.component.layer.hide();
+        $(".search-choose").hide();
+    });
+    (function(ns){
+        //初始化
+        ns.init = function (data, callback) {
+            $(".search-choose").html(template("search_choose_template", { list: data }));
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].isActive == 1) {
+                    $(".search-choose-text").html(data[i].name);
+                }
+            }
+            ns.bindEvent(callback);
+        },
+        ns.bindEvent = function (callback) {
+            $(".search-choose").on("click",".search-choose-item", function () {
+                var value = $(this).data("value");
+                var name = $(this).data("name");
+                yk.core.component.layer.hide(); 
+                $(".search-choose").hide();
+                $(".search-choose-text").html(name);
+                callback(value);
+            });
+            $(".search-choose-display").on("click", function () {
+                $(this).addClass("active");
+                yk.core.component.layer.show();
+                $(".search-choose").show();
+            });
+        }
+    })(yk.core.component.search);
+</script>

@@ -41,8 +41,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CachesHelper.cs" />
+    <Compile Include="DataToCacheHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BusinessCachesHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YK.BLL\YK.BLL.csproj">
+      <Project>{35343c16-db5b-48a5-8969-ee8a75ab9c20}</Project>
+      <Name>YK.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.Common\YK.Common.csproj">
+      <Project>{b2ac6c0e-1121-4242-a6fe-39606ef7c694}</Project>
+      <Name>YK.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.Core\YK.Core.csproj">
+      <Project>{79045b32-6aff-4418-8236-ee89f0430cfd}</Project>
+      <Name>YK.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.Interface\YK.Interface.csproj">
+      <Project>{45c63eb2-dd92-4fd1-bff6-a447629c3cf6}</Project>
+      <Name>YK.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.Model\YK.Model.csproj">
+      <Project>{e48e8e78-d351-46b5-bc48-c4c82d2cd998}</Project>
+      <Name>YK.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YK.Service\YK.Service.csproj">
+      <Project>{5f3e6386-7323-4945-8f59-db339181450b}</Project>
+      <Name>YK.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,267 @@
+﻿<style>
+    .search-div {             
+        background-color: #00ABEC;        
+        padding:0px 10px;
+        line-height:50px; 
+    }
+    .search-choose-text {
+        color:#ffffff;
+        margin-top:-4px;
+    }
+    .search-choose-icon:before {
+        content: "\e625";
+        color: #efefef;
+    }
+    .search-btn-icon {
+        float:right;
+    }
+    .search-btn-icon:before {
+        content: '\e60e';
+        color: #efefef;
+    }
+    .search-choose {
+        background-color:#ffffff;
+        width:100%;
+        display:none;
+        z-index:10;
+        position: absolute;
+    }
+    .search-choose-item {
+        border-bottom-width:1px;
+        height:50px;
+        line-height:50px;
+        padding:0px 15px;
+    }
+        .search-table {
+        width:100%;
+        height:50px;
+        border:0px;
+        vertical-align:middle;
+    }
+    .search-div input {
+        width: 100%;
+        padding-right: 10px;
+        padding-left: 10px;
+        font-size: 14px;
+        border: 0;
+        -webkit-appearance: none;
+        -webkit-user-select: text;
+        border-radius: 5px;
+        box-sizing: border-box;
+        height:30px;
+    }
+    .search-input {
+        display:none;
+    }
+</style>
+@Html.Partial("~/Views/Component/Frontend/layer.cshtml")
+<div class="search-div search-content">
+    <span class="search-choose-display type">
+        <span class="search-choose-icon icon iconfont"></span>
+        <span class="search-choose-text"></span>
+    </span>
+    <span class="search-choose-display year">
+        <span class="search-choose-icon icon iconfont"></span>
+        <span class="search-choose-text"></span>
+    </span>
+    <span class="search-choose-display month">
+        <span class="search-choose-icon icon iconfont"></span>
+        <span class="search-choose-text"></span>
+    </span>
+    <span class="search-choose-display week">
+        <span class="search-choose-icon icon iconfont"></span>
+        <span class="search-choose-text"></span>
+    </span>
+    <span class="search-btn-icon iconfont search-icon"></span>
+</div>
+<div class="search-div search-input">
+    <table class="search-table">
+        <tr>
+            <td><input type="text" placeholder="搜索关键字" id="key" name="k"></td>
+            <td style="width:20px;"><span class="search-btn-icon iconfont"></span></td>
+        </tr>
+    </table>
+</div>
+<div class="search-choose"></div>
+<script type="text/html" id="search_choose_template">
+    {{each list as v i}}
+        <div class="search-choose-item border-1px" data-value="{{v.value}}" data-name="{{v.name}}" >
+        {{v.name}}
+        </div>        
+    {{/each}}
+</script>
+
+<script type="text/javascript">    
+    yk.core.common.registerNamespace("yk.core.component.search");
+    yk.core.component.layer.eventBind(function () {
+        yk.core.component.layer.hide();
+        $(".search-choose").hide();
+    });
+    (function (ns) {
+        ns.currentType = 1;//当前类型，1年，2月，3周
+        ns.data = {};//数据
+        ns.value = {};
+        ns.callback;
+        ns.type = {};
+        //初始化
+        ns.init = function (data, callback) {
+            ns.data = data;
+            $(".type .search-choose-text").html(data.type.name);
+            $(".year .search-choose-text").html(data.year.name);
+            $(".month .search-choose-text").html(data.month.name);
+            $(".week .search-choose-text").html(data.week.name);
+            ns.value.type = data.type.value;
+            ns.value.year = data.year.value;
+            ns.value.month = data.month.value;
+            ns.value.week = data.week.value;
+            ns.callback = callback;
+            ns.bindEvent();
+        },
+        ns.bindEvent = function () {
+            $(".search-icon").on("click", function () {
+                $(".search-content").hide();
+                $(".search-input").show();
+            });
+            $(".search-choose").on("click",".search-choose-item", function () {
+                var value = $(this).data("value");
+                var name = $(this).data("name");
+                yk.core.component.layer.hide(); 
+                $(".search-choose").hide();                
+                switch (ns.currentType) {
+                    case 0:
+                        ns.value.type = value;
+                        break;
+                    case 1:
+                        $(".year .search-choose-text").html(name);
+                        ns.value.year = value;
+
+                        var monthData = ns.monthData();
+                        $(".month .search-choose-text").html(monthData[0].name);
+                        ns.value.month = monthData[0].value;
+
+                        var weekData = ns.weekData(ns.value.month);
+                        if (weekData.length > 0) {
+                            $(".week .search-choose-text").html(weekData[0].name);
+                            ns.value.week = weekData[0].value;
+                        } else {
+                            $(".week .search-choose-text").html("");
+                            ns.value.week = null;
+                        }
+                        break;
+                    case 2:
+                        $(".month .search-choose-text").html(name);
+                        ns.value.month = value;
+
+                        var weekData = ns.weekData(ns.value.month);
+                        if (weekData.length > 0) {
+                            $(".week .search-choose-text").html(weekData[0].name);
+                            ns.value.week = weekData[0].value;
+                        } else {
+                            $(".week .search-choose-text").html("");
+                            ns.value.week = null;
+                        }
+                        break;
+                    case 3:
+                        $(".week .search-choose-text").html(name);
+                        ns.value.week = value;
+                        break;
+                }
+                ns.callback(value);
+            });
+            $(".type").on("click", function () {
+                var data = ns.typeData();
+                $(".search-choose").html(template("search_choose_template", { list: data }));
+                $(this).addClass("active");
+                ns.currentType = 0;
+                ns.chooseHandle();
+            });
+            $(".year").on("click", function () {
+                var data = ns.yearData();
+                $(".search-choose").html(template("search_choose_template", { list: data }));
+                $(this).addClass("active");
+                ns.currentType = 1;
+                ns.chooseHandle();
+            });
+            $(".month").on("click", function () {
+                var data = ns.monthData();
+                $(".search-choose").html(template("search_choose_template", { list: data }));
+                $(this).addClass("active");
+                ns.currentType = 2;
+                ns.chooseHandle();
+            });
+            $(".week").on("click", function () {
+                var data = ns.weekData(ns.value.month);
+                $(".search-choose").html(template("search_choose_template", { list: data }));
+                $(this).addClass("active");
+                ns.currentType = 3;
+                ns.chooseHandle();
+            });
+        },
+        ns.chooseHandle = function () {
+            yk.core.component.layer.show();
+            $(".search-choose").show();
+        },
+        ns.typeData = function () {
+            var types = [];
+            types.push({
+                name: "进行中",
+                value: 0
+            });
+            types.push({
+                name: "已完成",
+                value: 1
+            });
+            return types;
+        },
+        ns.yearData = function () {
+            var year = [];
+            for (var i = 0; i < 10; i++) {
+                year.push({
+                    name: (2016 - i).toString() + "年",
+                    value: 2016 - i
+                });
+            }
+            return year;
+        },
+        ns.monthData = function () {
+            var month = [];
+            month.push({
+                name: "年度",
+                value: -1
+            });
+            month.push({
+                name: "季度",
+                value: 0
+            });
+            for (var i = 1; i <= 12; i++) {
+                month.push({
+                    name: i + "月",
+                    value: i
+                });
+            }
+            return month;
+        },
+        ns.weekData = function (month) {
+            var week = [];
+            if (month == -1) {
+                return week;
+            }
+            if (month == 0) {
+                for (var i = 1; i <= 4; i++) {
+                    week.push({
+                        name: i + "季度",
+                        value: i
+                    });
+                }
+                return week;
+            }
+            for (var i = 1; i <= 4; i++) {
+                week.push({
+                    name: i + "周",
+                    value: i
+                });
+            }
+            return week;
+        }
+    })(yk.core.component.search);
+</script>

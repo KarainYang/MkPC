@@ -9,3 +9,14 @@ E:\颜锟\最新模板全新\Web\02.YK.Interfaces\YK.Interfaces.Examination\bin\
 E:\颜锟\最新模板全新\Web\02.YK.Interfaces\YK.Interfaces.Examination\bin\Debug\YK.Interface.Common.pdb
 E:\颜锟\最新模板全新\Web\02.YK.Interfaces\YK.Interfaces.Examination\obj\Debug\YK.Interfaces.Examination.dll
 E:\颜锟\最新模板全新\Web\02.YK.Interfaces\YK.Interfaces.Examination\obj\Debug\YK.Interfaces.Examination.pdb
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interfaces.Examination\bin\Debug\YK.Interfaces.Examination.dll
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interfaces.Examination\bin\Debug\YK.Interfaces.Examination.pdb
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interfaces.Examination\bin\Debug\YK.Interface.Common.dll
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interfaces.Examination\bin\Debug\YK.Model.dll
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interfaces.Examination\bin\Debug\YK.Models.Examination.dll
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interfaces.Examination\bin\Debug\YK.Models.Examination.pdb
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interfaces.Examination\bin\Debug\YK.Model.pdb
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interfaces.Examination\bin\Debug\YK.Interface.Common.pdb
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interfaces.Examination\obj\Debug\YK.Interfaces.Examination.csprojResolveAssemblyReference.cache
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interfaces.Examination\obj\Debug\YK.Interfaces.Examination.dll
+E:\mysoft\git-me\MkPC\Web\02.YK.Interfaces\YK.Interfaces.Examination\obj\Debug\YK.Interfaces.Examination.pdb

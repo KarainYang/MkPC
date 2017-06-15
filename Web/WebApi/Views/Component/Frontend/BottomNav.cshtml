@@ -1,0 +1,38 @@
+﻿<style type="text/css">
+.wrap {
+    margin-bottom:58px;
+}
+.bottomNav {
+    background-color:#fafbfe;
+    bottom:0px;   
+    position:fixed;
+    width:100%;
+    line-height:16px;  
+    padding:5px 0px 3px 0px; 
+    border-top:1px solid #F6F6F6;
+    z-index:2;
+}
+.bottomNav a{
+    display:block;
+    float:left;    
+    color:#898989;                
+    text-align:center; 
+    font-size:13px;
+    /*font:13px/1.5 "Microsoft YaHei",Helvetica,Arial,Verdana,sans-serif; */                 
+}
+.bottomNav a img {
+    width:30px;
+}
+</style>
+<script type="text/javascript">
+    $(function () {
+        $(".bottomNav a").css("width", 100 / $(".bottomNav a").length + "%");                
+    });
+</script>
+<div class="bottomNav">
+    <a href="javascript:void(0)" onclick="window.location.replace('@Url.Action("Index","Office")')"><img src="@Url.Content("~/Images/office/nav_todo.png")"/><br />待办</a>
+    <a href="javascript:void(0)" onclick="window.location.replace('@Url.Action("App","Office")')"><img src="@Url.Content("~/Images/office/nav_app.png")"/><br />应用</a>
+    <a href="javascript:void(0)" onclick="window.location.replace('@Url.Action("Index","Approval")')"><img src="@Url.Content("~/Images/office/nav_db.png")"/><br />审批</a>
+    <a href="javascript:void(0)" onclick="window.location.replace('@Url.Action("Me","Person")')"><img src="@Url.Content("~/Images/office/nav_me.png")"/><br />我的</a>
+    <div class="clearFloatDiv"></div>
+</div> 

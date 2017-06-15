@@ -1,0 +1,174 @@
+﻿@model YK.Models.Plan.Plan_Task_Info
+@{
+    ViewBag.Title = "任务详情";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+
+<style>
+    .record {
+        margin-top:10px;
+        background-color:#F9F9F9;
+    }
+</style>
+
+<div class="task"></div>
+
+<script type="text/html" id="task_template">
+<div class="detail_title">{{task.Name}}</div>
+<div class="detail_proposer">    
+    <table class="fromTable">
+        <tr>
+            <th>计划开始：</th>
+            <td>
+                {{task.StartDate}}
+            </td>
+        </tr>
+        <tr>
+            <th>计划完成：</th>
+            <td>
+                {{task.EndDate}}
+            </td>
+        </tr>      
+        <tr>
+            <th>进度：</th>
+            <td>
+                {{task.CompleteRate}} % 
+            </td>
+        </tr>
+         
+    </table>
+</div>
+<div class="detail_info">    
+    <table class="fromTable"> 
+        <tr>
+            <th>预计完成：</th>
+            <td>
+               {{task.YjEndDate}}
+            </td>
+        </tr>
+        <tr>
+            <th>实际开始：</th>
+            <td>
+                {{task.SjStartDate}}
+            </td>
+        </tr>
+        <tr>
+            <th>实际完成：</th>
+            <td>
+                {{task.SjEndDate}}
+            </td>
+        </tr>
+        <tr>
+            <th>状态：</th>
+            <td>
+                {{task.State}}
+            </td>
+        </tr>    
+        <tr>
+            <th>末级工作项：</th>
+            <td>
+                {{task.IsEnd}}
+            </td>
+        </tr>
+        <tr>
+                <th>描述：</th>
+            <td>
+                {{task.Description}}
+            </td>
+        </tr> 
+    </table>
+</div>
+</script>
+
+<br />
+
+<div class="detail_title">任务反馈</div>
+<div class="reportList">
+
+</div>
+<div class="bottomButton">
+    <a class="border-1px" href="@Url.Action("TaskInfoEdit", "Plan", new { taskId = Model.ID })">编辑</a>
+    <a class="border-1px" href="@Url.Action("TaskReport", "Plan", new { taskId = Model.ID })">反馈</a>
+</div>
+
+<script type="text/html" id="list_template">
+    {{each reportList as v i}}
+        <div class="detail_proposer record">    
+            <table class="fromTable">
+                <tr>
+                    <th>状态：</th>
+                    <td>
+                        {{v.State}}
+                    </td>
+                </tr>
+                <tr>
+                    <th>进度：</th>
+                    <td>
+                        {{v.CompleteRate}} %
+                    </td>
+                </tr>
+                {{if v.SjStartDate!=null}}
+                <tr>
+                    <th>实际开始：</th>
+                    <td>
+                        {{v.SjStartDate}}
+                    </td>
+                </tr> 
+                {{/if}} 
+                {{if v.YjEndDate!=null}}
+                <tr>
+                    <th>预计完成：</th>
+                    <td>
+                        {{v.YjEndDate}}
+                    </td>
+                </tr> 
+                {{/if}} 
+                {{if v.SjEndDate!=null}}
+                <tr>
+                    <th>实际完成：</th>
+                    <td>
+                        {{v.SjEndDate}}
+                    </td>
+                </tr> 
+                {{/if}}                
+                <tr>
+                    <th>完成情况说明：</th>
+                    <td>
+                        {{v.Description}}                        
+                    </td>
+                </tr> 
+            </table>
+        </div>
+    {{/each}}
+</script>
+
+<script type="text/javascript">
+    $.ajax({
+        url: "@Url.Action("AjaxGetTaskReportList")",
+        type: 'post',
+        data: {taskId:@Model.ID},
+        dataType: 'json',
+        success: function (_data) {
+            if (_data.isSuccess == 1) {
+                $(".task").html(template("task_template", _data.data ));
+                $(".reportList").html(template("list_template", _data.data ));
+            } else {
+                $.dialog({
+                    title: '操作失败',
+                    content: _data.message,
+                    btncancel: false
+                });
+            }
+            ajaxLock = 0;
+        },
+        error: function () {
+            $.dialog({
+                closetime: 2000,
+                loading: {
+                    text: '请求失败，请稍后重试'
+                }
+            });
+            ajaxLock = 0;
+        }
+    });
+</script>

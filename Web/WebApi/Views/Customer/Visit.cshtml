@@ -1,0 +1,84 @@
+﻿
+@model YK.Model.TB_Customer_VisitRcord
+@{
+    ViewBag.Title = "客户跟进";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+
+@Scripts.Render("~/My97DatePicker/WdatePicker.js")
+
+@using (Html.BeginForm("SaveVisit", "Customer", FormMethod.Post, new { name = "form" }))
+{    
+    @Html.HiddenFor(f=>f.CustomerID)
+    <div class="form_content">
+
+        <div class="form_content_title">跟进方式</div>
+        <div class="form_content_control">
+             @Html.DropDownListFor(f => f.FollowType, CRMMvc.Common.GetDictionarys("C0007"), new
+                   {
+                       GroupName = "Validator",
+                       @class = "inputCss",
+                       title = "行业",
+                       LabelID = "LbFollowType",
+                       style="width:50%"
+                   })
+            <span id="LbFollowType">*</span>
+        </div>
+
+        <div class="form_content_title">联系人</div>
+        <div class="form_content_control">
+             @Html.TextBoxFor(f => f.ContractName, new
+                   {
+                       GroupName = "Validator",
+                       @class = "inputCss",
+                       title = "联系人",
+                       LabelID = "LbContractName",
+                       style="width:80%"
+                   })   
+              <span id="LbContractName">*</span>
+        </div>
+
+        <div class="form_content_title">联系电话</div>
+        <div class="form_content_control">
+             @Html.TextBoxFor(f => f.Phone, new
+                   {
+                       GroupName = "Validator",
+                       @class = "inputCss",
+                       title = "联系电话",
+                       LabelID = "LbPhone",
+                       style="width:80%",
+                       Validator="手机"
+                   })   
+              <span id="LbPhone">*</span>
+        </div>
+
+        <div class="form_content_title">跟进/回访时间</div>
+        <div class="form_content_control">
+                @Html.TextBoxFor(f => f.VisitDate, new
+                   {
+                       GroupName = "Validator",
+                       @class = "inputCss",
+                       title = "跟进/回访时间",
+                       LabelID = "LbVisitDate",
+                       onclick = "WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})",
+                   })                 
+                 <span id="LbVisitDate">*</span>
+        </div>
+
+        <div class="form_content_title">备注</div>
+        <div class="form_content_control">
+            @Html.TextAreaFor(f => f.VisitContent, new
+                   {
+                       @class = "inputCss",
+                       title = "备注",
+                       maxlength="1000",
+                       style="width:80%;height:80px;" 
+                   })                              
+        </div>  
+    </div>   
+    
+    <div class="submitCss">
+        <input type="submit" value="提交" onclick="return yk.core.validator.VerificationForm('Validator')" />
+    </div>    
+}
+

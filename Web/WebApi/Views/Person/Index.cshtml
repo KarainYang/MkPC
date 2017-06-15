@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "个人中心";
+    Layout = "~/Views/Shared/_IndexLayout.cshtml";
+}
+<div class="app_center">
+    <div onclick="urlLocation('@Url.Action("Me","Person")')">
+        <img src="@Url.Content("~/Images/pig/person.png")" /><br />
+        我
+    </div>
+</div>
+<div class="clearFloatDiv appspace"></div>

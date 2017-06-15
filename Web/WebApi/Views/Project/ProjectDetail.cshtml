@@ -1,0 +1,39 @@
+﻿@model YK.Model.TB_Project_Projects
+@{
+    ViewBag.Title = "客户详情";
+    Layout = "~/Views/Shared/_OfficeLayout.cshtml";
+}
+
+<div class="detail_title">@Model.Name</div>
+
+<div class="detail_proposer">    
+    <table class="fromTable">
+        <tr>
+            <th>开始时间：</th>
+            <td>
+                @Model.StartDate.ToShortDateString()
+            </td>
+        </tr>
+        <tr>
+            <th>结束时间：</th>
+            <td>
+                @Model.EndDate.ToShortDateString()
+            </td>
+        </tr>
+        @if (Model.IsApproval == 2)
+         { 
+            <tr>          
+                <th>不批准原因：</th>
+                <td>
+                    @Model.Reason
+                </td>
+            </tr> 
+        }
+        <tr>
+                <th>描述：</th>
+            <td>
+                @Model.Remark
+            </td>
+        </tr> 
+    </table>
+</div>

@@ -1,0 +1,28 @@
+﻿/*body {
+    background-image:url(/Images/bg.jpg);
+    background-repeat:round;
+    filter:alpha(opacity=90);-moz-opacity:0.9;-khtml-opacity:0.9;opacity:0.9;
+}*/
+.appspace {
+    clear:both;
+    padding-bottom:15px;
+}
+.app_center div {
+    width:30%;/*这里先设置一个默认宽度，后续js里面再处理为正确的*/
+    float:left;
+    text-decoration:none;
+    text-align:center;
+    vertical-align:middle;
+    line-height:20px;
+    padding:40px 0px 40px 0px;    
+    border-width: 0;
+    -webkit-border-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAxMS8yMC8xNWexeuQAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAAALklEQVQImWN8+vTpfwYsgIWBgYFBSkqKEVnw2bNn/5mwqWZgYGAgXYIFZia6BAAHMQtvWmlyJAAAAABJRU5ErkJggg==") 2 2 stretch;
+    border-bottom-width:1px;
+    border-right-width:1px; 
+}
+.app_center div:last-child{   
+    
+}
+.app_center div img {
+    height:35px;
+}

@@ -5,3 +5,10 @@ E:\颜锟\最新模板全新\Web\01.YK.Models\YK.Models.Examination\bin\Debug\YK
 E:\颜锟\最新模板全新\Web\01.YK.Models\YK.Models.Examination\obj\Debug\YK.Models.Examination.csprojResolveAssemblyReference.cache
 E:\颜锟\最新模板全新\Web\01.YK.Models\YK.Models.Examination\obj\Debug\YK.Models.Examination.dll
 E:\颜锟\最新模板全新\Web\01.YK.Models\YK.Models.Examination\obj\Debug\YK.Models.Examination.pdb
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Models.Examination\bin\Debug\YK.Models.Examination.dll
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Models.Examination\bin\Debug\YK.Models.Examination.pdb
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Models.Examination\bin\Debug\YK.Model.dll
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Models.Examination\bin\Debug\YK.Model.pdb
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Models.Examination\obj\Debug\YK.Models.Examination.csprojResolveAssemblyReference.cache
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Models.Examination\obj\Debug\YK.Models.Examination.dll
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Models.Examination\obj\Debug\YK.Models.Examination.pdb

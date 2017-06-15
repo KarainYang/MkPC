@@ -1,0 +1,94 @@
+﻿@model CRMMvc.Models.Plan.TaskListModel
+@{
+    ViewBag.Title = "我的工作项";
+    Layout = "~/Views/Shared/_IndexLayout.cshtml";
+}
+
+@{
+    ViewData["Url"] = Url.Action("TaskInfoEdit", "Plan");
+    }
+@Html.Partial("~/Views/Component/Frontend/AddButton.cshtml",ViewData)
+@Html.Partial("~/Views/Component/Frontend/dialog/index.cshtml")
+
+@Styles.Render("~/css/swiper.min.css")
+<style>
+    .swiper-container {
+        width: 100%;
+    }
+    .bottomNav {
+        display:none;    
+    }    
+</style>
+@Html.Partial("~/Views/Component/Frontend/Search.cshtml")
+<div class="todo">
+    <div class="tabDivs">
+        <div class="border-1px">进行中</div>
+        <div class="border-1px">已完成</div>
+        <div class="border-1px">部门任务</div>
+    </div>
+</div>
+<div class="clearFloatDiv appspace"></div>
+
+<script type="text/html" id="list_template">
+    {{each list as v i}}
+        <a href="@Url.Action("TaskDetail")?id={{v.ID }}">
+        <div class="list_item border-1px">
+            <div class="list_title">{{v.Name }}
+            </div>
+            <div class="list_info">
+                <span class="float-left">{{v.EndDate }}</span>   <span class="state-{{v.State }}">{{v.StateText }}</span>              
+            </div>
+        </div>
+        </a>
+    {{/each}}
+</script>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
+    </div>
+</div>
+
+<!-- Swiper JS -->
+@Scripts.Render("~/js/swiper.min.js")
+@Scripts.Render("~/js/swiper.tools.js")
+
+<script type="text/ecmascript">    
+    yk.core.component.search.init(function (value) {
+        alert(value);
+    });
+
+    $.loading({ width: "7.143em", text: '加载中...' });
+    $.ajax({
+        url: "AjaxTaskList",
+        type: 'post',
+        data: null,
+        dataType: 'json',
+        success: function (_data) {
+            $.loading.close();//关闭等待
+            if (_data.isSuccess == 1) {
+                $(".swiper-slide").eq(0).html(template("list_template", { list: _data.data.myProgressTaskList }));
+                $(".swiper-slide").eq(1).html(template("list_template", { list: _data.data.myCompleteTaskList }));
+                $(".swiper-slide").eq(2).html(template("list_template", { list: _data.data.departTaskList }));
+            } else {
+                $.dialog({
+                    title: '操作失败',
+                    content: _data.message,
+                    btncancel: false
+                });
+            }
+            ajaxLock = 0;
+        },
+        error: function () {
+            $.dialog({
+                closetime: 2000,
+                loading: {
+                    text: '请求失败，请稍后重试'
+                }
+            });
+            ajaxLock = 0;
+        }
+    });
+</script>
