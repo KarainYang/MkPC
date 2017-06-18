@@ -1,49 +1,20 @@
 ﻿<!DOCTYPE html>
 <html lang="zh">
     <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta charset="utf-8" />
-        <title>@ViewBag.Title - 我的 ASP.NET MVC 应用程序</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+        <title>@ViewBag.Title</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
+        @System.Web.Optimization.Scripts.Render("~/dist/js/base.min.js")
+        @System.Web.Optimization.Scripts.Render("~/dist/js/yk.core.common.js")
+        @System.Web.Optimization.Scripts.Render("~/dist/js/yk.core.validator.js")  
+        @System.Web.Optimization.Scripts.Render("~/dist/js/vue.js") 
+        @System.Web.Optimization.Styles.Render("~/dist/css/global.css")
+        @System.Web.Optimization.Styles.Render("~/dist/css/office.css")
+        @System.Web.Optimization.Styles.Render("~/dist/css/bootstrap.min.css")           
     </head>
     <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("将你的徽标放置在此处", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                            <li>@Html.ActionLink("关于", "About", "Home")</li>
-                            <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
-                @RenderBody()
-            </section>
-        </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - 我的 ASP.NET MVC 应用程序</p>
-                </div>
-            </div>
-        </footer>
-
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
+            @RenderBody()  
     </body>
 </html>

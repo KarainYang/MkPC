@@ -1,0 +1,213 @@
+﻿@{
+    ViewBag.Title = "Color";
+}
+
+<style>
+    #colors {
+        text-align:center;
+        line-height:50px;
+    }
+	.block{
+        float:left;
+        margin-left:5px;
+        margin-top:5px;
+	}
+    .TopTip {
+        padding:10px 20px;
+    }
+    .tipTxt {
+        color:red;
+        margin-left:5px;
+    }
+    .rightSpan {
+        float:right;
+    }
+</style>
+
+<div class="TopTip">
+    <span>时间</span><span class="tipTxt timeTip">60</span>
+    <span class="rightSpan"><span>通过</span><span class="tipTxt successTip">0</span></span>
+</div>
+<div id="colors"></div>
+
+<script type="text/html" id="list_template">
+    {{each item.blocks as v i}}
+        <div class="block" style="background-color:{{v.color}};width:{{item.blockWidth}}px;height:{{item.blockWidth}}px" onclick="chooseBlock({{v.isChoose}})"></div>
+    {{/each}}
+</script>
+
+<script type="text/javascript">
+    //右边预留5px的宽度，因为按照计算，空格子跟块一样多导致右边没有间距
+    var windowWidth = $(window).width() - 5;
+
+    var allColors = [];
+    allColors.push({
+        blockCount: 4,
+        rowBlockCount: 2,
+        blockWidth: windowWidth / 2,
+        defaultColor: "#234BDA",
+        chooseColor: "#5B82A3",
+    });
+    allColors.push({
+        blockCount: 4,
+        rowBlockCount: 2,
+        blockWidth: windowWidth / 2,
+        defaultColor: "#678973",
+        chooseColor: "#35BE3D"
+    });
+    allColors.push({
+        blockCount: 9,
+        rowBlockCount: 3,
+        blockWidth: windowWidth / 3,
+        defaultColor: "#77968F",
+        chooseColor: "#42CAC7"
+    });
+    allColors.push({
+        blockCount: 9,
+        rowBlockCount: 3,
+        blockWidth: windowWidth / 3,
+        defaultColor: "#C6A0E2",
+        chooseColor: "#F5D1B3"
+    });
+    allColors.push({
+        blockCount: 16,
+        rowBlockCount: 4,
+        blockWidth: windowWidth / 4,
+        defaultColor: "#75A3C3",
+        chooseColor: "#4275F1"
+    });
+    allColors.push({
+        blockCount: 16,
+        rowBlockCount: 4,
+        blockWidth: windowWidth / 4,
+        defaultColor: "#884286",
+        chooseColor: "#B77357"
+    });
+    allColors.push({
+        blockCount: 25,
+        rowBlockCount: 5,
+        blockWidth: windowWidth / 5,
+        defaultColor: "#794CD2",
+        chooseColor: "#A221A0"
+    });
+    allColors.push({
+        blockCount: 25,
+        rowBlockCount: 5,
+        blockWidth: windowWidth / 5,
+        defaultColor: "#F0D2E2",
+        chooseColor: "#C5A0B6"
+    });
+    allColors.push({
+        blockCount: 36,
+        rowBlockCount: 6,
+        blockWidth: windowWidth / 6,
+        defaultColor: "#D0806B",
+        chooseColor: "#A5AF42"
+    });
+    allColors.push({
+        blockCount: 36,
+        rowBlockCount: 6,
+        blockWidth: windowWidth / 6,
+        defaultColor: "#1A402D",
+        chooseColor: "#471906"
+    });
+
+    allColors.push({
+        blockCount: 49,
+        rowBlockCount: 7,
+        blockWidth: windowWidth / 7,
+        defaultColor: "#558E10",
+        chooseColor: "#29633D"
+    });
+    allColors.push({
+        blockCount: 49,
+        rowBlockCount: 7,
+        blockWidth: windowWidth / 7,
+        defaultColor: "#E32D00",
+        chooseColor: "#D93550"
+    });
+			 
+    for (var idx = 0; idx < allColors.length; idx++) {        
+        var item = allColors[idx];
+        item.blockWidth = item.blockWidth - 5;
+        item.blocks = [];        
+        var index = Math.round(Math.random() * (item.blockCount - 1));
+        for (var i = 0; i < item.blockCount; i++) {
+            if (i == index) {
+                item.blocks.push({
+                    color: item.chooseColor,
+                    isChoose: 1
+                });
+            } else {
+                item.blocks.push({
+                    color: item.defaultColor,
+                    isChoose: 0
+                });
+            }
+        }
+    }
+			
+    $("#colors").html(template("list_template", { item : allColors[0] }));
+			
+    var chooseIndex = 0;
+    var isStart = false;
+    var defaultStart = 60;
+    function chooseBlock(isChoose) {
+        if (!isStart) {
+            var intervalObj = setInterval(function () {
+                defaultStart--;
+                $(".timeTip").html(defaultStart);
+                if (defaultStart == 0) {
+                    clearInterval(intervalObj);
+                    submitResult(chooseIndex);
+                }
+            }, 1000);
+        }
+        isStart = true;
+        //错误则不通过,已经全部测试完则不通过，时间截至则不允许通过
+        if (!isChoose || chooseIndex >= allColors.length || defaultStart == 0) {
+	        return;
+	    }	    
+        $(".successTip").html(chooseIndex);
+        //最后一步操作完后提交
+        if (chooseIndex == allColors.length - 1) {
+            submitResult(chooseIndex + 1);           
+        }
+        //下一操作下表
+	    chooseIndex++;
+        //未操作完可继续显示下一步操作
+	    if (chooseIndex < allColors.length) {
+	        $("#colors").html(template("list_template", { item: allColors[chooseIndex] }));
+	    }	      
+    }
+
+    //提交结果
+    function submitResult(result) {
+        $("#colors").html("测试完成");
+        $.ajax({
+            url: "saveVisionColor",
+            type: 'post',
+            data: { result: result },
+            dataType: 'json',
+            success: function (_data) {
+                if (_data.isSuccess == 1) {
+                    
+                } else {
+                    $.dialog({
+                        title: '操作失败',
+                        content: _data.message,
+                        btncancel: false
+                    });
+                }
+            },
+            error: function () {
+                $.dialog({
+                    closetime: 2000,
+                    loading: {
+                        text: '请求失败，请稍后重试'
+                    }
+                });
+            }
+        });
+    }
+</script>

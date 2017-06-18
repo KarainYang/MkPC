@@ -1,0 +1,146 @@
+﻿@{
+    ViewBag.Title = "Color";
+}
+
+<style>
+	.block{
+		width: 100px;
+		height: 100px;
+        float:left;
+        margin-left:10%;
+        width:40%;
+	}
+</style>
+
+<div id="colors"></div>
+
+<script type="text/html" id="list_template">
+    {{each list as v i}}
+        <div class="block" style="background-color:{{v.color}}" onclick="chooseBlock()"></div>
+    {{/each}}
+</script>
+
+<input type="button" value="下一步" onclick="chooseBlock()" />
+
+<script type="text/javascript">
+    var allColors = [];
+    allColors.push({
+        blockCount : 4,
+        rowBlockCount: 2,
+        defaultColor: "#234BDA",
+        chooseColor: "#5B82A3"
+    });
+    allColors.push({
+        blockCount: 4,
+        rowBlockCount: 2,
+        defaultColor: "#678973",
+        chooseColor: "#35BE3D"
+    });
+    allColors.push({
+        blockCount: 9,
+        rowBlockCount: 3,
+        defaultColor: "#77968F",
+        chooseColor: "#42CAC7"
+    });
+    allColors.push({
+        blockCount: 9,
+        rowBlockCount: 3,
+        defaultColor: "#C6A0E2",
+        chooseColor: "#F5D1B3"
+    });
+    allColors.push({
+        blockCount: 16,
+        rowBlockCount: 4,
+        defaultColor: "#75A3C3",
+        chooseColor: "#4275F1"
+    });
+    allColors.push({
+        blockCount: 16,
+        rowBlockCount: 4,
+        defaultColor: "#884286",
+        chooseColor: "#B77357"
+    });
+    allColors.push({
+        blockCount: 25,
+        rowBlockCount: 5,
+        defaultColor: "#794CD2",
+        chooseColor: "#A221A0"
+    });
+    allColors.push({
+        blockCount: 25,
+        rowBlockCount: 5,
+        defaultColor: "#F0D2E2",
+        chooseColor: "#C5A0B6"
+    });
+    allColors.push({
+        blockCount: 36,
+        rowBlockCount: 6,
+        defaultColor: "#D0806B",
+        chooseColor: "#A5AF42"
+    });
+    allColors.push({
+        blockCount: 36,
+        rowBlockCount: 6,
+        defaultColor: "#1A402D",
+        chooseColor: "#471906"
+    });
+
+    allColors.push({
+        blockCount: 49,
+        rowBlockCount: 7,
+        defaultColor: "#558E10",
+        chooseColor: "#29633D"
+    });
+    allColors.push({
+        blockCount: 49,
+        rowBlockCount: 7,
+        defaultColor: "#E32D00",
+        chooseColor: "#D93550"
+    });
+
+	var allBlocks = [];
+			
+	var counts = [4,4,9,9,16,16,25,25,36,36,49,49];
+	var colors = [];
+	colors.push({ defaultColor: "#234BDA", chooseColor: "#5B82A3" });
+	colors.push({ defaultColor: "#678973", chooseColor: "#35BE3D" });
+	colors.push({ defaultColor: "#77968F", chooseColor: "#42CAC7" });
+	colors.push({ defaultColor: "#C6A0E2", chooseColor: "#F5D1B3" });
+	colors.push({ defaultColor: "#75A3C3", chooseColor: "#4275F1" });
+	colors.push({ defaultColor: "#884286", chooseColor: "#B77357" });
+	colors.push({ defaultColor: "#794CD2", chooseColor: "#A221A0" });
+	colors.push({ defaultColor: "#F0D2E2", chooseColor: "#C5A0B6" });
+	colors.push({ defaultColor: "#D0806B", chooseColor: "#A5AF42" });
+	colors.push({ defaultColor: "#1A402D", chooseColor: "#471906" });
+	colors.push({ defaultColor: "#558E10", chooseColor: "#29633D" });
+	colors.push({ defaultColor: "#E32D00", chooseColor: "#D93550" });
+			
+	for(var idx=0;idx<counts.length;idx++){
+		var div="<div>";
+				
+		var blocks=[];			
+		var index = Math.round(Math.random()*(counts[idx]-1));
+		for(var i=0;i<counts[idx];i++){					
+			if(i==index){
+				blocks.push({
+					color:colors[idx].chooseColor,
+					isChoose:false
+				});	
+			}else{
+				blocks.push({
+					color:colors[idx].defaultColor,
+					isChoose:false
+				});
+			}
+		}				
+		allBlocks.push(blocks);
+	}
+			
+	$("#colors").html(template("list_template", { list: allBlocks[0] }));
+			
+	var chooseIndex = 0;
+	function chooseBlock() {
+	    $("#colors").html(template("list_template", { list: allBlocks[chooseIndex] }));
+	    chooseIndex++;
+	}
+</script>

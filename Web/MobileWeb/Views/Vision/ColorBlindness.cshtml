@@ -1,0 +1,118 @@
+﻿@{
+    ViewBag.Title = "Color";
+}
+
+<style>
+    #colors {
+        text-align:center;
+        line-height:50px;
+    }
+    .TopTip {
+        padding:10px 20px;
+        text-align:right;
+    }
+    #colors select {
+        width:100px;
+        text-align:center;
+    }
+</style>
+
+<div class="TopTip">
+</div>
+<div id="colors">
+    <img id="imgUrl" src="" />
+    <br />
+    <select id="start">
+    </select>
+    <select id="end">
+    </select>
+</div>
+<div class="submitCss">
+    <input type="button" value="确认输入" onclick="submitInput()" />
+</div>  
+
+<script type="text/javascript">
+
+    var allColors = [];
+    allColors.push({
+        url: "/dist/images/colorblindness/1.png",
+        value: 10
+    });
+    allColors.push({
+        url: "/dist/images/colorblindness/2.png",
+        value: 6
+    });
+    allColors.push({
+        url: "/dist/images/colorblindness/3.png",
+        value: 57
+    });
+    allColors.push({
+        url: "/dist/images/colorblindness/4.png",
+        value: 18
+    });
+    allColors.push({
+        url: "/dist/images/colorblindness/5.png",
+        value: 6
+    });
+
+    for (var i = 0; i < 10; i++) {
+        var option = '<option value="' + i + '">' + i + '</option>';
+        $("#start").append(option);
+        $("#end").append(option);
+    }
+			 
+    $("#imgUrl").attr("src", allColors[0].url);
+
+    var currentIndex = 0;
+    var successCount = 0;
+    //确认输入
+    function submitInput() {
+        if (currentIndex >= allColors.length) {
+            return;
+        }
+        var value = parseInt($("#start").val()) * 10 + parseInt($("#end").val());
+        if (allColors[currentIndex].value == value) {
+            successCount++;
+            $(".TopTip").append("<img src='/dist/images/colorblindness/dui.png'>");
+        } else {
+            $(".TopTip").append("<img src='/dist/images/colorblindness/cuo.png'>");
+        }        
+        if (currentIndex == allColors.length - 1) {
+            $(".submitCss").hide();
+            submitResult();
+        }
+        
+        currentIndex++;
+        $("#imgUrl").attr("src", allColors[currentIndex].url);
+    }
+
+    //提交结果
+    function submitResult(result) {
+        $("#colors").html("测试完成");
+        $.ajax({
+            url: "saveColorBlindness",
+            type: 'post',
+            data: { result: successCount },
+            dataType: 'json',
+            success: function (_data) {
+                if (_data.isSuccess == 1) {
+                    
+                } else {
+                    $.dialog({
+                        title: '操作失败',
+                        content: _data.message,
+                        btncancel: false
+                    });
+                }
+            },
+            error: function () {
+                $.dialog({
+                    closetime: 2000,
+                    loading: {
+                        text: '请求失败，请稍后重试'
+                    }
+                });
+            }
+        });
+    }
+</script>

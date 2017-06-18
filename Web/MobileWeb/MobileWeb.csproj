@@ -49,6 +49,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -108,7 +112,7 @@
     <Compile Include="Controllers\Api\IdentityAuthController.cs" />
     <Compile Include="Controllers\Api\LoginController.cs" />
     <Compile Include="Controllers\Api\TestController.cs" />
-    <Compile Include="Controllers\Api\VisionController.cs" />
+    <Compile Include="Controllers\VisionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -125,6 +129,21 @@
     <Content Include="dist\css\office.css" />
     <Content Include="dist\css\swiper\swiper.css" />
     <Content Include="dist\css\swiper\swiper.min.css" />
+    <Content Include="dist\images\colorblindness\1.png" />
+    <Content Include="dist\images\colorblindness\2.png" />
+    <Content Include="dist\images\colorblindness\3.png" />
+    <Content Include="dist\images\colorblindness\4.png" />
+    <Content Include="dist\images\colorblindness\5.png" />
+    <Content Include="dist\images\colorblindness\cuo.png" />
+    <Content Include="dist\images\colorblindness\dui.png" />
+    <Content Include="dist\images\colorblindness\IMG_1556.PNG" />
+    <Content Include="dist\images\colorblindness\IMG_1557.PNG" />
+    <Content Include="dist\images\colorblindness\IMG_1558.PNG" />
+    <Content Include="dist\images\colorblindness\IMG_1559.PNG" />
+    <Content Include="dist\images\colorblindness\IMG_1560.PNG" />
+    <Content Include="dist\images\colorblindness\IMG_1561.PNG" />
+    <Content Include="dist\images\colorblindness\IMG_1562.PNG" />
+    <Content Include="dist\images\colorblindness\IMG_1563.PNG" />
     <Content Include="dist\js\base.min.js" />
     <Content Include="dist\js\swiper\swiper.jquery.js" />
     <Content Include="dist\js\swiper\swiper.jquery.min.js" />
@@ -133,10 +152,12 @@
     <Content Include="dist\js\swiper\swiper.js" />
     <Content Include="dist\js\swiper\swiper.min.js" />
     <Content Include="dist\js\swiper\swiper.tools.js" />
+    <Content Include="dist\js\vue.js" />
     <Content Include="dist\js\yk.core.common.js" />
     <Content Include="dist\js\yk.core.validator.js" />
     <Content Include="dist\js\yk.js" />
     <Content Include="Global.asax" />
+    <Content Include="Views\Component\Frontend\simple.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -148,8 +169,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\Mobile\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Component\Backend\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\01.YK.Models\YK.Models.Examination\YK.Models.Examination.csproj">
@@ -209,6 +230,93 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dist\js\swiper\maps\swiper.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Approval\Expenses.cshtml" />
+    <Content Include="Views\Approval\ExpensesDetail.cshtml" />
+    <Content Include="Views\Approval\Index.cshtml" />
+    <Content Include="Views\Approval\Leave.cshtml" />
+    <Content Include="Views\Approval\LeaveDetail.cshtml" />
+    <Content Include="Views\Approval\MyApply.cshtml" />
+    <Content Include="Views\Approval\MyApproval.cshtml" />
+    <Content Include="Views\Approval\OfficeSupplies.cshtml" />
+    <Content Include="Views\Approval\OfficeSuppliesDetail.cshtml" />
+    <Content Include="Views\Approval\Overtime.cshtml" />
+    <Content Include="Views\Approval\OvertimeDetail.cshtml" />
+    <Content Include="Views\Backend\Default\Index.cshtml" />
+    <Content Include="Views\Backend\Shared\Error.cshtml" />
+    <Content Include="Views\Backend\Shared\_DefaultLayout.cshtml" />
+    <Content Include="Views\Backend\Shared\_Layout.cshtml" />
+    <Content Include="Views\Backend\_ViewStart.cshtml" />
+    <Content Include="Views\Component\Frontend\AddButton.cshtml" />
+    <Content Include="Views\Component\Frontend\BottomNav.cshtml" />
+    <Content Include="Views\Component\Frontend\choose.cshtml" />
+    <Content Include="Views\Component\Frontend\ChooseUser.cshtml" />
+    <Content Include="Views\Component\Frontend\dialog.cshtml" />
+    <Content Include="Views\Component\Frontend\dialog\index.cshtml" />
+    <Content Include="Views\Component\Frontend\layer.cshtml" />
+    <Content Include="Views\Component\Frontend\Search.cshtml" />
+    <Content Include="Views\Component\Frontend\SearchTools.cshtml" />
+    <Content Include="Views\Component\Frontend\TaskSearch.cshtml" />
+    <Content Include="Views\Component\Frontend\TreeChoose.cshtml" />
+    <Content Include="Views\Customer\CustomerDetail.cshtml" />
+    <Content Include="Views\Customer\CustomerEdit.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\MyCustomer.cshtml" />
+    <Content Include="Views\Customer\Visit.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Office\App.cshtml" />
+    <Content Include="Views\Office\Index.cshtml" />
+    <Content Include="Views\Office\Login.cshtml" />
+    <Content Include="Views\Person\AttendanceDetail.cshtml" />
+    <Content Include="Views\Person\Index.cshtml" />
+    <Content Include="Views\Person\LaborageDetail.cshtml" />
+    <Content Include="Views\Person\LaborageList.cshtml" />
+    <Content Include="Views\Person\Me.cshtml" />
+    <Content Include="Views\Person\MyAttendanceList.cshtml" />
+    <Content Include="Views\Person\Person.cshtml" />
+    <Content Include="Views\Person\PersonDtl.cshtml" />
+    <Content Include="Views\Person\WorkStatementDetail.cshtml" />
+    <Content Include="Views\Person\WorkStatementEdit.cshtml" />
+    <Content Include="Views\Person\WorkStatementList.cshtml" />
+    <Content Include="Views\Plan\List.cshtml" />
+    <Content Include="Views\Plan\TaskDetail.cshtml" />
+    <Content Include="Views\Plan\TaskInfoEdit.cshtml" />
+    <Content Include="Views\Plan\TaskList.cshtml" />
+    <Content Include="Views\Plan\TaskReport.cshtml" />
+    <Content Include="Views\Plan\Tree.cshtml" />
+    <Content Include="Views\Plan\副本 TaskList.cshtml" />
+    <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="Views\Project\MyProject.cshtml" />
+    <Content Include="Views\Project\ProjectDetail.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_IndexLayout.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_OfficeLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Vision\Color.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Vision\副本 Color.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Vision\ColorBlindness.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
