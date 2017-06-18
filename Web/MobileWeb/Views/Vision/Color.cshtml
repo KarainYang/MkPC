@@ -171,7 +171,8 @@
         $(".successTip").html(chooseIndex);
         //最后一步操作完后提交
         if (chooseIndex == allColors.length - 1) {
-            submitResult(chooseIndex + 1);           
+            submitResult(chooseIndex + 1);
+            return;
         }
         //下一操作下表
 	    chooseIndex++;
