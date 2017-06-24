@@ -47,3 +47,4 @@ E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Model.CRM\bin\Debug\YK.Model.CRM.dll
 E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Model.CRM\bin\Debug\YK.Model.CRM.pdb
 E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Model.CRM\obj\Debug\YK.Model.CRM.dll
 E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Model.CRM\obj\Debug\YK.Model.CRM.pdb
+E:\mysoft\git-me\MkPC\Web\01.YK.Models\YK.Model.CRM\obj\Debug\YK.Model.CRM.csprojResolveAssemblyReference.cache

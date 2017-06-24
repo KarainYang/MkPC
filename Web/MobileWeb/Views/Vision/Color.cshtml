@@ -22,6 +22,16 @@
     .rightSpan {
         float:right;
     }
+    .complete {
+        text-align:center;
+        line-height:50px;
+        display:none;
+        padding-top:50px;
+    }
+    .fraction {
+        color:red;
+        font-size:40px;
+    }
 </style>
 
 <div class="TopTip">
@@ -29,6 +39,11 @@
     <span class="rightSpan"><span>通过</span><span class="tipTxt successTip">0</span></span>
 </div>
 <div id="colors"></div>
+
+<div class="complete">
+    成功 <span class="fraction"></span> 个
+    <div class="complete-text"></div>
+</div>
 
 <script type="text/html" id="list_template">
     {{each item.blocks as v i}}
@@ -168,7 +183,7 @@
         if (!isChoose || chooseIndex >= allColors.length || defaultStart == 0) {
 	        return;
 	    }	    
-        $(".successTip").html(chooseIndex);
+        $(".successTip").html(chooseIndex + 1);
         //最后一步操作完后提交
         if (chooseIndex == allColors.length - 1) {
             submitResult(chooseIndex + 1);
@@ -184,7 +199,14 @@
 
     //提交结果
     function submitResult(result) {
-        $("#colors").html("测试完成");
+
+        $(".fraction").html(chooseIndex + 1);
+        $(".complete-text").html("打败了百分之" + ((chooseIndex + 1) / 12) * 100 + "的用户");
+
+        $("#colors").hide();
+        $(".TopTip").hide();
+        $(".complete").show();
+
         $.ajax({
             url: "saveVisionColor",
             type: 'post',

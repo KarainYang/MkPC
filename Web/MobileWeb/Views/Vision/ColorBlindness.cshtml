@@ -5,31 +5,51 @@
 <style>
     #colors {
         text-align:center;
-        line-height:50px;
+        margin-top:30px;
     }
     .TopTip {
         padding:10px 20px;
         text-align:right;
+        height:40px;
     }
     #colors select {
         width:100px;
         text-align:center;
+        height:30px;
+    }
+    .complete {
+        text-align:center;
+        line-height:50px;
+        display:none;
+        padding-top:50px;
+    }
+    .fraction {
+        color:red;
+        font-size:40px;
     }
 </style>
 
-<div class="TopTip">
+<div class="color-main">
+    <div class="TopTip">
+    </div>
+    <div id="colors">
+        <img id="imgUrl" src="" style="width:276px;height:276px;" />
+        <br /><br />
+        <select id="start">
+        </select>
+        <select id="end">
+        </select>
+    </div>
 </div>
-<div id="colors">
-    <img id="imgUrl" src="" />
-    <br />
-    <select id="start">
-    </select>
-    <select id="end">
-    </select>
-</div>
+
 <div class="submitCss">
     <input type="button" value="确认输入" onclick="submitInput()" />
 </div>  
+
+<div class="complete">
+    <span class="fraction"></span> 分
+    <div class="complete-text"></div>
+</div>
 
 <script type="text/javascript">
 
@@ -65,20 +85,30 @@
 
     var currentIndex = 0;
     var successCount = 0;
+    var failCount = 0;
     //确认输入
     function submitInput() {
         if (currentIndex >= allColors.length) {
             return;
         }
         var value = parseInt($("#start").val()) * 10 + parseInt($("#end").val());
+        $("#start").val("0");
+        $("#end").val("0");
+
         if (allColors[currentIndex].value == value) {
             successCount++;
             $(".TopTip").append("<img src='/dist/images/colorblindness/dui.png'>");
         } else {
+            failCount++;
             $(".TopTip").append("<img src='/dist/images/colorblindness/cuo.png'>");
-        }        
-        if (currentIndex == allColors.length - 1) {
-            $(".submitCss").hide();
+        }
+        if (failCount == 4) {
+            $(".complete-text").html("您有很大几率是色盲患者");
+            submitResult();
+            return;
+        }
+        if (currentIndex == allColors.length - 1) {            
+            $(".complete-text").html("恭喜您，您没有色盲的症状");
             submitResult();
             return;
         }
@@ -89,7 +119,11 @@
 
     //提交结果
     function submitResult(result) {
-        $("#colors").html("测试完成");
+        
+        $(".submitCss").hide();
+        $(".color-main").hide();
+        $(".complete").show();
+        $(".fraction").html((5 - failCount) * 20);
         $.ajax({
             url: "saveColorBlindness",
             type: 'post',
