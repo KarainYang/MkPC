@@ -34,6 +34,8 @@
     }
 </style>
 
+@Html.Partial("~/Views/Vision/Header.cshtml")
+
 <div class="TopTip">
     <span>时间</span><span class="tipTxt timeTip">60</span>
     <span class="rightSpan"><span>通过</span><span class="tipTxt successTip">0</span></span>
@@ -47,7 +49,7 @@
 
 <script type="text/html" id="list_template">
     {{each item.blocks as v i}}
-        <div class="block" style="background-color:{{v.color}};width:{{item.blockWidth}}px;height:{{item.blockWidth}}px" onclick="chooseBlock({{v.isChoose}})"></div>
+        <div class="block" style="background-color:{{v.color}};padding:{{item.blockWidth/2}}px" onclick="chooseBlock({{v.isChoose}})"></div>
     {{/each}}
 </script>
 
@@ -201,7 +203,7 @@
     function submitResult(result) {
 
         $(".fraction").html(chooseIndex + 1);
-        $(".complete-text").html("打败了百分之" + ((chooseIndex + 1) / 12) * 100 + "的用户");
+        $(".complete-text").html("打败了百分之" + parseInt(((chooseIndex + 1) / 12) * 100) + "的用户");
 
         $("#colors").hide();
         $(".TopTip").hide();
